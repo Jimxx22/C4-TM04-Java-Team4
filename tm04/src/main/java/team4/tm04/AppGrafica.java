@@ -9,6 +9,7 @@ import javax.swing.GroupLayout.Alignment;
 import java.awt.Rectangle;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
+import java.awt.CardLayout;
 
 public class AppGrafica {
 
@@ -86,6 +87,7 @@ public class AppGrafica {
 		panel = new JPanel();
 		panel.setBackground(Color.WHITE);
 		frame.getContentPane().add(panel);
+		panel.setLayout(new SpringLayout());
 		
 		panel_1 = new JPanel();
 		frame.getContentPane().add(panel_1);
@@ -103,6 +105,7 @@ public class AppGrafica {
 		panel_2.add(lblNewLabel);
 		
 		JPanel panel_4 = new JPanel();
+		panel_4.setBackground(Color.WHITE);
 		panel_4.setBorder(null);
 		sl_panel_2.putConstraint(SpringLayout.NORTH, panel_4, 6, SpringLayout.SOUTH, lblNewLabel);
 		sl_panel_2.putConstraint(SpringLayout.WEST, panel_4, 40, SpringLayout.WEST, panel_2);
