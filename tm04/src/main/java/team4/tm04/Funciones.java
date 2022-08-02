@@ -14,6 +14,7 @@ public class Funciones {
 		menu();
 	}*/
 	
+	//Genera las piezas con los colores aleatorios es decir, genera el patron aleatorio
 	public static Pieza[] generarPiezas(Integer[] colores) {
 		Pieza[] piezas= new Pieza[6];
 		
@@ -37,6 +38,8 @@ public class Funciones {
 		return piezas;
 	}
 	
+	//Funcion que solo funciona por terminal si es para entrar los colores 
+	//se tendria que adaptar a grafico
 	public static Pieza[] entrarPiezas() {
 		
 		Pieza[] piezas= new Pieza[5];
@@ -68,6 +71,8 @@ public class Funciones {
 		return piezasS;
 	}
 	
+	//Funcion que solo funciona por terminal es para cambiar el estado de estas 
+	//se tendria que adaptar a grafico
 	public static String estadoPiezas(Pieza[] piezas) {
 		
 		String estadoTodo="";
