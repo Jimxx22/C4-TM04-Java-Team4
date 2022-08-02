@@ -114,12 +114,6 @@ public class AppGrafica {
 		panel_2.add(panel_4);
 		panel_4.setLayout(new GridLayout(1, 0, 0, 0));
 		
-		JToggleButton tglbtnClr1 = new JToggleButton("");
-		tglbtnClr1.setEnabled(false);
-		tglbtnClr1.setBackground(Color.RED);
-		tglbtnClr1.setBorder(new LineBorder(new Color(255, 255, 255), 3));
-		panel_4.add(tglbtnClr1);
-		
 		JToggleButton tglbtnClr2 = new JToggleButton("");
 		tglbtnClr2.setEnabled(false);
 		tglbtnClr2.setBackground(Color.ORANGE);
@@ -200,6 +194,12 @@ public class AppGrafica {
 		tglbtnClr6S.setBorder(new LineBorder(Color.WHITE, 3));
 		tglbtnClr6S.setBackground(Color.YELLOW);
 		panel_5.add(tglbtnClr6S);
+		
+		JToggleButton tglbtnClr1 = new JToggleButton("");
+		panel_2.add(tglbtnClr1);
+		tglbtnClr1.setEnabled(false);
+		tglbtnClr1.setBackground(Color.RED);
+		tglbtnClr1.setBorder(new LineBorder(new Color(255, 255, 255), 3));
 		
 		panel_3 = new JPanel();
 		panel_3.setBackground(Color.WHITE);
