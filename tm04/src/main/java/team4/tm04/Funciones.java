@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class MainApp {
+public class Funciones {
 
 	static Pieza[] piezasGeneradas;
 	static Scanner sc = new Scanner(System.in);
