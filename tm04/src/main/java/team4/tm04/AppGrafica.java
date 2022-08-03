@@ -244,51 +244,33 @@ public class AppGrafica {
 		panel_3.setLayout(new GridLayout(1, 0, 0, 0));
 		
 		tglbtnClr1 = new JToggleButton("");
-<<<<<<< HEAD
-=======
 		tglbtnClr1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
->>>>>>> branch 'main' of https://github.com/Jimxx22/C4-TM04-Java-Team4.git
 		tglbtnClr1.setBackground(Color.WHITE);
 		panel_3.add(tglbtnClr1);
 		
 		
 		tglbtnClr2 = new JToggleButton("");
-<<<<<<< HEAD
-=======
 		tglbtnClr2.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
->>>>>>> branch 'main' of https://github.com/Jimxx22/C4-TM04-Java-Team4.git
 		tglbtnClr2.setBackground(Color.WHITE);
 		panel_3.add(tglbtnClr2);
 		
 		tglbtnClr3 = new JToggleButton("");
-<<<<<<< HEAD
-=======
 		tglbtnClr3.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
->>>>>>> branch 'main' of https://github.com/Jimxx22/C4-TM04-Java-Team4.git
 		tglbtnClr3.setBackground(Color.WHITE);
 		panel_3.add(tglbtnClr3);
 		
 		tglbtnClr4 = new JToggleButton("");
-<<<<<<< HEAD
-=======
 		tglbtnClr4.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
->>>>>>> branch 'main' of https://github.com/Jimxx22/C4-TM04-Java-Team4.git
 		tglbtnClr4.setBackground(Color.WHITE);
 		panel_3.add(tglbtnClr4);
 		
 		tglbtnClr5 = new JToggleButton("");
-<<<<<<< HEAD
-=======
 		tglbtnClr5.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
->>>>>>> branch 'main' of https://github.com/Jimxx22/C4-TM04-Java-Team4.git
 		tglbtnClr5.setBackground(Color.WHITE);
 		panel_3.add(tglbtnClr5);
 		
 		tglbtnClr6 = new JToggleButton("");
-<<<<<<< HEAD
-=======
 		tglbtnClr6.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
->>>>>>> branch 'main' of https://github.com/Jimxx22/C4-TM04-Java-Team4.git
 		tglbtnClr6.setBackground(Color.WHITE);
 		panel_3.add(tglbtnClr6);
 		
@@ -298,14 +280,9 @@ public class AppGrafica {
 		panel_1.add(lblColores);
 		
 		btnGen = new JButton("Generar patrón");
-<<<<<<< HEAD
-		sl_panel_1.putConstraint(SpringLayout.NORTH, btnGen, 23, SpringLayout.SOUTH, panel_3);
-		sl_panel_1.putConstraint(SpringLayout.EAST, btnGen, 0, SpringLayout.EAST, panel_3);
-=======
 		sl_panel_1.putConstraint(SpringLayout.SOUTH, panel_3, -6, SpringLayout.NORTH, btnGen);
 		sl_panel_1.putConstraint(SpringLayout.NORTH, btnGen, 69, SpringLayout.NORTH, panel_1);
 		sl_panel_1.putConstraint(SpringLayout.EAST, btnGen, -29, SpringLayout.EAST, panel_1);
->>>>>>> branch 'main' of https://github.com/Jimxx22/C4-TM04-Java-Team4.git
 		panel_1.add(btnGen);
 		
 		//SI estemos jugando vs jugador este boton se muestra
@@ -384,17 +361,9 @@ public class AppGrafica {
 		
 
 		lblError = new JLabel();
-<<<<<<< HEAD
-		sl_panel_1.putConstraint(SpringLayout.NORTH, lblError, 98, SpringLayout.NORTH, panel_1);
-=======
 		sl_panel_1.putConstraint(SpringLayout.EAST, lblError, -29, SpringLayout.EAST, panel_1);
->>>>>>> branch 'main' of https://github.com/Jimxx22/C4-TM04-Java-Team4.git
 		lblError.setForeground(Color.RED);
-<<<<<<< HEAD
-		sl_panel_1.putConstraint(SpringLayout.EAST, lblError, 0, SpringLayout.EAST, panel_3);
-=======
 		sl_panel_1.putConstraint(SpringLayout.NORTH, lblError, 6, SpringLayout.SOUTH, btnGen);
->>>>>>> branch 'main' of https://github.com/Jimxx22/C4-TM04-Java-Team4.git
 		lblError.setBackground(Color.WHITE);
 		panel_1.add(lblError);
 		frame.getContentPane().setLayout(null);
