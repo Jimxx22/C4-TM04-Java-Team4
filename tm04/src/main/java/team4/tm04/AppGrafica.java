@@ -396,7 +396,7 @@ public class AppGrafica {
 					.addComponent(panel5T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addComponent(panel6T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap())
+					.addContainerGap()) 
 		);
 		gl_panel_turno1.setVerticalGroup(
 			gl_panel_turno1.createParallelGroup(Alignment.LEADING)
