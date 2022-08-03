@@ -51,7 +51,7 @@ public class AppGrafica {
 	static Pieza[] piezasJUgador;
 	static Scanner sc = new Scanner(System.in);
 	static ArrayList<String> piezasHistorial=new ArrayList<>();
-	private static int pos=0;
+	private static int p1=0, p2=0, p3=0, pos=0;
 
 	//turno 1
 	private static JToggleButton tglbtnClr1Turno1;
@@ -144,7 +144,6 @@ public class AppGrafica {
 	 JPanel panel_turno4;
 	 JPanel panel_turno5;
 	 JPanel panel_turno6;
-
 	 
 	 
 	 
@@ -1094,27 +1093,12 @@ public class AppGrafica {
 		tglbtnClr5Turno1.addActionListener(e -> botonColorJugador(tglbtnClr5Turno1));
 		tglbtnClr6Turno1.addActionListener(e -> botonColorJugador(tglbtnClr6Turno1));
 		
-//		tglbtnClr1Turno2.addMouseListener(mouseListener);
-//		tglbtnClr2Turno2.addMouseListener(mouseListener);
-//		tglbtnClr3Turno2.addMouseListener(mouseListener);
-//		tglbtnClr4Turno2.addMouseListener(mouseListener);
-//		tglbtnClr5Turno2.addMouseListener(mouseListener);
-//		tglbtnClr6Turno2.addMouseListener(mouseListener);
-		
 		tglbtnClr1Turno2.addActionListener(e -> botonColorJugador(tglbtnClr1Turno2));
 		tglbtnClr2Turno2.addActionListener(e -> botonColorJugador(tglbtnClr2Turno2));
 		tglbtnClr3Turno2.addActionListener(e -> botonColorJugador(tglbtnClr3Turno2));
 		tglbtnClr4Turno2.addActionListener(e -> botonColorJugador(tglbtnClr4Turno2));
 		tglbtnClr5Turno2.addActionListener(e -> botonColorJugador(tglbtnClr5Turno2));
 		tglbtnClr6Turno2.addActionListener(e -> botonColorJugador(tglbtnClr6Turno2));
-
-		
-//		tglbtnClr1Turno3.addMouseListener(mouseListener);
-//		tglbtnClr2Turno3.addMouseListener(mouseListener);
-//		tglbtnClr3Turno3.addMouseListener(mouseListener);
-//		tglbtnClr4Turno3.addMouseListener(mouseListener);
-//		tglbtnClr5Turno3.addMouseListener(mouseListener);
-//		tglbtnClr6Turno3.addMouseListener(mouseListener);
 		
 		tglbtnClr1Turno3.addActionListener(e -> botonColorJugador(tglbtnClr1Turno3));
 		tglbtnClr2Turno3.addActionListener(e -> botonColorJugador(tglbtnClr2Turno3));
@@ -1122,14 +1106,6 @@ public class AppGrafica {
 		tglbtnClr4Turno3.addActionListener(e -> botonColorJugador(tglbtnClr4Turno3));
 		tglbtnClr5Turno3.addActionListener(e -> botonColorJugador(tglbtnClr5Turno3));
 		tglbtnClr6Turno3.addActionListener(e -> botonColorJugador(tglbtnClr6Turno3));
-
-		
-//		tglbtnClr1Turno4.addMouseListener(mouseListener);
-//		tglbtnClr2Turno4.addMouseListener(mouseListener);
-//		tglbtnClr3Turno4.addMouseListener(mouseListener);
-//		tglbtnClr4Turno4.addMouseListener(mouseListener);
-//		tglbtnClr5Turno4.addMouseListener(mouseListener);
-//		tglbtnClr6Turno4.addMouseListener(mouseListener);
 		
 		tglbtnClr1Turno4.addActionListener(e -> botonColorJugador(tglbtnClr1Turno4));
 		tglbtnClr2Turno4.addActionListener(e -> botonColorJugador(tglbtnClr2Turno4));
@@ -1137,14 +1113,6 @@ public class AppGrafica {
 		tglbtnClr4Turno4.addActionListener(e -> botonColorJugador(tglbtnClr4Turno4));
 		tglbtnClr5Turno4.addActionListener(e -> botonColorJugador(tglbtnClr5Turno4));
 		tglbtnClr6Turno4.addActionListener(e -> botonColorJugador(tglbtnClr6Turno4));
-
-		
-//		tglbtnClr1Turno5.addMouseListener(mouseListener);
-//		tglbtnClr2Turno5.addMouseListener(mouseListener);
-//		tglbtnClr3Turno5.addMouseListener(mouseListener);
-//		tglbtnClr4Turno5.addMouseListener(mouseListener);
-//		tglbtnClr5Turno5.addMouseListener(mouseListener);
-//		tglbtnClr6Turno5.addMouseListener(mouseListener);
 		
 		tglbtnClr1Turno5.addActionListener(e -> botonColorJugador(tglbtnClr1Turno5));
 		tglbtnClr2Turno5.addActionListener(e -> botonColorJugador(tglbtnClr2Turno5));
@@ -1152,15 +1120,6 @@ public class AppGrafica {
 		tglbtnClr4Turno5.addActionListener(e -> botonColorJugador(tglbtnClr4Turno5));
 		tglbtnClr5Turno5.addActionListener(e -> botonColorJugador(tglbtnClr5Turno5));
 		tglbtnClr6Turno5.addActionListener(e -> botonColorJugador(tglbtnClr6Turno5));
-
-		
-		
-//		tglbtnClr1Turno5.addMouseListener(mouseListener);
-//		tglbtnClr2Turno5.addMouseListener(mouseListener);
-//		tglbtnClr3Turno5.addMouseListener(mouseListener);
-//		tglbtnClr4Turno5.addMouseListener(mouseListener);
-//		tglbtnClr5Turno5.addMouseListener(mouseListener);
-//		tglbtnClr6Turno5.addMouseListener(mouseListener);
 		
 		tglbtnClr1Turno6.addActionListener(e -> botonColorJugador(tglbtnClr1Turno6));
 		tglbtnClr2Turno6.addActionListener(e -> botonColorJugador(tglbtnClr2Turno6));
@@ -1177,9 +1136,9 @@ public class AppGrafica {
         @Override
         public void mouseReleased(MouseEvent e) {
         }
-
         @Override
         public void mousePressed(MouseEvent e) {
+        	
         }
 
         @Override
@@ -1191,8 +1150,9 @@ public class AppGrafica {
         }
 
         @Override
-        public void mouseClicked(MouseEvent e) {
-            if(e.getButton() == MouseEvent.BUTTON3) {
+        public void mouseClicked(MouseEvent e) {	
+        	
+        	if(e.getButton() == MouseEvent.BUTTON3) {
             	if(pos==0) {
         			pos=5;
         		}else {
@@ -1207,13 +1167,15 @@ public class AppGrafica {
             }else if(e.getButton() == MouseEvent.BUTTON2){}
             System.out.println(pos);
             ((JToggleButton) e.getComponent()).setBackground(new Color(coloresDisponibles[pos]));
-        	((JToggleButton) e.getComponent()).setSelected(false);	
+        	((JToggleButton) e.getComponent()).setSelected(false);
+            
         }
     };
 
     //Llama al mouseLIstener porque sino el boton aunque lo desactivaras seguia dejando canviar el color
-    public static void botonColorJugador(JToggleButton button) {
+    public static void botonColorJugador(JToggleButton button) {    	
     	button.addMouseListener(mouseListener);
+    	
 	}
 	
 	public static void botonColor(JToggleButton button) {
