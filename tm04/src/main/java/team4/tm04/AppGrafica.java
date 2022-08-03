@@ -1061,13 +1061,11 @@ public class AppGrafica {
 		tglbtnClr6.addActionListener(e -> botonColor(tglbtnClr6));
 		
 		tglbtnClr1Turno1.addActionListener(e -> botonColorJugador(tglbtnClr1Turno1));
-		
-		//tglbtnClr1Turno1.addMouseListener(mouseListener);
-		tglbtnClr2Turno1.addMouseListener(mouseListener);
-		tglbtnClr3Turno1.addMouseListener(mouseListener);
-		tglbtnClr4Turno1.addMouseListener(mouseListener);
-		tglbtnClr5Turno1.addMouseListener(mouseListener);
-		tglbtnClr6Turno1.addMouseListener(mouseListener);
+		tglbtnClr2Turno1.addActionListener(e -> botonColorJugador(tglbtnClr2Turno1));
+		tglbtnClr3Turno1.addActionListener(e -> botonColorJugador(tglbtnClr3Turno1));
+		tglbtnClr4Turno1.addActionListener(e -> botonColorJugador(tglbtnClr4Turno1));
+		tglbtnClr5Turno1.addActionListener(e -> botonColorJugador(tglbtnClr5Turno1));
+		tglbtnClr6Turno1.addActionListener(e -> botonColorJugador(tglbtnClr6Turno1));
 		
 		tglbtnClr1Turno2.addMouseListener(mouseListener);
 		tglbtnClr2Turno2.addMouseListener(mouseListener);
@@ -1145,6 +1143,7 @@ public class AppGrafica {
         }
     };
 
+    //Llama al mouseLIstener porque sino el boton aunque lo desactivaras seguia dejando canviar el color
     public static void botonColorJugador(JToggleButton button) {
     	button.addMouseListener(mouseListener);
 	}
