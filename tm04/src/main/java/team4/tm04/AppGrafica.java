@@ -52,97 +52,11 @@ public class AppGrafica {
 	static Scanner sc = new Scanner(System.in);
 	static ArrayList<String> piezasHistorial=new ArrayList<>();
 	private static int pos=0;
-
-	//turno 1
-	private static JToggleButton tglbtnClr1Turno1;
-	private static JToggleButton tglbtnClr2Turno1;
-	private static JToggleButton tglbtnClr3Turno1;
-	private static JToggleButton tglbtnClr4Turno1;
-	private static JToggleButton tglbtnClr5Turno1;
-	private static JToggleButton tglbtnClr6Turno1;
-	private static JToggleButton tglbtnPista1Turno1;
-	private static JToggleButton tglbtnPista2Turno1;
-	private static JToggleButton tglbtnPista3Turno1;
-	private static JToggleButton tglbtnPista4Turno1;
-	private static JToggleButton tglbtnPista5Turno1;
-	private static JToggleButton tglbtnPista6Turno1;
-		
-	//turno2
-	private static JToggleButton tglbtnClr1Turno2;
-	private static JToggleButton tglbtnClr2Turno2;
-	private static JToggleButton tglbtnClr3Turno2;
-	private static JToggleButton tglbtnClr4Turno2;
-	private static JToggleButton tglbtnClr5Turno2;
-	private static JToggleButton tglbtnClr6Turno2;
-	private static JToggleButton tglbtnPista1Turno2;
-	private static JToggleButton tglbtnPista2Turno2;
-	private static JToggleButton tglbtnPista3Turno2;
-	private static JToggleButton tglbtnPista4Turno2;
-	private static JToggleButton tglbtnPista5Turno2;
-	private static JToggleButton tglbtnPista6Turno2;
-	
-	//turno3
-	private static JToggleButton tglbtnClr1Turno3;
-	private static JToggleButton tglbtnClr2Turno3;
-	private static JToggleButton tglbtnClr3Turno3;
-	private static JToggleButton tglbtnClr4Turno3;
-	private static JToggleButton tglbtnClr5Turno3;
-	private static JToggleButton tglbtnClr6Turno3;
-	private static JToggleButton tglbtnPista1Turno3;
-	private static JToggleButton tglbtnPista2Turno3;
-	private static JToggleButton tglbtnPista3Turno3;
-	private static JToggleButton tglbtnPista4Turno3;
-	private static JToggleButton tglbtnPista5Turno3;
-	private static JToggleButton tglbtnPista6Turno3;
-	
-	//tunro4
-	private static JToggleButton tglbtnClr1Turno4;
-	private static JToggleButton tglbtnClr2Turno4;
-	private static JToggleButton tglbtnClr3Turno4;
-	private static JToggleButton tglbtnClr4Turno4;
-	private static JToggleButton tglbtnClr5Turno4;
-	private static JToggleButton tglbtnClr6Turno4;
-	private static JToggleButton tglbtnPista1Turno4;
-	private static JToggleButton tglbtnPista2Turno4;
-	private static JToggleButton tglbtnPista3Turno4;
-	private static JToggleButton tglbtnPista4Turno4;
-	private static JToggleButton tglbtnPista5Turno4;
-	private static JToggleButton tglbtnPista6Turno4;
-	
-	//turno5
-	private static JToggleButton tglbtnClr1Turno5;
-	private static JToggleButton tglbtnClr2Turno5;
-	private static JToggleButton tglbtnClr3Turno5;
-	private static JToggleButton tglbtnClr4Turno5;
-	private static JToggleButton tglbtnClr5Turno5;
-	private static JToggleButton tglbtnClr6Turno5;
-	private static JToggleButton tglbtnPista1Turno5;
-	private static JToggleButton tglbtnPista2Turno5;
-	private static JToggleButton tglbtnPista3Turno5;
-	private static JToggleButton tglbtnPista4Turno5;
-	private static JToggleButton tglbtnPista5Turno5;
-	private static JToggleButton tglbtnPista6Turno5;
-	
-	//turno6
-	 private static JToggleButton tglbtnClr1Turno6;
-	 private static JToggleButton tglbtnClr2Turno6;
-	 private static JToggleButton tglbtnClr3Turno6;
-	 private static JToggleButton tglbtnClr4Turno6;
-	 private static JToggleButton tglbtnClr5Turno6;
-	 private static JToggleButton tglbtnClr6Turno6;
-	 private static JToggleButton tglbtnPista1Turno6;
-	 private static JToggleButton tglbtnPista2Turno6;
-	 private static JToggleButton tglbtnPista3Turno6;
-	 private static JToggleButton tglbtnPista4Turno6;
-	 private static JToggleButton tglbtnPista5Turno6;
-	 private static JToggleButton tglbtnPista6Turno6;
+	private static boolean a=true;
 	 
 	 //panels trons
 	 JPanel panel_turno1;
 	 JPanel panel_turno2;
-	 JPanel panel_turno3;
-	 JPanel panel_turno4;
-	 JPanel panel_turno5;
 	 JPanel panel_turno6;
 
 	 
@@ -196,7 +110,7 @@ public class AppGrafica {
 			@Override
 			public void actionPerformed(ActionEvent e) {			
 				coloresDisponibles=generarColoresAleatorio();
-				activarDesactivar(false,0);
+				activarDesactivar(false);
 				tglbtnClr1.setBackground(new Color(coloresDisponibles[0]));
 				tglbtnClr2.setBackground(new Color(coloresDisponibles[1]));
 				tglbtnClr3.setBackground(new Color(coloresDisponibles[2]));
@@ -217,7 +131,7 @@ public class AppGrafica {
 		nuevaPartidaJugador.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {			
-				activarDesactivar(true,0);
+				activarDesactivar(true);
 				btnGen.setVisible(true);
 				lblError.setVisible(true);
 		}});
@@ -300,7 +214,7 @@ public class AppGrafica {
 					piezasGeneradas=Funciones.generarPiezas(coloresDisponibles,true);
 					addBackground(piezasGeneradas);
 					panel_turno1.setVisible(true);	
-					activarDesactivar(false,0);
+					activarDesactivar(false);
 					//activarDesactivar(true,1);
 					btnGen.setVisible(false);
 					lblError.setVisible(false);
@@ -377,51 +291,15 @@ public class AppGrafica {
 		sl_panel.putConstraint(SpringLayout.EAST, panel_turno1, -39, SpringLayout.EAST, panel);
 		panel.add(panel_turno1);
 		
-		JPanel panel_2_turno1 = new JPanel();
-		panel_2_turno1.setBorder(null);
-		panel_2_turno1.setBackground(UIManager.getColor("Button.background"));
-		panel_2_turno1.setLayout(new GridLayout(1, 0, 0, 0));
-			
-		tglbtnClr1Turno1 = new JToggleButton("");
-		tglbtnClr1Turno1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr1Turno1.setBackground(Color.WHITE);
-		panel_2_turno1.add(tglbtnClr1Turno1);
-		
-		tglbtnClr2Turno1 = new JToggleButton("");
-		tglbtnClr2Turno1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr2Turno1.setBackground(Color.WHITE);
-		panel_2_turno1.add(tglbtnClr2Turno1);
-		
-		tglbtnClr3Turno1 = new JToggleButton("");
-		tglbtnClr3Turno1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr3Turno1.setBackground(Color.WHITE);
-		panel_2_turno1.add(tglbtnClr3Turno1);
-		
-		tglbtnClr4Turno1 = new JToggleButton("");
-		tglbtnClr4Turno1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr4Turno1.setBackground(Color.WHITE);
-		panel_2_turno1.add(tglbtnClr4Turno1);
-		
-		tglbtnClr5Turno1 = new JToggleButton("");
-		tglbtnClr5Turno1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr5Turno1.setBackground(Color.WHITE);
-		panel_2_turno1.add(tglbtnClr5Turno1);
-		
-		tglbtnClr6Turno1 = new JToggleButton("");
-		tglbtnClr6Turno1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr6Turno1.setBackground(Color.WHITE);
-		panel_2_turno1.add(tglbtnClr6Turno1);
-		
 		JButton btnCorregitTurno1 = new JButton("Corregir");
 		btnCorregitTurno1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				respuesta[0]=tglbtnClr1Turno1.getBackground().getRGB();
-				respuesta[1]=tglbtnClr2Turno1.getBackground().getRGB();
-				respuesta[2]=tglbtnClr3Turno1.getBackground().getRGB();
-				respuesta[3]=tglbtnClr4Turno1.getBackground().getRGB();
-				respuesta[4]=tglbtnClr5Turno1.getBackground().getRGB();
-				respuesta[5]=tglbtnClr6Turno1.getBackground().getRGB();
-				activarDesactivar(false, 1);
+//				respuesta[0]=tglbtnClr1Turno1.getBackground().getRGB();
+//				respuesta[1]=tglbtnClr2Turno1.getBackground().getRGB();
+//				respuesta[2]=tglbtnClr3Turno1.getBackground().getRGB();
+//				respuesta[3]=tglbtnClr4Turno1.getBackground().getRGB();
+//				respuesta[4]=tglbtnClr5Turno1.getBackground().getRGB();
+//				respuesta[5]=tglbtnClr6Turno1.getBackground().getRGB();
 
 				for (Integer integer : respuesta) {
 					System.out.println(integer);
@@ -435,98 +313,111 @@ public class AppGrafica {
 				}
 				
 				for (int i = 0; i < piezasJUgador.length; i++) {
-					switch (i) {
-					case 0:
-						colorPista(tglbtnPista1Turno1, i);
-						break;
-					case 1:
-						colorPista(tglbtnPista2Turno1, i);
-						break;
-					case 2:
-						colorPista(tglbtnPista3Turno1, i);
-						break;
-					case 3:
-						colorPista(tglbtnPista4Turno1, i);
-						break;
-					case 4:
-						colorPista(tglbtnPista5Turno1, i);
-						break;
-					case 5:
-						colorPista(tglbtnPista6Turno1, i);
-						break;
-
-					default:
-						break;
-					}
+//					switch (i) {
+//					case 0:
+//						colorPista(tglbtnPista1Turno1, i);
+//						break;
+//					case 1:
+//						colorPista(tglbtnPista2Turno1, i);
+//						break;
+//					case 2:
+//						colorPista(tglbtnPista3Turno1, i);
+//						break;
+//					case 3:
+//						colorPista(tglbtnPista4Turno1, i);
+//						break;
+//					case 4:
+//						colorPista(tglbtnPista5Turno1, i);
+//						break;
+//					case 5:
+//						colorPista(tglbtnPista6Turno1, i);
+//						break;
+//
+//					default:
+//						break;
+//					}
 					
 				}
 				
 			}
 		});
 		
-		JPanel panel_5_turno1 = new JPanel();
-		panel_5_turno1.setBorder(null);
-		panel_5_turno1.setBackground(SystemColor.menu);
-		panel_5_turno1.setLayout(new GridLayout(1, 0, 0, 0));
+		panel1T1 = new JPanel();
 		
+		panel2T1 = new JPanel();
 		
-		tglbtnPista1Turno1 = new JToggleButton("");
-		tglbtnPista1Turno1.setEnabled(false);
-		tglbtnPista1Turno1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista1Turno1.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno1.add(tglbtnPista1Turno1);
+		panel3T1 = new JPanel();
 		
-		tglbtnPista2Turno1 = new JToggleButton("");
-		tglbtnPista2Turno1.setEnabled(false);
-		tglbtnPista2Turno1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista2Turno1.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno1.add(tglbtnPista2Turno1);
+		panel4T1 = new JPanel();
 		
-		tglbtnPista3Turno1 = new JToggleButton("");
-		tglbtnPista3Turno1.setEnabled(false);
-		tglbtnPista3Turno1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista3Turno1.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno1.add(tglbtnPista3Turno1);
+		panel5T1 = new JPanel();
 		
-		tglbtnPista4Turno1 = new JToggleButton("");
-		tglbtnPista4Turno1.setEnabled(false);
-		tglbtnPista4Turno1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista4Turno1.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno1.add(tglbtnPista4Turno1);
+		panel6T1 = new JPanel();
 		
-		tglbtnPista5Turno1 = new JToggleButton("");
-		tglbtnPista5Turno1.setEnabled(false);
-		tglbtnPista5Turno1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista5Turno1.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno1.add(tglbtnPista5Turno1);
+		panel6T1S = new JPanel();
 		
-		tglbtnPista6Turno1 = new JToggleButton("");
-		tglbtnPista6Turno1.setEnabled(false);
-		tglbtnPista6Turno1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista6Turno1.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno1.add(tglbtnPista6Turno1);
+		panel1T1S = new JPanel();
+		
+		panel1T6_9 = new JPanel();
+		
+		panel2T1S = new JPanel();
+		
+		panel4T1S = new JPanel();
+		
+		panel5T1S = new JPanel();
 		
 		GroupLayout gl_panel_turno1 = new GroupLayout(panel_turno1);
 		gl_panel_turno1.setHorizontalGroup(
 			gl_panel_turno1.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_turno1.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(panel_2_turno1, GroupLayout.PREFERRED_SIZE, 222, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
+					.addComponent(panel1T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel2T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel3T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel4T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel5T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel6T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addGap(30)
 					.addComponent(btnCorregitTurno1, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-					.addComponent(panel_5_turno1, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE)
+					.addGap(42)
+					.addComponent(panel1T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel1T6_9, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel2T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel4T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel5T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(panel6T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
 		gl_panel_turno1.setVerticalGroup(
 			gl_panel_turno1.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_turno1.createSequentialGroup()
-					.addGap(5)
-					.addGroup(gl_panel_turno1.createParallelGroup(Alignment.LEADING)
-						.addComponent(btnCorregitTurno1, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel_5_turno1, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel_2_turno1, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
-					.addContainerGap())
+					.addContainerGap()
+					.addGroup(gl_panel_turno1.createParallelGroup(Alignment.TRAILING)
+						.addComponent(panel1T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel6T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel5T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel4T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel3T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel2T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_panel_turno1.createParallelGroup(Alignment.LEADING)
+							.addComponent(btnCorregitTurno1, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
+							.addComponent(panel1T6_9, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addComponent(panel2T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addComponent(panel4T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addComponent(panel5T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addComponent(panel6T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addComponent(panel1T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(14, Short.MAX_VALUE))
 		);
 		panel_turno1.setLayout(gl_panel_turno1);
 		
@@ -537,545 +428,553 @@ public class AppGrafica {
 		panel_turno2.setVisible(false);
 		panel.add(panel_turno2);
 		
-		JPanel panel_2_turno2 = new JPanel();
-		panel_2_turno2.setBorder(null);
-		panel_2_turno2.setBackground(SystemColor.menu);
-		panel_2_turno2.setLayout(new GridLayout(1, 0, 0, 0));
-		
-		tglbtnClr1Turno2 = new JToggleButton("");
-		tglbtnClr1Turno2.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr1Turno2.setBackground(Color.WHITE);
-		panel_2_turno2.add(tglbtnClr1Turno2);
-		
-		tglbtnClr2Turno2 = new JToggleButton("");
-		tglbtnClr2Turno2.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr2Turno2.setBackground(Color.WHITE);
-		panel_2_turno2.add(tglbtnClr2Turno2);
-		
-		tglbtnClr3Turno2 = new JToggleButton("");
-		tglbtnClr3Turno2.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr3Turno2.setBackground(Color.WHITE);
-		panel_2_turno2.add(tglbtnClr3Turno2);
-		
-		tglbtnClr4Turno2 = new JToggleButton("");
-		tglbtnClr4Turno2.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr4Turno2.setBackground(Color.WHITE);
-		panel_2_turno2.add(tglbtnClr4Turno2);
-		
-		tglbtnClr5Turno2 = new JToggleButton("");
-		tglbtnClr5Turno2.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr5Turno2.setBackground(Color.WHITE);
-		panel_2_turno2.add(tglbtnClr5Turno2);
-		
-		tglbtnClr6Turno2 = new JToggleButton("");
-		tglbtnClr6Turno2.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr6Turno2.setBackground(Color.WHITE);
-		panel_2_turno2.add(tglbtnClr6Turno2);
-		
 		JButton btnCorregitTurno2 = new JButton("Corregir");
 		
-		JPanel panel_5_turno2 = new JPanel();
-		panel_5_turno2.setBorder(null);
-		panel_5_turno2.setBackground(SystemColor.menu);
-		panel_5_turno2.setLayout(new GridLayout(1, 0, 0, 0));
+		panel1T2 = new JPanel();
 		
-		tglbtnPista1Turno2 = new JToggleButton("");
-		tglbtnPista1Turno2.setEnabled(false);
-		tglbtnPista1Turno2.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista1Turno2.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno2.add(tglbtnPista1Turno2);
+		panel2T2 = new JPanel();
 		
-		tglbtnPista2Turno2 = new JToggleButton("");
-		tglbtnPista2Turno2.setEnabled(false);
-		tglbtnPista2Turno2.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista2Turno2.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno2.add(tglbtnPista2Turno2);
+		panel3T2 = new JPanel();
 		
-		tglbtnPista3Turno2 = new JToggleButton("");
-		tglbtnPista3Turno2.setEnabled(false);
-		tglbtnPista3Turno2.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista3Turno2.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno2.add(tglbtnPista3Turno2);
+		panel4T2 = new JPanel();
 		
-		tglbtnPista4Turno2 = new JToggleButton("");
-		tglbtnPista4Turno2.setEnabled(false);
-		tglbtnPista4Turno2.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista4Turno2.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno2.add(tglbtnPista4Turno2);
+		panel5T2 = new JPanel();
 		
-		tglbtnPista5Turno2 = new JToggleButton("");
-		tglbtnPista5Turno2.setEnabled(false);
-		tglbtnPista5Turno2.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista5Turno2.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno2.add(tglbtnPista5Turno2);
+		panel6T2 = new JPanel();
 		
-		tglbtnPista6Turno2 = new JToggleButton("");
-		tglbtnPista6Turno2.setEnabled(false);
-		tglbtnPista6Turno2.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista6Turno2.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno2.add(tglbtnPista6Turno2);
+		panel6T2S = new JPanel();
+		
+		panel5T2S = new JPanel();
+		
+		panel4T2S = new JPanel();
+		
+		panel3T2S = new JPanel();
+		
+		panel2T2S = new JPanel();
+		
+		panel1T2S = new JPanel();
 		GroupLayout gl_panel_turno2 = new GroupLayout(panel_turno2);
 		gl_panel_turno2.setHorizontalGroup(
 			gl_panel_turno2.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_turno2.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(panel_2_turno2, GroupLayout.PREFERRED_SIZE, 222, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
+					.addComponent(panel1T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel2T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel3T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel4T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel5T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel6T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addGap(30)
 					.addComponent(btnCorregitTurno2, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-					.addComponent(panel_5_turno2, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+					.addComponent(panel1T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel2T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel3T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel4T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel5T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel6T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
 		gl_panel_turno2.setVerticalGroup(
 			gl_panel_turno2.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 52, Short.MAX_VALUE)
 				.addGroup(gl_panel_turno2.createSequentialGroup()
 					.addGap(5)
 					.addGroup(gl_panel_turno2.createParallelGroup(Alignment.LEADING)
-						.addComponent(btnCorregitTurno2, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel_5_turno2, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel_2_turno2, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
-					.addContainerGap())
+						.addComponent(panel1T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel2T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel3T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel4T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel5T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel6T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel6T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel5T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel4T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel3T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel2T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel1T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(btnCorregitTurno2, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(14, Short.MAX_VALUE))
 		);
 		panel_turno2.setLayout(gl_panel_turno2);
 		
-		panel_turno3 = new JPanel();
-		sl_panel.putConstraint(SpringLayout.NORTH, panel_turno3, 6, SpringLayout.SOUTH, panel_turno2);
-		sl_panel.putConstraint(SpringLayout.WEST, panel_turno3, 30, SpringLayout.WEST, panel);
-		sl_panel.putConstraint(SpringLayout.EAST, panel_turno3, -39, SpringLayout.EAST, panel);
-		panel_turno3.setVisible(false);
-		panel.add(panel_turno3);
 		
-		JPanel panel_2_turno3 = new JPanel();
-		panel_2_turno3.setBorder(null);
-		panel_2_turno3.setBackground(SystemColor.menu);
-		panel_2_turno3.setLayout(new GridLayout(1, 0, 0, 0));
-		
-		tglbtnClr1Turno3 = new JToggleButton("");
-		tglbtnClr1Turno3.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr1Turno3.setBackground(Color.WHITE);
-		panel_2_turno3.add(tglbtnClr1Turno3);
-		
-		tglbtnClr2Turno3 = new JToggleButton("");
-		tglbtnClr2Turno3.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr2Turno3.setBackground(Color.WHITE);
-		panel_2_turno3.add(tglbtnClr2Turno3);
-		
-		tglbtnClr3Turno3 = new JToggleButton("");
-		tglbtnClr3Turno3.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr3Turno3.setBackground(Color.WHITE);
-		panel_2_turno3.add(tglbtnClr3Turno3);
-		
-		tglbtnClr4Turno3 = new JToggleButton("");
-		tglbtnClr4Turno3.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr4Turno3.setBackground(Color.WHITE);
-		panel_2_turno3.add(tglbtnClr4Turno3);
-		
-		tglbtnClr5Turno3 = new JToggleButton("");
-		tglbtnClr5Turno3.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr5Turno3.setBackground(Color.WHITE);
-		panel_2_turno3.add(tglbtnClr5Turno3);
-		
-		tglbtnClr6Turno3 = new JToggleButton("");
-		tglbtnClr6Turno3.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr6Turno3.setBackground(Color.WHITE);
-		panel_2_turno3.add(tglbtnClr6Turno3);
-		
-		JButton btnCorregitTurno3 = new JButton("Corregir");
-		
-		JPanel panel_5_turno3 = new JPanel();
-		panel_5_turno3.setBorder(null);
-		panel_5_turno3.setBackground(SystemColor.menu);
-		panel_5_turno3.setLayout(new GridLayout(1, 0, 0, 0));
-		
-
-		
-		tglbtnPista1Turno3 = new JToggleButton("");
-		tglbtnPista1Turno3.setEnabled(false);
-		tglbtnPista1Turno3.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista1Turno3.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno3.add(tglbtnPista1Turno3);
-		
-		tglbtnPista2Turno3 = new JToggleButton("");
-		tglbtnPista2Turno3.setEnabled(false);
-		tglbtnPista2Turno3.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista2Turno3.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno3.add(tglbtnPista2Turno3);
-		
-		tglbtnPista3Turno3 = new JToggleButton("");
-		tglbtnPista3Turno3.setEnabled(false);
-		tglbtnPista3Turno3.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista3Turno3.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno3.add(tglbtnPista3Turno3);
-		
-		tglbtnPista4Turno3 = new JToggleButton("");
-		tglbtnPista4Turno3.setEnabled(false);
-		tglbtnPista4Turno3.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista4Turno3.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno3.add(tglbtnPista4Turno3);
-		
-		tglbtnPista5Turno3 = new JToggleButton("");
-		tglbtnPista5Turno3.setEnabled(false);
-		tglbtnPista5Turno3.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista5Turno3.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno3.add(tglbtnPista5Turno3);
-		
-		tglbtnPista6Turno3 = new JToggleButton("");
-		tglbtnPista6Turno3.setEnabled(false);
-		tglbtnPista6Turno3.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista6Turno3.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno3.add(tglbtnPista6Turno3);
-		GroupLayout gl_panel_turno3 = new GroupLayout(panel_turno3);
-		gl_panel_turno3.setHorizontalGroup(
-			gl_panel_turno3.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_turno3.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(panel_2_turno3, GroupLayout.PREFERRED_SIZE, 222, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(btnCorregitTurno3, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-					.addComponent(panel_5_turno3, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap())
-		);
-		gl_panel_turno3.setVerticalGroup(
-			gl_panel_turno3.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 52, Short.MAX_VALUE)
-				.addGroup(gl_panel_turno3.createSequentialGroup()
-					.addGap(5)
-					.addGroup(gl_panel_turno3.createParallelGroup(Alignment.LEADING)
-						.addComponent(btnCorregitTurno3, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel_5_turno3, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel_2_turno3, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
-					.addContainerGap())
-		);
-		panel_turno3.setLayout(gl_panel_turno3);
-		
-		panel_turno4 = new JPanel();
-		sl_panel.putConstraint(SpringLayout.NORTH, panel_turno4, 6, SpringLayout.SOUTH, panel_turno3);
-		sl_panel.putConstraint(SpringLayout.WEST, panel_turno4, 30, SpringLayout.WEST, panel);
-		sl_panel.putConstraint(SpringLayout.EAST, panel_turno4, 0, SpringLayout.EAST, panel_turno1);
-		panel_turno4.setVisible(false);
-		panel.add(panel_turno4);
-		
-		JPanel panel_2_turno4 = new JPanel();
-		panel_2_turno4.setBorder(null);
-		panel_2_turno4.setBackground(SystemColor.menu);
-		panel_2_turno4.setLayout(new GridLayout(1, 0, 0, 0));
-		
-		tglbtnClr1Turno4 = new JToggleButton("");
-		tglbtnClr1Turno4.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr1Turno4.setBackground(Color.WHITE);
-		panel_2_turno4.add(tglbtnClr1Turno4);
-		
-		tglbtnClr2Turno4 = new JToggleButton("");
-		tglbtnClr2Turno4.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr2Turno4.setBackground(Color.WHITE);
-		panel_2_turno4.add(tglbtnClr2Turno4);
-		
-		tglbtnClr3Turno4 = new JToggleButton("");
-		tglbtnClr3Turno4.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr3Turno4.setBackground(Color.WHITE);
-		panel_2_turno4.add(tglbtnClr3Turno4);
-		
-		tglbtnClr4Turno4 = new JToggleButton("");
-		tglbtnClr4Turno4.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr4Turno4.setBackground(Color.WHITE);
-		panel_2_turno4.add(tglbtnClr4Turno4);
-		
-		tglbtnClr5Turno4 = new JToggleButton("");
-		tglbtnClr5Turno4.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr5Turno4.setBackground(Color.WHITE);
-		panel_2_turno4.add(tglbtnClr5Turno4);
-		
-		tglbtnClr6Turno4 = new JToggleButton("");
-		tglbtnClr6Turno4.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr6Turno4.setBackground(Color.WHITE);
-		panel_2_turno4.add(tglbtnClr6Turno4);
-		
-		JButton btnCorregitTurno4 = new JButton("Corregir");
-		
-		JPanel panel_5_turno4 = new JPanel();
-		panel_5_turno4.setBorder(null);
-		panel_5_turno4.setBackground(SystemColor.menu);
-		panel_5_turno4.setLayout(new GridLayout(1, 0, 0, 0));
-		
-		tglbtnPista1Turno4 = new JToggleButton("");
-		tglbtnPista1Turno4.setEnabled(false);
-		tglbtnPista1Turno4.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista1Turno4.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno4.add(tglbtnPista1Turno4);
-		
-		tglbtnPista2Turno4 = new JToggleButton("");
-		tglbtnPista2Turno4.setEnabled(false);
-		tglbtnPista2Turno4.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista2Turno4.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno4.add(tglbtnPista2Turno4);
-		
-		tglbtnPista3Turno4 = new JToggleButton("");
-		tglbtnPista3Turno4.setEnabled(false);
-		tglbtnPista3Turno4.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista3Turno4.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno4.add(tglbtnPista3Turno4);
-		
-		tglbtnPista4Turno4 = new JToggleButton("");
-		tglbtnPista4Turno4.setEnabled(false);
-		tglbtnPista4Turno4.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista4Turno4.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno4.add(tglbtnPista4Turno4);
-		
-		tglbtnPista5Turno4 = new JToggleButton("");
-		tglbtnPista5Turno4.setEnabled(false);
-		tglbtnPista5Turno4.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista5Turno4.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno4.add(tglbtnPista5Turno4);
-		
-		tglbtnPista6Turno4 = new JToggleButton("");
-		tglbtnPista6Turno4.setEnabled(false);
-		tglbtnPista6Turno4.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista6Turno4.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno4.add(tglbtnPista6Turno4);
-		GroupLayout gl_panel_turno4 = new GroupLayout(panel_turno4);
-		gl_panel_turno4.setHorizontalGroup(
-			gl_panel_turno4.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_turno4.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(panel_2_turno4, GroupLayout.PREFERRED_SIZE, 222, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(btnCorregitTurno4, GroupLayout.PREFERRED_SIZE, 101, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-					.addComponent(panel_5_turno4, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap())
-		);
-		gl_panel_turno4.setVerticalGroup(
-			gl_panel_turno4.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 52, Short.MAX_VALUE)
-				.addGroup(gl_panel_turno4.createSequentialGroup()
-					.addGap(5)
-					.addGroup(gl_panel_turno4.createParallelGroup(Alignment.LEADING)
-						.addComponent(btnCorregitTurno4, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel_5_turno4, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel_2_turno4, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
-					.addContainerGap())
-		);
-		panel_turno4.setLayout(gl_panel_turno4);
-		
-		panel_turno5 = new JPanel();
-		sl_panel.putConstraint(SpringLayout.NORTH, panel_turno5, 6, SpringLayout.SOUTH, panel_turno4);
-		sl_panel.putConstraint(SpringLayout.WEST, panel_turno5, 30, SpringLayout.WEST, panel);
-		sl_panel.putConstraint(SpringLayout.EAST, panel_turno5, 0, SpringLayout.EAST, panel_turno1);
-		panel_turno5.setVisible(false);
-		panel.add(panel_turno5);
-		
-		JPanel panel_2_turno5 = new JPanel();
-		panel_2_turno5.setBorder(null);
-		panel_2_turno5.setBackground(SystemColor.menu);
-		panel_2_turno5.setLayout(new GridLayout(1, 0, 0, 0));
-		
-		tglbtnClr1Turno5 = new JToggleButton("");
-		tglbtnClr1Turno5.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr1Turno5.setBackground(Color.WHITE);
-		panel_2_turno5.add(tglbtnClr1Turno5);
-		
-		tglbtnClr2Turno5 = new JToggleButton("");
-		tglbtnClr2Turno5.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr2Turno5.setBackground(Color.WHITE);
-		panel_2_turno5.add(tglbtnClr2Turno5);
-		
-		tglbtnClr3Turno5 = new JToggleButton("");
-		tglbtnClr3Turno5.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr3Turno5.setBackground(Color.WHITE);
-		panel_2_turno5.add(tglbtnClr3Turno5);
-		
-		tglbtnClr4Turno5 = new JToggleButton("");
-		tglbtnClr4Turno5.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr4Turno5.setBackground(Color.WHITE);
-		panel_2_turno5.add(tglbtnClr4Turno5);
-		
-		tglbtnClr5Turno5 = new JToggleButton("");
-		tglbtnClr5Turno5.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr5Turno5.setBackground(Color.WHITE);
-		panel_2_turno5.add(tglbtnClr5Turno5);
-		
-		tglbtnClr6Turno5 = new JToggleButton("");
-		tglbtnClr6Turno5.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr6Turno5.setBackground(Color.WHITE);
-		panel_2_turno5.add(tglbtnClr6Turno5);
-		
-		JButton btnCorregitTurno5 = new JButton("Corregir");
-		
-		JPanel panel_5_turno5 = new JPanel();
-		panel_5_turno5.setBorder(null);
-		panel_5_turno5.setBackground(SystemColor.menu);
-		panel_5_turno5.setLayout(new GridLayout(1, 0, 0, 0));
-		
-		tglbtnPista1Turno5 = new JToggleButton("");
-		tglbtnPista1Turno5.setEnabled(false);
-		tglbtnPista1Turno5.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista1Turno5.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno5.add(tglbtnPista1Turno5);
-		
-		tglbtnPista2Turno5 = new JToggleButton("");
-		tglbtnPista2Turno5.setEnabled(false);
-		tglbtnPista2Turno5.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista2Turno5.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno5.add(tglbtnPista2Turno5);
-		
-		tglbtnPista3Turno5 = new JToggleButton("");
-		tglbtnPista3Turno5.setEnabled(false);
-		tglbtnPista3Turno5.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista3Turno5.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno5.add(tglbtnPista3Turno5);
-		
-		tglbtnPista4Turno5 = new JToggleButton("");
-		tglbtnPista4Turno5.setEnabled(false);
-		tglbtnPista4Turno5.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista4Turno5.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno5.add(tglbtnPista4Turno5);
-		
-		tglbtnPista5Turno5 = new JToggleButton("");
-		tglbtnPista5Turno5.setEnabled(false);
-		tglbtnPista5Turno5.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista5Turno5.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno5.add(tglbtnPista5Turno5);
-		
-		tglbtnPista6Turno5 = new JToggleButton("");
-		tglbtnPista6Turno5.setEnabled(false);
-		tglbtnPista6Turno5.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista6Turno5.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno5.add(tglbtnPista6Turno5);
-		GroupLayout gl_panel_turno5 = new GroupLayout(panel_turno5);
-		gl_panel_turno5.setHorizontalGroup(
-			gl_panel_turno5.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_turno5.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(panel_2_turno5, GroupLayout.PREFERRED_SIZE, 222, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(btnCorregitTurno5, GroupLayout.PREFERRED_SIZE, 101, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-					.addComponent(panel_5_turno5, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap())
-		);
-		gl_panel_turno5.setVerticalGroup(
-			gl_panel_turno5.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 52, Short.MAX_VALUE)
-				.addGroup(gl_panel_turno5.createSequentialGroup()
-					.addGap(5)
-					.addGroup(gl_panel_turno5.createParallelGroup(Alignment.LEADING)
-						.addComponent(btnCorregitTurno5, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel_5_turno5, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel_2_turno5, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
-					.addContainerGap())
-		);
-		panel_turno5.setLayout(gl_panel_turno5);
 		
 		panel_turno6 = new JPanel();
-		sl_panel.putConstraint(SpringLayout.NORTH, panel_turno6, 6, SpringLayout.SOUTH, panel_turno5);
+		sl_panel.putConstraint(SpringLayout.NORTH, panel_turno6, 180, SpringLayout.SOUTH, panel_turno2);
 		sl_panel.putConstraint(SpringLayout.WEST, panel_turno6, 30, SpringLayout.WEST, panel);
 		sl_panel.putConstraint(SpringLayout.EAST, panel_turno6, 0, SpringLayout.EAST, panel_turno1);
 		panel_turno6.setVisible(false);
 		panel.add(panel_turno6);
 		
-		JPanel panel_2_turno6 = new JPanel();
-		panel_2_turno6.setBorder(null);
-		panel_2_turno6.setBackground(SystemColor.menu);
-		panel_2_turno6.setLayout(new GridLayout(1, 0, 0, 0));
-		
-		tglbtnClr1Turno6 = new JToggleButton("");
-		tglbtnClr1Turno6.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr1Turno6.setBackground(Color.WHITE);
-		panel_2_turno6.add(tglbtnClr1Turno6);
-		
-		tglbtnClr2Turno6 = new JToggleButton("");
-		tglbtnClr2Turno6.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr2Turno6.setBackground(Color.WHITE);
-		panel_2_turno6.add(tglbtnClr2Turno6);
-		
-		tglbtnClr3Turno6 = new JToggleButton("");
-		tglbtnClr3Turno6.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr3Turno6.setBackground(Color.WHITE);
-		panel_2_turno6.add(tglbtnClr3Turno6);
-		
-		tglbtnClr4Turno6 = new JToggleButton("");
-		tglbtnClr4Turno6.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr4Turno6.setBackground(Color.WHITE);
-		panel_2_turno6.add(tglbtnClr4Turno6);
-		
-		tglbtnClr5Turno6 = new JToggleButton("");
-		tglbtnClr5Turno6.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr5Turno6.setBackground(Color.WHITE);
-		panel_2_turno6.add(tglbtnClr5Turno6);
-		
-		tglbtnClr6Turno6 = new JToggleButton("");
-		tglbtnClr6Turno6.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr6Turno6.setBackground(Color.WHITE);
-		panel_2_turno6.add(tglbtnClr6Turno6);
-		
 		JButton btnCorregitTurno6 = new JButton("Corregir");
+		btnCorregitTurno6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+//				respuesta[0]=tglbtnClr1Turno1.getBackground().getRGB();
+//				respuesta[1]=tglbtnClr2Turno1.getBackground().getRGB();
+//				respuesta[2]=tglbtnClr3Turno1.getBackground().getRGB();
+//				respuesta[3]=tglbtnClr4Turno1.getBackground().getRGB();
+//				respuesta[4]=tglbtnClr5Turno1.getBackground().getRGB();
+//				respuesta[5]=tglbtnClr6Turno1.getBackground().getRGB();
+
+				for (Integer integer : respuesta) {
+					System.out.println(integer);
+				}
+				
+				piezasJUgador=Funciones.generarPiezas(respuesta, false);
+				boolean fin=Funciones.comprobarPiezas(piezasJUgador, piezasGeneradas);
+				
+				if(!fin) {
+					panel_turno2.setVisible(true);
+				}
+				
+				for (int i = 0; i < piezasJUgador.length; i++) {
+//					switch (i) {
+//					case 0:
+//						colorPista(tglbtnPista1Turno1, i);
+//						break;
+//					case 1:
+//						colorPista(tglbtnPista2Turno1, i);
+//						break;
+//					case 2:
+//						colorPista(tglbtnPista3Turno1, i);
+//						break;
+//					case 3:
+//						colorPista(tglbtnPista4Turno1, i);
+//						break;
+//					case 4:
+//						colorPista(tglbtnPista5Turno1, i);
+//						break;
+//					case 5:
+//						colorPista(tglbtnPista6Turno1, i);
+//						break;
+//
+//					default:
+//						break;
+//					}
+					
+				}
+				
+			}
+		});
 		
-		JPanel panel_5_turno6 = new JPanel();
-		panel_5_turno6.setBorder(null);
-		panel_5_turno6.setBackground(SystemColor.menu);
-		panel_5_turno6.setLayout(new GridLayout(1, 0, 0, 0));
+		JPanel panel1T6 = new JPanel();
 		
-		tglbtnPista1Turno6 = new JToggleButton("");
-		tglbtnPista1Turno6.setEnabled(false);
-		tglbtnPista1Turno6.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista1Turno6.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno6.add(tglbtnPista1Turno6);
+		JPanel panel2T6 = new JPanel();
 		
-		tglbtnPista2Turno6 = new JToggleButton("");
-		tglbtnPista2Turno6.setEnabled(false);
-		tglbtnPista2Turno6.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista2Turno6.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno6.add(tglbtnPista2Turno6);
+		JPanel panel3T6 = new JPanel();
 		
-		tglbtnPista3Turno6 = new JToggleButton("");
-		tglbtnPista3Turno6.setEnabled(false);
-		tglbtnPista3Turno6.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista3Turno6.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno6.add(tglbtnPista3Turno6);
+		JPanel panel4T6 = new JPanel();
 		
-		tglbtnPista4Turno6 = new JToggleButton("");
-		tglbtnPista4Turno6.setEnabled(false);
-		tglbtnPista4Turno6.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista4Turno6.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno6.add(tglbtnPista4Turno6);
+		JPanel panel5T6 = new JPanel();
 		
-		tglbtnPista5Turno6 = new JToggleButton("");
-		tglbtnPista5Turno6.setEnabled(false);
-		tglbtnPista5Turno6.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista5Turno6.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno6.add(tglbtnPista5Turno6);
+		JPanel panel6T6 = new JPanel();
 		
-		tglbtnPista6Turno6 = new JToggleButton("");
-		tglbtnPista6Turno6.setEnabled(false);
-		tglbtnPista6Turno6.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnPista6Turno6.setBackground(Color.LIGHT_GRAY);
-		panel_5_turno6.add(tglbtnPista6Turno6);
+		JPanel panel6T6S = new JPanel();
+		
+		JPanel panel5T6S = new JPanel();
+		
+		JPanel panel4T6S = new JPanel();
+		
+		JPanel panel3T6S = new JPanel();
+		
+		JPanel panel2T6S = new JPanel();
+		
+		JPanel panel1T6S = new JPanel();
 		GroupLayout gl_panel_turno6 = new GroupLayout(panel_turno6);
 		gl_panel_turno6.setHorizontalGroup(
 			gl_panel_turno6.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_turno6.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(panel_2_turno6, GroupLayout.PREFERRED_SIZE, 222, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
+					.addComponent(panel1T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel2T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel3T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel4T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel5T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel6T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addGap(30)
 					.addComponent(btnCorregitTurno6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-					.addComponent(panel_5_turno6, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+					.addComponent(panel1T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel2T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel3T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel4T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel5T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel6T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
 		gl_panel_turno6.setVerticalGroup(
 			gl_panel_turno6.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 52, Short.MAX_VALUE)
-				.addGroup(gl_panel_turno6.createSequentialGroup()
-					.addGap(5)
-					.addGroup(gl_panel_turno6.createParallelGroup(Alignment.LEADING)
-						.addComponent(btnCorregitTurno6, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel_5_turno6, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel_2_turno6, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
+				.addGroup(Alignment.TRAILING, gl_panel_turno6.createSequentialGroup()
+					.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_panel_turno6.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(panel1T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
+							.addGroup(gl_panel_turno6.createSequentialGroup()
+								.addContainerGap()
+								.addComponent(panel2T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+							.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
+								.addGroup(gl_panel_turno6.createSequentialGroup()
+									.addContainerGap()
+									.addComponent(panel3T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
+									.addGroup(gl_panel_turno6.createSequentialGroup()
+										.addContainerGap()
+										.addComponent(panel4T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+									.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
+										.addGroup(gl_panel_turno6.createSequentialGroup()
+											.addContainerGap()
+											.addComponent(panel5T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+										.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
+											.addGroup(gl_panel_turno6.createSequentialGroup()
+												.addContainerGap()
+												.addComponent(panel6T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+											.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
+												.addGroup(gl_panel_turno6.createSequentialGroup()
+													.addContainerGap()
+													.addComponent(panel5T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+												.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
+													.addGroup(gl_panel_turno6.createSequentialGroup()
+														.addContainerGap()
+														.addComponent(panel4T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+													.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
+														.addGroup(gl_panel_turno6.createSequentialGroup()
+															.addContainerGap()
+															.addComponent(panel3T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+														.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
+															.addGroup(gl_panel_turno6.createSequentialGroup()
+																.addContainerGap()
+																.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
+																	.addComponent(panel6T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+																	.addComponent(btnCorregitTurno6, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)))
+															.addGroup(gl_panel_turno6.createSequentialGroup()
+																.addContainerGap()
+																.addGroup(gl_panel_turno6.createParallelGroup(Alignment.LEADING, false)
+																	.addComponent(panel1T6, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																	.addComponent(panel2T6, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)))))))))))))
 					.addContainerGap())
 		);
 		panel_turno6.setLayout(gl_panel_turno6);
+		
+		panel_2 = new JPanel();
+		sl_panel.putConstraint(SpringLayout.NORTH, panel_2, 6, SpringLayout.SOUTH, panel_turno2);
+		sl_panel.putConstraint(SpringLayout.WEST, panel_2, 30, SpringLayout.WEST, panel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, panel_2, 58, SpringLayout.SOUTH, panel_turno2);
+		sl_panel.putConstraint(SpringLayout.EAST, panel_2, 646, SpringLayout.WEST, panel);
+		panel.add(panel_2);
+		
+		panel_5 = new JPanel();
+		sl_panel.putConstraint(SpringLayout.NORTH, panel_5, 11, SpringLayout.SOUTH, panel_2);
+		SpringLayout sl_panel_2 = new SpringLayout();
+		panel_2.setLayout(sl_panel_2);
+		
+		panel1T1_1 = new JPanel();
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_1, 10, SpringLayout.NORTH, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_1, 10, SpringLayout.WEST, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_1, -10, SpringLayout.SOUTH, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_1, 40, SpringLayout.WEST, panel_2);
+		panel_2.add(panel1T1_1);
+		
+		panel1T1_2 = new JPanel();
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_2, 0, SpringLayout.NORTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_2, 6, SpringLayout.EAST, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_2, 0, SpringLayout.SOUTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_2, 36, SpringLayout.EAST, panel1T1_1);
+		panel_2.add(panel1T1_2);
+		
+		panel1T1_3 = new JPanel();
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_3, 0, SpringLayout.NORTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_3, 6, SpringLayout.EAST, panel1T1_2);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_3, 0, SpringLayout.SOUTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_3, 36, SpringLayout.EAST, panel1T1_2);
+		panel_2.add(panel1T1_3);
+		
+		panel1T1_4 = new JPanel();
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_4, 0, SpringLayout.NORTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_4, 6, SpringLayout.EAST, panel1T1_3);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_4, 0, SpringLayout.SOUTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_4, 36, SpringLayout.EAST, panel1T1_3);
+		panel_2.add(panel1T1_4);
+		
+		panel1T1_5 = new JPanel();
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_5, 0, SpringLayout.NORTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_5, 6, SpringLayout.EAST, panel1T1_4);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_5, 0, SpringLayout.SOUTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_5, 36, SpringLayout.EAST, panel1T1_4);
+		panel_2.add(panel1T1_5);
+		
+		panel1T1_6 = new JPanel();
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_6, 0, SpringLayout.NORTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_6, 6, SpringLayout.EAST, panel1T1_5);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_6, 0, SpringLayout.SOUTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_6, 36, SpringLayout.EAST, panel1T1_5);
+		panel_2.add(panel1T1_6);
+		
+		btnCorregitTurno2_1 = new JButton("Corregir");
+		sl_panel_2.putConstraint(SpringLayout.NORTH, btnCorregitTurno2_1, 0, SpringLayout.NORTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.WEST, btnCorregitTurno2_1, 30, SpringLayout.EAST, panel1T1_6);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, btnCorregitTurno2_1, 0, SpringLayout.SOUTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.EAST, btnCorregitTurno2_1, 130, SpringLayout.EAST, panel1T1_6);
+		panel_2.add(btnCorregitTurno2_1);
+		
+		panel1T1_7 = new JPanel();
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_7, 0, SpringLayout.NORTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_7, -40, SpringLayout.EAST, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_7, -10, SpringLayout.SOUTH, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_7, -10, SpringLayout.EAST, panel_2);
+		panel_2.add(panel1T1_7);
+		
+		panel1T1_8 = new JPanel();
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_8, 0, SpringLayout.NORTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_8, -36, SpringLayout.WEST, panel1T1_7);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_8, 0, SpringLayout.SOUTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_8, -6, SpringLayout.WEST, panel1T1_7);
+		panel_2.add(panel1T1_8);
+		
+		panel1T1_9 = new JPanel();
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_9, 0, SpringLayout.NORTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_9, -36, SpringLayout.WEST, panel1T1_8);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_9, 0, SpringLayout.SOUTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_9, -6, SpringLayout.WEST, panel1T1_8);
+		panel_2.add(panel1T1_9);
+		
+		panel1T1_10 = new JPanel();
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_10, 0, SpringLayout.NORTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_10, -36, SpringLayout.WEST, panel1T1_9);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_10, 0, SpringLayout.SOUTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_10, -6, SpringLayout.WEST, panel1T1_9);
+		panel_2.add(panel1T1_10);
+		
+		panel1T1_11 = new JPanel();
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_11, 0, SpringLayout.NORTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_11, -36, SpringLayout.WEST, panel1T1_10);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_11, 0, SpringLayout.SOUTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_11, -6, SpringLayout.WEST, panel1T1_10);
+		panel_2.add(panel1T1_11);
+		
+		panel1T1_12 = new JPanel();
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_12, 0, SpringLayout.NORTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_12, -36, SpringLayout.WEST, panel1T1_11);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_12, 0, SpringLayout.SOUTH, panel1T1_1);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_12, -6, SpringLayout.WEST, panel1T1_11);
+		panel_2.add(panel1T1_12);
+		sl_panel.putConstraint(SpringLayout.WEST, panel_5, 30, SpringLayout.WEST, panel);
+		sl_panel.putConstraint(SpringLayout.EAST, panel_5, 0, SpringLayout.EAST, panel_turno1);
+		panel.add(panel_5);
+		
+		panel_6 = new JPanel();
+		sl_panel.putConstraint(SpringLayout.SOUTH, panel_5, -6, SpringLayout.NORTH, panel_6);
+		SpringLayout sl_panel_5 = new SpringLayout();
+		panel_5.setLayout(sl_panel_5);
+		
+		panel1T1_13 = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T1_13, 10, SpringLayout.NORTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T1_13, 10, SpringLayout.WEST, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T1_13, -10, SpringLayout.SOUTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T1_13, 40, SpringLayout.WEST, panel_5);
+		panel_5.add(panel1T1_13);
+		
+		panel1T1_14 = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T1_14, 0, SpringLayout.NORTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T1_14, 6, SpringLayout.EAST, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T1_14, 0, SpringLayout.SOUTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T1_14, 36, SpringLayout.EAST, panel1T1_13);
+		panel_5.add(panel1T1_14);
+		
+		panel1T1_15 = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T1_15, 0, SpringLayout.NORTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T1_15, 6, SpringLayout.EAST, panel1T1_14);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T1_15, 0, SpringLayout.SOUTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T1_15, 36, SpringLayout.EAST, panel1T1_14);
+		panel_5.add(panel1T1_15);
+		
+		panel1T1_16 = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T1_16, 0, SpringLayout.NORTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T1_16, 6, SpringLayout.EAST, panel1T1_15);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T1_16, 0, SpringLayout.SOUTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T1_16, 36, SpringLayout.EAST, panel1T1_15);
+		panel_5.add(panel1T1_16);
+		
+		panel1T1_17 = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T1_17, 0, SpringLayout.NORTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T1_17, 6, SpringLayout.EAST, panel1T1_16);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T1_17, 0, SpringLayout.SOUTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T1_17, 36, SpringLayout.EAST, panel1T1_16);
+		panel_5.add(panel1T1_17);
+		
+		panel1T1_18 = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T1_18, 0, SpringLayout.NORTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T1_18, 6, SpringLayout.EAST, panel1T1_17);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T1_18, 0, SpringLayout.SOUTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T1_18, 36, SpringLayout.EAST, panel1T1_17);
+		panel_5.add(panel1T1_18);
+		
+		btnCorregitTurno2_2 = new JButton("Corregir");
+		sl_panel_5.putConstraint(SpringLayout.NORTH, btnCorregitTurno2_2, 0, SpringLayout.NORTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.WEST, btnCorregitTurno2_2, 33, SpringLayout.EAST, panel1T1_18);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, btnCorregitTurno2_2, 0, SpringLayout.SOUTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.EAST, btnCorregitTurno2_2, 129, SpringLayout.EAST, panel1T1_18);
+		panel_5.add(btnCorregitTurno2_2);
+		
+		panel1T6S_1 = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T6S_1, 0, SpringLayout.NORTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T6S_1, -40, SpringLayout.EAST, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T6S_1, 0, SpringLayout.SOUTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T6S_1, -10, SpringLayout.EAST, panel_5);
+		panel_5.add(panel1T6S_1);
+		
+		panel1T6S_2 = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T6S_2, 0, SpringLayout.NORTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T6S_2, -36, SpringLayout.WEST, panel1T6S_1);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T6S_2, 0, SpringLayout.SOUTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T6S_2, -6, SpringLayout.WEST, panel1T6S_1);
+		panel_5.add(panel1T6S_2);
+		
+		panel1T6S_3 = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T6S_3, 0, SpringLayout.NORTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T6S_3, -36, SpringLayout.WEST, panel1T6S_2);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T6S_3, 0, SpringLayout.SOUTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T6S_3, -6, SpringLayout.WEST, panel1T6S_2);
+		panel_5.add(panel1T6S_3);
+		
+		panel1T6S_4 = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T6S_4, 0, SpringLayout.NORTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T6S_4, -36, SpringLayout.WEST, panel1T6S_3);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T6S_4, -10, SpringLayout.SOUTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T6S_4, -6, SpringLayout.WEST, panel1T6S_3);
+		panel_5.add(panel1T6S_4);
+		
+		panel1T6S_5 = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T6S_5, 0, SpringLayout.NORTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T6S_5, -36, SpringLayout.WEST, panel1T6S_4);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T6S_5, 0, SpringLayout.SOUTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T6S_5, -6, SpringLayout.WEST, panel1T6S_4);
+		panel_5.add(panel1T6S_5);
+		
+		panel1T6S_6 = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T6S_6, 0, SpringLayout.NORTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T6S_6, -36, SpringLayout.WEST, panel1T6S_5);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T6S_6, 0, SpringLayout.SOUTH, panel1T1_13);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T6S_6, -6, SpringLayout.WEST, panel1T6S_5);
+		panel_5.add(panel1T6S_6);
+		sl_panel.putConstraint(SpringLayout.NORTH, panel_6, 247, SpringLayout.NORTH, panel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, panel_6, -6, SpringLayout.NORTH, panel_turno6);
+		sl_panel.putConstraint(SpringLayout.WEST, panel_6, 30, SpringLayout.WEST, panel);
+		sl_panel.putConstraint(SpringLayout.EAST, panel_6, 0, SpringLayout.EAST, panel_turno1);
+		panel.add(panel_6);
+		SpringLayout sl_panel_6 = new SpringLayout();
+		panel_6.setLayout(sl_panel_6);
+		
+		btnCorregitTurno2_3 = new JButton("Corregir");
+		sl_panel_6.putConstraint(SpringLayout.NORTH, btnCorregitTurno2_3, 10, SpringLayout.NORTH, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.WEST, btnCorregitTurno2_3, 251, SpringLayout.WEST, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, btnCorregitTurno2_3, -5, SpringLayout.SOUTH, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.EAST, btnCorregitTurno2_3, 346, SpringLayout.WEST, panel_6);
+		panel_6.add(btnCorregitTurno2_3);
+		
+		panel1T6S_7 = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_7, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_7, 10, SpringLayout.WEST, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_7, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_7, 41, SpringLayout.WEST, panel_6);
+		panel_6.add(panel1T6S_7);
+		
+		panel1T6S_8 = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_8, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_8, 5, SpringLayout.EAST, panel1T6S_7);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_8, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_8, 36, SpringLayout.EAST, panel1T6S_7);
+		panel_6.add(panel1T6S_8);
+		
+		panel1T6S_9 = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_9, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_9, 6, SpringLayout.EAST, panel1T6S_8);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_9, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_9, 37, SpringLayout.EAST, panel1T6S_8);
+		panel_6.add(panel1T6S_9);
+		
+		panel1T6S_10 = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_10, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_10, 6, SpringLayout.EAST, panel1T6S_9);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_10, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_10, 37, SpringLayout.EAST, panel1T6S_9);
+		panel_6.add(panel1T6S_10);
+		
+		panel1T6S_11 = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_11, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_11, 6, SpringLayout.EAST, panel1T6S_10);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_11, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_11, 37, SpringLayout.EAST, panel1T6S_10);
+		panel_6.add(panel1T6S_11);
+		
+		panel1T6S_12 = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_12, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_12, 6, SpringLayout.EAST, panel1T6S_11);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_12, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_12, 37, SpringLayout.EAST, panel1T6S_11);
+		panel_6.add(panel1T6S_12);
+		
+		panel1T6S_13 = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_13, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_13, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_13, -10, SpringLayout.EAST, panel_6);
+		panel_6.add(panel1T6S_13);
+		
+		panel1T6S_14 = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_14, 538, SpringLayout.WEST, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_14, -47, SpringLayout.EAST, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_13, 6, SpringLayout.EAST, panel1T6S_14);
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_14, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_14, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
+		panel_6.add(panel1T6S_14);
+		
+		panel1T6S_15 = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_15, 501, SpringLayout.WEST, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_15, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_15, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_15, -6, SpringLayout.WEST, panel1T6S_14);
+		panel_6.add(panel1T6S_15);
+		
+		panel1T6S_16 = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_16, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_16, -37, SpringLayout.WEST, panel1T6S_15);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_16, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_16, -6, SpringLayout.WEST, panel1T6S_15);
+		panel_6.add(panel1T6S_16);
+		
+		panel1T6S_17 = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_17, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_17, -37, SpringLayout.WEST, panel1T6S_16);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_17, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_17, -6, SpringLayout.WEST, panel1T6S_16);
+		panel_6.add(panel1T6S_17);
+		
+		panel1T6S_18 = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_18, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_18, -37, SpringLayout.WEST, panel1T6S_17);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_18, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_18, -6, SpringLayout.WEST, panel1T6S_17);
+		panel_6.add(panel1T6S_18);
 		frame.getContentPane().add(panel_1);
 		
 		//Si los botones estan activados, pulsaremos y se abrira una ventan de selector de color para asignarlo color a este
@@ -1086,90 +985,6 @@ public class AppGrafica {
 		tglbtnClr4.addActionListener(e -> botonColor(tglbtnClr4));
 		tglbtnClr5.addActionListener(e -> botonColor(tglbtnClr5));
 		tglbtnClr6.addActionListener(e -> botonColor(tglbtnClr6));
-		
-		tglbtnClr1Turno1.addActionListener(e -> botonColorJugador(tglbtnClr1Turno1));
-		tglbtnClr2Turno1.addActionListener(e -> botonColorJugador(tglbtnClr2Turno1));
-		tglbtnClr3Turno1.addActionListener(e -> botonColorJugador(tglbtnClr3Turno1));
-		tglbtnClr4Turno1.addActionListener(e -> botonColorJugador(tglbtnClr4Turno1));
-		tglbtnClr5Turno1.addActionListener(e -> botonColorJugador(tglbtnClr5Turno1));
-		tglbtnClr6Turno1.addActionListener(e -> botonColorJugador(tglbtnClr6Turno1));
-		
-//		tglbtnClr1Turno2.addMouseListener(mouseListener);
-//		tglbtnClr2Turno2.addMouseListener(mouseListener);
-//		tglbtnClr3Turno2.addMouseListener(mouseListener);
-//		tglbtnClr4Turno2.addMouseListener(mouseListener);
-//		tglbtnClr5Turno2.addMouseListener(mouseListener);
-//		tglbtnClr6Turno2.addMouseListener(mouseListener);
-		
-		tglbtnClr1Turno2.addActionListener(e -> botonColorJugador(tglbtnClr1Turno2));
-		tglbtnClr2Turno2.addActionListener(e -> botonColorJugador(tglbtnClr2Turno2));
-		tglbtnClr3Turno2.addActionListener(e -> botonColorJugador(tglbtnClr3Turno2));
-		tglbtnClr4Turno2.addActionListener(e -> botonColorJugador(tglbtnClr4Turno2));
-		tglbtnClr5Turno2.addActionListener(e -> botonColorJugador(tglbtnClr5Turno2));
-		tglbtnClr6Turno2.addActionListener(e -> botonColorJugador(tglbtnClr6Turno2));
-
-		
-//		tglbtnClr1Turno3.addMouseListener(mouseListener);
-//		tglbtnClr2Turno3.addMouseListener(mouseListener);
-//		tglbtnClr3Turno3.addMouseListener(mouseListener);
-//		tglbtnClr4Turno3.addMouseListener(mouseListener);
-//		tglbtnClr5Turno3.addMouseListener(mouseListener);
-//		tglbtnClr6Turno3.addMouseListener(mouseListener);
-		
-		tglbtnClr1Turno3.addActionListener(e -> botonColorJugador(tglbtnClr1Turno3));
-		tglbtnClr2Turno3.addActionListener(e -> botonColorJugador(tglbtnClr2Turno3));
-		tglbtnClr3Turno3.addActionListener(e -> botonColorJugador(tglbtnClr3Turno3));
-		tglbtnClr4Turno3.addActionListener(e -> botonColorJugador(tglbtnClr4Turno3));
-		tglbtnClr5Turno3.addActionListener(e -> botonColorJugador(tglbtnClr5Turno3));
-		tglbtnClr6Turno3.addActionListener(e -> botonColorJugador(tglbtnClr6Turno3));
-
-		
-//		tglbtnClr1Turno4.addMouseListener(mouseListener);
-//		tglbtnClr2Turno4.addMouseListener(mouseListener);
-//		tglbtnClr3Turno4.addMouseListener(mouseListener);
-//		tglbtnClr4Turno4.addMouseListener(mouseListener);
-//		tglbtnClr5Turno4.addMouseListener(mouseListener);
-//		tglbtnClr6Turno4.addMouseListener(mouseListener);
-		
-		tglbtnClr1Turno4.addActionListener(e -> botonColorJugador(tglbtnClr1Turno4));
-		tglbtnClr2Turno4.addActionListener(e -> botonColorJugador(tglbtnClr2Turno4));
-		tglbtnClr3Turno4.addActionListener(e -> botonColorJugador(tglbtnClr3Turno4));
-		tglbtnClr4Turno4.addActionListener(e -> botonColorJugador(tglbtnClr4Turno4));
-		tglbtnClr5Turno4.addActionListener(e -> botonColorJugador(tglbtnClr5Turno4));
-		tglbtnClr6Turno4.addActionListener(e -> botonColorJugador(tglbtnClr6Turno4));
-
-		
-//		tglbtnClr1Turno5.addMouseListener(mouseListener);
-//		tglbtnClr2Turno5.addMouseListener(mouseListener);
-//		tglbtnClr3Turno5.addMouseListener(mouseListener);
-//		tglbtnClr4Turno5.addMouseListener(mouseListener);
-//		tglbtnClr5Turno5.addMouseListener(mouseListener);
-//		tglbtnClr6Turno5.addMouseListener(mouseListener);
-		
-		tglbtnClr1Turno5.addActionListener(e -> botonColorJugador(tglbtnClr1Turno5));
-		tglbtnClr2Turno5.addActionListener(e -> botonColorJugador(tglbtnClr2Turno5));
-		tglbtnClr3Turno5.addActionListener(e -> botonColorJugador(tglbtnClr3Turno5));
-		tglbtnClr4Turno5.addActionListener(e -> botonColorJugador(tglbtnClr4Turno5));
-		tglbtnClr5Turno5.addActionListener(e -> botonColorJugador(tglbtnClr5Turno5));
-		tglbtnClr6Turno5.addActionListener(e -> botonColorJugador(tglbtnClr6Turno5));
-
-		
-		
-//		tglbtnClr1Turno5.addMouseListener(mouseListener);
-//		tglbtnClr2Turno5.addMouseListener(mouseListener);
-//		tglbtnClr3Turno5.addMouseListener(mouseListener);
-//		tglbtnClr4Turno5.addMouseListener(mouseListener);
-//		tglbtnClr5Turno5.addMouseListener(mouseListener);
-//		tglbtnClr6Turno5.addMouseListener(mouseListener);
-		
-		tglbtnClr1Turno6.addActionListener(e -> botonColorJugador(tglbtnClr1Turno6));
-		tglbtnClr2Turno6.addActionListener(e -> botonColorJugador(tglbtnClr2Turno6));
-		tglbtnClr3Turno6.addActionListener(e -> botonColorJugador(tglbtnClr3Turno6));
-		tglbtnClr4Turno6.addActionListener(e -> botonColorJugador(tglbtnClr4Turno6));
-		tglbtnClr5Turno6.addActionListener(e -> botonColorJugador(tglbtnClr5Turno6));
-		tglbtnClr6Turno6.addActionListener(e -> botonColorJugador(tglbtnClr6Turno6));
-
-		
 	}
 	
 	static MouseListener mouseListener= new MouseListener() {
@@ -1192,24 +1007,97 @@ public class AppGrafica {
 
         @Override
         public void mouseClicked(MouseEvent e) {
+        	System.out.println("Botón clicado");
             if(e.getButton() == MouseEvent.BUTTON3) {
             	if(pos==0) {
         			pos=5;
         		}else {
         			pos--;
         		}
-            		
+            	a=false;
             }else if(e.getButton() == MouseEvent.BUTTON1){
             	pos++;
         		if(pos>5) {
         			pos=0;
         		}
+        		a=true;
             }else if(e.getButton() == MouseEvent.BUTTON2){}
             System.out.println(pos);
             ((JToggleButton) e.getComponent()).setBackground(new Color(coloresDisponibles[pos]));
-        	((JToggleButton) e.getComponent()).setSelected(false);	
+        	((JToggleButton) e.getComponent()).setSelected(false);
+//        	if (a) {
+//				pos--;
+//			}else {
+//				pos++;
+//			}
         }
     };
+	private JPanel panel1T1;
+	private JPanel panel2T1;
+	private JPanel panel3T1;
+	private JPanel panel4T1;
+	private JPanel panel5T1;
+	private JPanel panel6T1;
+	private JPanel panel6T1S;
+	private JPanel panel1T1S;
+	private JPanel panel1T6_9;
+	private JPanel panel2T1S;
+	private JPanel panel4T1S;
+	private JPanel panel5T1S;
+	private JPanel panel1T2;
+	private JPanel panel2T2;
+	private JPanel panel3T2;
+	private JPanel panel4T2;
+	private JPanel panel5T2;
+	private JPanel panel6T2;
+	private JPanel panel6T2S;
+	private JPanel panel5T2S;
+	private JPanel panel4T2S;
+	private JPanel panel3T2S;
+	private JPanel panel2T2S;
+	private JPanel panel1T2S;
+	private JPanel panel_2;
+	private JPanel panel_5;
+	private JPanel panel_6;
+	private JPanel panel1T1_1;
+	private JPanel panel1T1_2;
+	private JPanel panel1T1_3;
+	private JPanel panel1T1_4;
+	private JPanel panel1T1_5;
+	private JPanel panel1T1_6;
+	private JButton btnCorregitTurno2_1;
+	private JPanel panel1T1_7;
+	private JPanel panel1T1_8;
+	private JPanel panel1T1_9;
+	private JPanel panel1T1_10;
+	private JPanel panel1T1_11;
+	private JPanel panel1T1_12;
+	private JPanel panel1T1_13;
+	private JPanel panel1T1_14;
+	private JPanel panel1T1_15;
+	private JPanel panel1T1_16;
+	private JPanel panel1T1_17;
+	private JPanel panel1T1_18;
+	private JButton btnCorregitTurno2_2;
+	private JButton btnCorregitTurno2_3;
+	private JPanel panel1T6S_1;
+	private JPanel panel1T6S_2;
+	private JPanel panel1T6S_3;
+	private JPanel panel1T6S_4;
+	private JPanel panel1T6S_5;
+	private JPanel panel1T6S_6;
+	private JPanel panel1T6S_7;
+	private JPanel panel1T6S_8;
+	private JPanel panel1T6S_9;
+	private JPanel panel1T6S_10;
+	private JPanel panel1T6S_11;
+	private JPanel panel1T6S_12;
+	private JPanel panel1T6S_13;
+	private JPanel panel1T6S_14;
+	private JPanel panel1T6S_15;
+	private JPanel panel1T6S_16;
+	private JPanel panel1T6S_17;
+	private JPanel panel1T6S_18;
 
     //Llama al mouseLIstener porque sino el boton aunque lo desactivaras seguia dejando canviar el color
     public static void botonColorJugador(JToggleButton button) {
@@ -1252,70 +1140,14 @@ public class AppGrafica {
 	}
 	
 	//Activar y desactivar los botones 
-	public static void activarDesactivar(boolean estado, int torn) {
+	public static void activarDesactivar(boolean estado) {
 		
-		switch (torn) {
-		case 0:
 			tglbtnClr1.setEnabled(estado);
 			tglbtnClr2.setEnabled(estado);
 			tglbtnClr3.setEnabled(estado);
 			tglbtnClr4.setEnabled(estado);
 			tglbtnClr5.setEnabled(estado);
 			tglbtnClr6.setEnabled(estado);
-			break;
-		case 1:
-			System.out.print("B");
-			tglbtnClr1Turno1.setEnabled(estado);
-			tglbtnClr2Turno1.setEnabled(estado);
-			tglbtnClr3Turno1.setEnabled(estado);
-			tglbtnClr4Turno1.setEnabled(estado);
-			tglbtnClr5Turno1.setEnabled(estado);
-			tglbtnClr6Turno1.setEnabled(estado);
-			break;
-		case 2:
-			tglbtnClr1Turno2.setEnabled(estado);
-			tglbtnClr2Turno2.setEnabled(estado);
-			tglbtnClr3Turno2.setEnabled(estado);
-			tglbtnClr4Turno2.setEnabled(estado);
-			tglbtnClr5Turno2.setEnabled(estado);
-			tglbtnClr6Turno2.setEnabled(estado);
-			break;
-		case 3:
-			tglbtnClr1Turno3.setEnabled(estado);
-			tglbtnClr2Turno3.setEnabled(estado);
-			tglbtnClr3Turno3.setEnabled(estado);
-			tglbtnClr4Turno3.setEnabled(estado);
-			tglbtnClr5Turno3.setEnabled(estado);
-			tglbtnClr6Turno3.setEnabled(estado);
-			break;
-		case 4:
-			tglbtnClr1Turno4.setEnabled(estado);
-			tglbtnClr2Turno4.setEnabled(estado);
-			tglbtnClr3Turno4.setEnabled(estado);
-			tglbtnClr4Turno4.setEnabled(estado);
-			tglbtnClr5Turno4.setEnabled(estado);
-			tglbtnClr6Turno4.setEnabled(estado);
-			break;
-		case 5:
-			tglbtnClr1Turno5.setEnabled(estado);
-			tglbtnClr2Turno5.setEnabled(estado);
-			tglbtnClr3Turno5.setEnabled(estado);
-			tglbtnClr4Turno5.setEnabled(estado);
-			tglbtnClr5Turno5.setEnabled(estado);
-			tglbtnClr6Turno5.setEnabled(estado);
-			break;
-		case 6:
-			tglbtnClr1Turno6.setEnabled(estado);
-			tglbtnClr2Turno6.setEnabled(estado);
-			tglbtnClr3Turno6.setEnabled(estado);
-			tglbtnClr4Turno6.setEnabled(estado);
-			tglbtnClr5Turno6.setEnabled(estado);
-			tglbtnClr6Turno6.setEnabled(estado);
-			break;
-
-		default:
-			break;
-		}
 		
 	}
 	
