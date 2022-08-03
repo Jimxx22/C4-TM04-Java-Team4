@@ -1,6 +1,7 @@
 package team4.tm04;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Funciones {
@@ -9,14 +10,28 @@ public class Funciones {
 	static Scanner sc = new Scanner(System.in);
 	static ArrayList<String> piezasHistorial=new ArrayList<>();
 	
-	public static void main(String[] args) {;
+	/*public static void main(String[] args) {;
 		menu();
-	}
+	}*/
 	
-	public static Pieza[] generarPiezasAleatorio() {
-		Pieza[] piezas= new Pieza[5];
-		for(int i=0;i<5;i++) {
-			piezas[i]=new Pieza((int)Math.floor(Math.random() * 5));
+	public static Pieza[] generarPiezas(Integer[] colores) {
+		Pieza[] piezas= new Pieza[6];
+		
+		int temp, random;
+	    for (int i = 0; i < colores.length; i++)
+	    {
+	        random=(int)Math.floor(Math.random() * colores.length);
+	        if(random!=i) {
+	        	temp=colores[i];
+	        	colores[i]=colores[random];
+	        	colores[random]=temp;
+	        }else {
+	        	i--;
+	        }    
+	    }
+		
+		for(int i=0;i<piezas.length;i++) {
+			piezas[i]=new Pieza(colores[i]);
 			piezas[i].setPosicion(i);
 		}
 		return piezas;
@@ -121,7 +136,7 @@ public class Funciones {
 	}
 	
 	public static void jugarVsMaquina() {
-		piezasGeneradas=generarPiezasAleatorio();
+		//piezasGeneradas=generarPiezasAleatorio();
 		jugar();
 	}
 	
