@@ -1,7 +1,7 @@
 package team4.tm04;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.InputMismatchException;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Funciones {
@@ -17,15 +17,16 @@ public class Funciones {
 	//Genera las piezas con los colores aleatorios es decir, genera el patron aleatorio
 	public static Pieza[] generarPiezas(Integer[] colores, boolean mezclar) {
 		Pieza[] piezas= new Pieza[6];
+		Integer[] coloresM= Arrays.copyOf(colores, colores.length);;
 		
 		int temp, random;
-	    for (int i = 0; i < colores.length; i++)
+	    for (int i = 0; i < coloresM.length; i++)
 	    { 	if(mezclar) {
-		        random=(int)Math.floor(Math.random() * colores.length);
+		        random=(int)Math.floor(Math.random() * coloresM.length);
 		        if(random!=i) {
-		        	temp=colores[i];
-		        	colores[i]=colores[random];
-		        	colores[random]=temp;
+		        	temp=coloresM[i];
+		        	coloresM[i]=coloresM[random];
+		        	coloresM[random]=temp;
 		        }else {
 		        	i--;
 		        }  
@@ -33,7 +34,7 @@ public class Funciones {
 	    }
 		
 		for(int i=0;i<piezas.length;i++) {
-			piezas[i]=new Pieza(colores[i]);
+			piezas[i]=new Pieza(coloresM[i]);
 			piezas[i].setPosicion(i);
 		}
 		return piezas;

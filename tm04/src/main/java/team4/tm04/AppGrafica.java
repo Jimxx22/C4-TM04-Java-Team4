@@ -10,10 +10,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.border.EmptyBorder;
 
 public class AppGrafica {
 
@@ -52,13 +50,85 @@ public class AppGrafica {
 	static Scanner sc = new Scanner(System.in);
 	static ArrayList<String> piezasHistorial=new ArrayList<>();
 	private static int pos=0;
-	private static boolean a=true;
+	
+	private JPanel panel1T1;
+	private JPanel panel2T1;
+	private JPanel panel3T1;
+	private JPanel panel4T1;
+	private JPanel panel5T1;
+	private JPanel panel6T1;
+	private JPanel panel6T1S;
+	private JPanel panel1T1S;
+	private JPanel panel2T1S;
+	private JPanel panel3T1S;
+	private JPanel panel4T1S;
+	private JPanel panel5T1S;
+	private JPanel panel1T2;
+	private JPanel panel2T2;
+	private JPanel panel3T2;
+	private JPanel panel4T2;
+	private JPanel panel5T2;
+	private JPanel panel6T2;
+	private JPanel panel6T2S;
+	private JPanel panel5T2S;
+	private JPanel panel4T2S;
+	private JPanel panel3T2S;
+	private JPanel panel2T2S;
+	private JPanel panel1T2S;
+	private JPanel panel1T3;
+	private JPanel panel2T3;
+	private JPanel panel3T3;
+	private JPanel panel4T3;
+	private JPanel panel5T3;
+	private JPanel panel6T3;
+	private JButton btnCorregitTurno2_1;
+	private JPanel panel6T3S;
+	private JPanel panel5T3S;
+	private JPanel panel4T3S;
+	private JPanel panel3T3S;
+	private JPanel panel2T3S;
+	private JPanel panel1T3S;
+	private JPanel panel1T4;
+	private JPanel panel2T4;
+	private JPanel panel3T4;
+	private JPanel panel4T4;
+	private JPanel panel5T4;
+	private JPanel panel6T4;
+	private JButton btnCorregitTurno2_2;
+	private JButton btnCorregitTurno2_3;
+	private JPanel panel6T4S;
+	private JPanel panel5T4S;
+	private JPanel panel4T4S;
+	private JPanel panel3T4S;
+	private JPanel panel2T4S;
+	private JPanel panel1T4S;
+	private JPanel panel1T5;
+	private JPanel panel2T5;
+	private JPanel panel3T5;
+	private JPanel panel4T5;
+	private JPanel panel5T5;
+	private JPanel panel6T5;
+	private JPanel panel6T5S;
+	private JPanel panel5T5S;
+	private JPanel panel4T5S;
+	private JPanel panel3T5S;
+	private JPanel panel2T5S;
+	private JPanel panel1T5S;
 	 
-	 //panels trons
-	 JPanel panel_turno1;
-	 JPanel panel_turno2;
-	 JPanel panel_turno6;
-
+	//panels trons
+	private JPanel panel_turno1;
+	private JPanel panel_turno2;
+	private JPanel panel_turno6;
+	private JPanel panel_2;
+	private JPanel panel_5;
+	private JPanel panel_6;
+	
+	private JLabel txtErrorT1;
+	private JLabel txtErrorT2;
+	private JLabel txtErrorT3;
+	private JLabel txtErrorT4;
+	private JLabel txtErrorT5;
+	private JLabel txtErrorT6;
 	 
 	 
 	 
@@ -215,7 +285,6 @@ public class AppGrafica {
 					addBackground(piezasGeneradas);
 					panel_turno1.setVisible(true);	
 					activarDesactivar(false);
-					//activarDesactivar(true,1);
 					btnGen.setVisible(false);
 					lblError.setVisible(false);
 				}
@@ -285,246 +354,314 @@ public class AppGrafica {
 			
 		panel_turno1 = new JPanel();
 		panel_turno1.setVisible(false);
+		panel_turno1.setVerifyInputWhenFocusTarget(false);
 		sl_panel.putConstraint(SpringLayout.NORTH, panel_turno1, 10, SpringLayout.NORTH, panel);
 		sl_panel.putConstraint(SpringLayout.WEST, panel_turno1, 30, SpringLayout.WEST, panel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, panel_turno1, -377, SpringLayout.SOUTH, panel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, panel_turno1, -369, SpringLayout.SOUTH, panel);
 		sl_panel.putConstraint(SpringLayout.EAST, panel_turno1, -39, SpringLayout.EAST, panel);
 		panel.add(panel_turno1);
 		
 		JButton btnCorregitTurno1 = new JButton("Corregir");
 		btnCorregitTurno1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				respuesta[0]=tglbtnClr1Turno1.getBackground().getRGB();
-//				respuesta[1]=tglbtnClr2Turno1.getBackground().getRGB();
-//				respuesta[2]=tglbtnClr3Turno1.getBackground().getRGB();
-//				respuesta[3]=tglbtnClr4Turno1.getBackground().getRGB();
-//				respuesta[4]=tglbtnClr5Turno1.getBackground().getRGB();
-//				respuesta[5]=tglbtnClr6Turno1.getBackground().getRGB();
-
+				respuesta[0]=panel1T1.getBackground().getRGB();
+				respuesta[1]=panel2T1.getBackground().getRGB();
+				respuesta[2]=panel3T1.getBackground().getRGB();
+				respuesta[3]=panel4T1.getBackground().getRGB();
+				respuesta[4]=panel5T1.getBackground().getRGB();
+				respuesta[5]=panel6T1.getBackground().getRGB();
+				
 				for (Integer integer : respuesta) {
 					System.out.println(integer);
 				}
 				
-				piezasJUgador=Funciones.generarPiezas(respuesta, false);
-				boolean fin=Funciones.comprobarPiezas(piezasJUgador, piezasGeneradas);
-				
-				if(!fin) {
-					panel_turno2.setVisible(true);
-				}
-				
-				for (int i = 0; i < piezasJUgador.length; i++) {
-//					switch (i) {
-//					case 0:
-//						colorPista(tglbtnPista1Turno1, i);
-//						break;
-//					case 1:
-//						colorPista(tglbtnPista2Turno1, i);
-//						break;
-//					case 2:
-//						colorPista(tglbtnPista3Turno1, i);
-//						break;
-//					case 3:
-//						colorPista(tglbtnPista4Turno1, i);
-//						break;
-//					case 4:
-//						colorPista(tglbtnPista5Turno1, i);
-//						break;
-//					case 5:
-//						colorPista(tglbtnPista6Turno1, i);
-//						break;
-//
-//					default:
-//						break;
-//					}
+				if(respuesta[0]==null||respuesta[1]==null||respuesta[2]==null||respuesta[3]==null||respuesta[4]==null||respuesta[5]==null) {
+					txtErrorT1.setVisible(true);
+				}else {
+					piezasJUgador=Funciones.generarPiezas(respuesta, false);
+					boolean fin=Funciones.comprobarPiezas(piezasJUgador, piezasGeneradas);
+					txtErrorT1.setVisible(false);
+					btnCorregitTurno1.setVisible(false);
 					
+					if(!fin) {
+						panel_turno2.setVisible(true);
+					}
+					
+					for (int i = 0; i < piezasJUgador.length; i++) {
+						switch (i) {
+						case 0:
+							colorPista(panel1T1S, i);
+							break;
+						case 1:
+							colorPista(panel2T1S, i);
+							break;
+						case 2:
+							colorPista(panel3T1S, i);
+							break;
+						case 3:
+							colorPista(panel4T1S, i);
+							break;
+						case 4:
+							colorPista(panel5T1S, i);
+							break;
+						case 5:
+							colorPista(panel6T1S, i);
+							break;
+	
+						default:
+							break;
+						}
+						
+					}
 				}
-				
 			}
 		});
 		
 		panel1T1 = new JPanel();
+		panel1T1.setBorder(new LineBorder(Color.BLACK, 2));
+		panel1T1.setBackground(null);
+
 		
 		panel2T1 = new JPanel();
+		panel2T1.setBorder(new LineBorder(Color.BLACK, 2));
+		panel2T1.setBackground(UIManager.getColor("ComboBox.buttonBackground"));
 		
 		panel3T1 = new JPanel();
+		panel3T1.setBorder(new LineBorder(Color.BLACK, 2));
+		panel3T1.setBackground(UIManager.getColor("ComboBox.buttonBackground"));
 		
 		panel4T1 = new JPanel();
+		panel4T1.setBorder(new LineBorder(Color.BLACK, 2));
+		panel4T1.setBackground(UIManager.getColor("ComboBox.buttonBackground"));
 		
 		panel5T1 = new JPanel();
+		panel5T1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		panel5T1.setBackground(UIManager.getColor("ComboBox.buttonBackground"));
 		
 		panel6T1 = new JPanel();
+		panel6T1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		panel6T1.setBackground(UIManager.getColor("ComboBox.buttonBackground"));
 		
 		panel6T1S = new JPanel();
+		panel6T1S.setBackground(Color.LIGHT_GRAY);
 		
 		panel1T1S = new JPanel();
-		
-		panel1T6_9 = new JPanel();
+		panel1T1S.setBackground(Color.LIGHT_GRAY);
 		
 		panel2T1S = new JPanel();
+		panel2T1S.setBackground(Color.LIGHT_GRAY);
+		
+		panel3T1S = new JPanel();
+		panel3T1S.setBackground(Color.LIGHT_GRAY);
 		
 		panel4T1S = new JPanel();
+		panel4T1S.setBackground(Color.LIGHT_GRAY);
 		
 		panel5T1S = new JPanel();
+		panel5T1S.setBackground(Color.LIGHT_GRAY);
+		
+		txtErrorT1 = new JLabel("Error: hay algun color vacio");
+		txtErrorT1.setVisible(false);
+		txtErrorT1.setForeground(Color.RED);
+		txtErrorT1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		
 		GroupLayout gl_panel_turno1 = new GroupLayout(panel_turno1);
 		gl_panel_turno1.setHorizontalGroup(
 			gl_panel_turno1.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_turno1.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(panel1T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel2T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel3T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel4T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel5T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel6T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addGap(30)
-					.addComponent(btnCorregitTurno1, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-					.addGap(42)
-					.addComponent(panel1T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel1T6_9, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel2T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel4T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel5T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(panel6T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap()) 
+					.addGroup(gl_panel_turno1.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_turno1.createSequentialGroup()
+							.addComponent(panel1T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel2T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel3T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel4T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel5T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel6T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(btnCorregitTurno1, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
+							.addGap(62)
+							.addComponent(panel1T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel2T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel3T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel4T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(panel5T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(panel6T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+						.addComponent(txtErrorT1))
+					.addContainerGap())
 		);
 		gl_panel_turno1.setVerticalGroup(
 			gl_panel_turno1.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_turno1.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_panel_turno1.createParallelGroup(Alignment.TRAILING)
+						.addComponent(btnCorregitTurno1, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
 						.addComponent(panel1T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 						.addComponent(panel6T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 						.addComponent(panel5T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 						.addComponent(panel4T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 						.addComponent(panel3T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 						.addComponent(panel2T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addGroup(gl_panel_turno1.createParallelGroup(Alignment.LEADING)
-							.addComponent(btnCorregitTurno1, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-							.addComponent(panel1T6_9, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addComponent(panel2T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addComponent(panel4T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addComponent(panel5T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addComponent(panel6T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addComponent(panel1T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(14, Short.MAX_VALUE))
+						.addGroup(gl_panel_turno1.createSequentialGroup()
+							.addGroup(gl_panel_turno1.createParallelGroup(Alignment.LEADING)
+								.addComponent(panel2T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								.addComponent(panel3T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								.addComponent(panel4T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								.addComponent(panel6T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								.addComponent(panel5T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								.addComponent(panel1T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+							.addGap(3)))
+					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(txtErrorT1)
+					.addContainerGap())
 		);
 		panel_turno1.setLayout(gl_panel_turno1);
 		
 		panel_turno2 = new JPanel();
-		sl_panel.putConstraint(SpringLayout.NORTH, panel_turno2, 6, SpringLayout.SOUTH, panel_turno1);
-		sl_panel.putConstraint(SpringLayout.WEST, panel_turno2, 30, SpringLayout.WEST, panel);
-		sl_panel.putConstraint(SpringLayout.EAST, panel_turno2, 0, SpringLayout.EAST, panel_turno1);
 		panel_turno2.setVisible(false);
+		sl_panel.putConstraint(SpringLayout.NORTH, panel_turno2, 8, SpringLayout.SOUTH, panel_turno1);
+		sl_panel.putConstraint(SpringLayout.WEST, panel_turno2, 0, SpringLayout.WEST, panel_turno1);
+		sl_panel.putConstraint(SpringLayout.SOUTH, panel_turno2, -301, SpringLayout.SOUTH, panel);
+		sl_panel.putConstraint(SpringLayout.EAST, panel_turno2, -39, SpringLayout.EAST, panel);
 		panel.add(panel_turno2);
 		
 		JButton btnCorregitTurno2 = new JButton("Corregir");
 		
 		panel1T2 = new JPanel();
+		panel1T2.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		panel1T2.setBackground(UIManager.getColor("ComboBox.buttonBackground"));
 		
 		panel2T2 = new JPanel();
+		panel2T2.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		panel2T2.setBackground(UIManager.getColor("ComboBox.buttonBackground"));
 		
 		panel3T2 = new JPanel();
+		panel3T2.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		panel3T2.setBackground(UIManager.getColor("ComboBox.buttonBackground"));
 		
 		panel4T2 = new JPanel();
+		panel4T2.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		panel4T2.setBackground(UIManager.getColor("ComboBox.buttonBackground"));
 		
 		panel5T2 = new JPanel();
+		panel5T2.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		
 		panel6T2 = new JPanel();
+		panel6T2.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		
 		panel6T2S = new JPanel();
+		panel6T2S.setBackground(Color.LIGHT_GRAY);
 		
 		panel5T2S = new JPanel();
+		panel5T2S.setBackground(Color.LIGHT_GRAY);
 		
 		panel4T2S = new JPanel();
+		panel4T2S.setBackground(Color.LIGHT_GRAY);
 		
 		panel3T2S = new JPanel();
+		panel3T2S.setBackground(Color.LIGHT_GRAY);
 		
 		panel2T2S = new JPanel();
+		panel2T2S.setBackground(Color.LIGHT_GRAY);
 		
 		panel1T2S = new JPanel();
+		panel1T2S.setBackground(Color.LIGHT_GRAY);
+		
+		txtErrorT2 = new JLabel("Error: hay algun color vacio");
+		txtErrorT2.setVisible(false);
+		txtErrorT2.setForeground(Color.RED);
+		txtErrorT2.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		GroupLayout gl_panel_turno2 = new GroupLayout(panel_turno2);
 		gl_panel_turno2.setHorizontalGroup(
 			gl_panel_turno2.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_turno2.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(panel1T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel2T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel3T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel4T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel5T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel6T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addGap(30)
-					.addComponent(btnCorregitTurno2, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-					.addComponent(panel1T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel2T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel3T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel4T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel5T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel6T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addGroup(gl_panel_turno2.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_turno2.createSequentialGroup()
+							.addComponent(panel1T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel2T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel3T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel4T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel5T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel6T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(btnCorregitTurno2, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+							.addComponent(panel1T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel2T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel3T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel4T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel5T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel6T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+						.addComponent(txtErrorT2))
 					.addContainerGap())
 		);
 		gl_panel_turno2.setVerticalGroup(
 			gl_panel_turno2.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_turno2.createSequentialGroup()
-					.addGap(5)
 					.addGroup(gl_panel_turno2.createParallelGroup(Alignment.LEADING)
-						.addComponent(panel1T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel2T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel3T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel4T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel5T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel6T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel6T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel5T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel4T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel3T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel2T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel1T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnCorregitTurno2, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(14, Short.MAX_VALUE))
+						.addGroup(gl_panel_turno2.createSequentialGroup()
+							.addContainerGap()
+							.addGroup(gl_panel_turno2.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(panel2T2, GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+								.addComponent(panel3T2, GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+								.addComponent(panel4T2, GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+								.addComponent(panel5T2, GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+								.addComponent(panel6T2, GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+								.addComponent(panel1T2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(btnCorregitTurno2, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)))
+						.addGroup(gl_panel_turno2.createSequentialGroup()
+							.addContainerGap()
+							.addGroup(gl_panel_turno2.createParallelGroup(Alignment.TRAILING)
+								.addComponent(panel4T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								.addComponent(panel6T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								.addComponent(panel5T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								.addComponent(panel3T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								.addComponent(panel2T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								.addComponent(panel1T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))))
+					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(txtErrorT2))
 		);
 		panel_turno2.setLayout(gl_panel_turno2);
 		
 		
 		
 		panel_turno6 = new JPanel();
-		sl_panel.putConstraint(SpringLayout.NORTH, panel_turno6, 180, SpringLayout.SOUTH, panel_turno2);
-		sl_panel.putConstraint(SpringLayout.WEST, panel_turno6, 30, SpringLayout.WEST, panel);
-		sl_panel.putConstraint(SpringLayout.EAST, panel_turno6, 0, SpringLayout.EAST, panel_turno1);
 		panel_turno6.setVisible(false);
+		sl_panel.putConstraint(SpringLayout.WEST, panel_turno6, 30, SpringLayout.WEST, panel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, panel_turno6, -37, SpringLayout.SOUTH, panel);
+		sl_panel.putConstraint(SpringLayout.EAST, panel_turno6, -39, SpringLayout.EAST, panel);
 		panel.add(panel_turno6);
 		
 		JButton btnCorregitTurno6 = new JButton("Corregir");
 		btnCorregitTurno6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				respuesta[0]=tglbtnClr1Turno1.getBackground().getRGB();
-//				respuesta[1]=tglbtnClr2Turno1.getBackground().getRGB();
-//				respuesta[2]=tglbtnClr3Turno1.getBackground().getRGB();
-//				respuesta[3]=tglbtnClr4Turno1.getBackground().getRGB();
-//				respuesta[4]=tglbtnClr5Turno1.getBackground().getRGB();
-//				respuesta[5]=tglbtnClr6Turno1.getBackground().getRGB();
+				respuesta[0]=panel1T1.getBackground().getRGB();
+				respuesta[1]=panel2T1.getBackground().getRGB();
+				respuesta[2]=panel3T1.getBackground().getRGB();
+				respuesta[3]=panel4T1.getBackground().getRGB();
+				respuesta[4]=panel5T1.getBackground().getRGB();
+				respuesta[5]=panel6T1.getBackground().getRGB();
 
 				for (Integer integer : respuesta) {
 					System.out.println(integer);
@@ -538,29 +675,29 @@ public class AppGrafica {
 				}
 				
 				for (int i = 0; i < piezasJUgador.length; i++) {
-//					switch (i) {
-//					case 0:
-//						colorPista(tglbtnPista1Turno1, i);
-//						break;
-//					case 1:
-//						colorPista(tglbtnPista2Turno1, i);
-//						break;
-//					case 2:
-//						colorPista(tglbtnPista3Turno1, i);
-//						break;
-//					case 3:
-//						colorPista(tglbtnPista4Turno1, i);
-//						break;
-//					case 4:
-//						colorPista(tglbtnPista5Turno1, i);
-//						break;
-//					case 5:
-//						colorPista(tglbtnPista6Turno1, i);
-//						break;
-//
-//					default:
-//						break;
-//					}
+					switch (i) {
+					case 0:
+						colorPista(panel1T1, i);
+						break;
+					case 1:
+						colorPista(panel2T1, i);
+						break;
+					case 2:
+						colorPista(panel3T1, i);
+						break;
+					case 3:
+						colorPista(panel4T1, i);
+						break;
+					case 4:
+						colorPista(panel5T1, i);
+						break;
+					case 5:
+						colorPista(panel6T1, i);
+						break;
+
+					default:
+						break;
+					}
 					
 				}
 				
@@ -568,413 +705,467 @@ public class AppGrafica {
 		});
 		
 		JPanel panel1T6 = new JPanel();
+		panel1T6.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		
 		JPanel panel2T6 = new JPanel();
+		panel2T6.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		
 		JPanel panel3T6 = new JPanel();
+		panel3T6.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		
 		JPanel panel4T6 = new JPanel();
+		panel4T6.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		
 		JPanel panel5T6 = new JPanel();
+		panel5T6.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		
 		JPanel panel6T6 = new JPanel();
+		panel6T6.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		
 		JPanel panel6T6S = new JPanel();
+		panel6T6S.setBackground(Color.LIGHT_GRAY);
 		
 		JPanel panel5T6S = new JPanel();
+		panel5T6S.setBackground(Color.LIGHT_GRAY);
 		
 		JPanel panel4T6S = new JPanel();
+		panel4T6S.setBackground(Color.LIGHT_GRAY);
 		
 		JPanel panel3T6S = new JPanel();
+		panel3T6S.setBackground(Color.LIGHT_GRAY);
 		
 		JPanel panel2T6S = new JPanel();
+		panel2T6S.setBackground(Color.LIGHT_GRAY);
 		
 		JPanel panel1T6S = new JPanel();
+		panel1T6S.setBackground(Color.LIGHT_GRAY);
+		
+		txtErrorT6 = new JLabel("Error: hay algun color vacio");
+		txtErrorT6.setVisible(false);
+		txtErrorT6.setForeground(Color.RED);
+		txtErrorT6.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		GroupLayout gl_panel_turno6 = new GroupLayout(panel_turno6);
 		gl_panel_turno6.setHorizontalGroup(
 			gl_panel_turno6.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_turno6.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(panel1T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel2T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel3T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel4T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel5T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel6T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addGap(30)
-					.addComponent(btnCorregitTurno6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-					.addComponent(panel1T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel2T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel3T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel4T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel5T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel6T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+					.addGroup(gl_panel_turno6.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_turno6.createSequentialGroup()
+							.addComponent(panel1T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel2T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel3T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel4T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel5T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel6T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addGap(10)
+							.addComponent(btnCorregitTurno6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+							.addComponent(panel1T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel2T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel3T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel4T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel5T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(panel6T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+						.addComponent(txtErrorT6))
 					.addContainerGap())
 		);
 		gl_panel_turno6.setVerticalGroup(
-			gl_panel_turno6.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_panel_turno6.createSequentialGroup()
-					.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
-						.addGroup(gl_panel_turno6.createSequentialGroup()
-							.addContainerGap()
-							.addComponent(panel1T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
-							.addGroup(gl_panel_turno6.createSequentialGroup()
-								.addContainerGap()
-								.addComponent(panel2T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-							.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
-								.addGroup(gl_panel_turno6.createSequentialGroup()
-									.addContainerGap()
-									.addComponent(panel3T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-								.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
-									.addGroup(gl_panel_turno6.createSequentialGroup()
-										.addContainerGap()
-										.addComponent(panel4T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-									.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
-										.addGroup(gl_panel_turno6.createSequentialGroup()
-											.addContainerGap()
-											.addComponent(panel5T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-										.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
-											.addGroup(gl_panel_turno6.createSequentialGroup()
-												.addContainerGap()
-												.addComponent(panel6T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-											.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
-												.addGroup(gl_panel_turno6.createSequentialGroup()
-													.addContainerGap()
-													.addComponent(panel5T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-												.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
-													.addGroup(gl_panel_turno6.createSequentialGroup()
-														.addContainerGap()
-														.addComponent(panel4T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-													.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
-														.addGroup(gl_panel_turno6.createSequentialGroup()
-															.addContainerGap()
-															.addComponent(panel3T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-														.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
-															.addGroup(gl_panel_turno6.createSequentialGroup()
-																.addContainerGap()
-																.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
-																	.addComponent(panel6T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-																	.addComponent(btnCorregitTurno6, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)))
-															.addGroup(gl_panel_turno6.createSequentialGroup()
-																.addContainerGap()
-																.addGroup(gl_panel_turno6.createParallelGroup(Alignment.LEADING, false)
-																	.addComponent(panel1T6, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-																	.addComponent(panel2T6, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)))))))))))))
-					.addContainerGap())
+			gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
+				.addGroup(Alignment.LEADING, gl_panel_turno6.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(gl_panel_turno6.createParallelGroup(Alignment.LEADING)
+						.addComponent(panel1T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(btnCorregitTurno6, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel2T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel3T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel4T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel5T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel6T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel6T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel5T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel4T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING, false)
+							.addComponent(panel1T6, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(panel2T6, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(panel3T6, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)))
+					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(txtErrorT6))
 		);
 		panel_turno6.setLayout(gl_panel_turno6);
 		
 		panel_2 = new JPanel();
+		panel_2.setVisible(false);
 		sl_panel.putConstraint(SpringLayout.NORTH, panel_2, 6, SpringLayout.SOUTH, panel_turno2);
-		sl_panel.putConstraint(SpringLayout.WEST, panel_2, 30, SpringLayout.WEST, panel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, panel_2, 58, SpringLayout.SOUTH, panel_turno2);
-		sl_panel.putConstraint(SpringLayout.EAST, panel_2, 646, SpringLayout.WEST, panel);
+		sl_panel.putConstraint(SpringLayout.WEST, panel_2, 0, SpringLayout.WEST, panel_turno1);
+		sl_panel.putConstraint(SpringLayout.SOUTH, panel_2, -235, SpringLayout.SOUTH, panel);
+		sl_panel.putConstraint(SpringLayout.EAST, panel_2, -39, SpringLayout.EAST, panel);
 		panel.add(panel_2);
 		
 		panel_5 = new JPanel();
-		sl_panel.putConstraint(SpringLayout.NORTH, panel_5, 11, SpringLayout.SOUTH, panel_2);
+		panel_5.setVisible(false);
+		sl_panel.putConstraint(SpringLayout.NORTH, panel_5, 6, SpringLayout.SOUTH, panel_2);
+		sl_panel.putConstraint(SpringLayout.WEST, panel_5, 30, SpringLayout.WEST, panel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, panel_5, -169, SpringLayout.SOUTH, panel);
+		sl_panel.putConstraint(SpringLayout.EAST, panel_5, 0, SpringLayout.EAST, panel_turno1);
 		SpringLayout sl_panel_2 = new SpringLayout();
 		panel_2.setLayout(sl_panel_2);
 		
-		panel1T1_1 = new JPanel();
-		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_1, 10, SpringLayout.NORTH, panel_2);
-		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_1, 10, SpringLayout.WEST, panel_2);
-		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_1, -10, SpringLayout.SOUTH, panel_2);
-		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_1, 40, SpringLayout.WEST, panel_2);
-		panel_2.add(panel1T1_1);
+		panel1T3 = new JPanel();
+		panel1T3.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T3, 10, SpringLayout.NORTH, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T3, 10, SpringLayout.WEST, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T3, -576, SpringLayout.EAST, panel_2);
+		panel_2.add(panel1T3);
 		
-		panel1T1_2 = new JPanel();
-		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_2, 0, SpringLayout.NORTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_2, 6, SpringLayout.EAST, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_2, 0, SpringLayout.SOUTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_2, 36, SpringLayout.EAST, panel1T1_1);
-		panel_2.add(panel1T1_2);
+		panel2T3 = new JPanel();
+		panel2T3.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel2T3, 10, SpringLayout.NORTH, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel2T3, 6, SpringLayout.EAST, panel1T3);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel2T3, 0, SpringLayout.SOUTH, panel1T3);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel2T3, -540, SpringLayout.EAST, panel_2);
+		panel_2.add(panel2T3);
 		
-		panel1T1_3 = new JPanel();
-		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_3, 0, SpringLayout.NORTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_3, 6, SpringLayout.EAST, panel1T1_2);
-		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_3, 0, SpringLayout.SOUTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_3, 36, SpringLayout.EAST, panel1T1_2);
-		panel_2.add(panel1T1_3);
+		panel3T3 = new JPanel();
+		panel3T3.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel3T3, 10, SpringLayout.NORTH, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel3T3, 6, SpringLayout.EAST, panel2T3);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel3T3, 0, SpringLayout.SOUTH, panel1T3);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel3T3, -504, SpringLayout.EAST, panel_2);
+		panel_2.add(panel3T3);
 		
-		panel1T1_4 = new JPanel();
-		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_4, 0, SpringLayout.NORTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_4, 6, SpringLayout.EAST, panel1T1_3);
-		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_4, 0, SpringLayout.SOUTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_4, 36, SpringLayout.EAST, panel1T1_3);
-		panel_2.add(panel1T1_4);
+		panel4T3 = new JPanel();
+		panel4T3.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel4T3, 10, SpringLayout.NORTH, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel4T3, 6, SpringLayout.EAST, panel3T3);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel4T3, 0, SpringLayout.SOUTH, panel1T3);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel4T3, -468, SpringLayout.EAST, panel_2);
+		panel_2.add(panel4T3);
 		
-		panel1T1_5 = new JPanel();
-		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_5, 0, SpringLayout.NORTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_5, 6, SpringLayout.EAST, panel1T1_4);
-		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_5, 0, SpringLayout.SOUTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_5, 36, SpringLayout.EAST, panel1T1_4);
-		panel_2.add(panel1T1_5);
+		panel5T3 = new JPanel();
+		panel5T3.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel5T3, 10, SpringLayout.NORTH, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel5T3, 6, SpringLayout.EAST, panel4T3);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel5T3, 0, SpringLayout.SOUTH, panel1T3);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel5T3, -432, SpringLayout.EAST, panel_2);
+		panel_2.add(panel5T3);
 		
-		panel1T1_6 = new JPanel();
-		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_6, 0, SpringLayout.NORTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_6, 6, SpringLayout.EAST, panel1T1_5);
-		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_6, 0, SpringLayout.SOUTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_6, 36, SpringLayout.EAST, panel1T1_5);
-		panel_2.add(panel1T1_6);
+		panel6T3 = new JPanel();
+		panel6T3.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel6T3, 10, SpringLayout.NORTH, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel6T3, 6, SpringLayout.EAST, panel5T3);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel6T3, 0, SpringLayout.SOUTH, panel1T3);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel6T3, -396, SpringLayout.EAST, panel_2);
+		panel_2.add(panel6T3);
 		
 		btnCorregitTurno2_1 = new JButton("Corregir");
-		sl_panel_2.putConstraint(SpringLayout.NORTH, btnCorregitTurno2_1, 0, SpringLayout.NORTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.WEST, btnCorregitTurno2_1, 30, SpringLayout.EAST, panel1T1_6);
-		sl_panel_2.putConstraint(SpringLayout.SOUTH, btnCorregitTurno2_1, 0, SpringLayout.SOUTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.EAST, btnCorregitTurno2_1, 130, SpringLayout.EAST, panel1T1_6);
+		sl_panel_2.putConstraint(SpringLayout.NORTH, btnCorregitTurno2_1, 10, SpringLayout.NORTH, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.WEST, btnCorregitTurno2_1, 6, SpringLayout.EAST, panel6T3);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, btnCorregitTurno2_1, 0, SpringLayout.SOUTH, panel1T3);
 		panel_2.add(btnCorregitTurno2_1);
 		
-		panel1T1_7 = new JPanel();
-		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_7, 0, SpringLayout.NORTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_7, -40, SpringLayout.EAST, panel_2);
-		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_7, -10, SpringLayout.SOUTH, panel_2);
-		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_7, -10, SpringLayout.EAST, panel_2);
-		panel_2.add(panel1T1_7);
+		panel6T3S = new JPanel();
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel6T3S, 10, SpringLayout.NORTH, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel6T3S, 0, SpringLayout.SOUTH, panel1T3);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel6T3S, -10, SpringLayout.EAST, panel_2);
+		panel6T3S.setBackground(Color.LIGHT_GRAY);
+		panel_2.add(panel6T3S);
 		
-		panel1T1_8 = new JPanel();
-		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_8, 0, SpringLayout.NORTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_8, -36, SpringLayout.WEST, panel1T1_7);
-		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_8, 0, SpringLayout.SOUTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_8, -6, SpringLayout.WEST, panel1T1_7);
-		panel_2.add(panel1T1_8);
+		panel5T3S = new JPanel();
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel6T3S, 6, SpringLayout.EAST, panel5T3S);
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel5T3S, 10, SpringLayout.NORTH, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel5T3S, 0, SpringLayout.SOUTH, panel1T3);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel5T3S, -46, SpringLayout.EAST, panel_2);
+		panel5T3S.setBackground(Color.LIGHT_GRAY);
+		panel_2.add(panel5T3S);
 		
-		panel1T1_9 = new JPanel();
-		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_9, 0, SpringLayout.NORTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_9, -36, SpringLayout.WEST, panel1T1_8);
-		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_9, 0, SpringLayout.SOUTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_9, -6, SpringLayout.WEST, panel1T1_8);
-		panel_2.add(panel1T1_9);
+		panel4T3S = new JPanel();
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel5T3S, 6, SpringLayout.EAST, panel4T3S);
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel4T3S, 10, SpringLayout.NORTH, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel4T3S, 0, SpringLayout.SOUTH, panel1T3);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel4T3S, -82, SpringLayout.EAST, panel_2);
+		panel4T3S.setBackground(Color.LIGHT_GRAY);
+		panel_2.add(panel4T3S);
 		
-		panel1T1_10 = new JPanel();
-		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_10, 0, SpringLayout.NORTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_10, -36, SpringLayout.WEST, panel1T1_9);
-		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_10, 0, SpringLayout.SOUTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_10, -6, SpringLayout.WEST, panel1T1_9);
-		panel_2.add(panel1T1_10);
+		panel3T3S = new JPanel();
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel4T3S, 6, SpringLayout.EAST, panel3T3S);
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel3T3S, 10, SpringLayout.NORTH, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel3T3S, -19, SpringLayout.SOUTH, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel3T3S, -118, SpringLayout.EAST, panel_2);
+		panel3T3S.setBackground(Color.LIGHT_GRAY);
+		panel_2.add(panel3T3S);
 		
-		panel1T1_11 = new JPanel();
-		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_11, 0, SpringLayout.NORTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_11, -36, SpringLayout.WEST, panel1T1_10);
-		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_11, 0, SpringLayout.SOUTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_11, -6, SpringLayout.WEST, panel1T1_10);
-		panel_2.add(panel1T1_11);
+		panel2T3S = new JPanel();
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel3T3S, 6, SpringLayout.EAST, panel2T3S);
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel2T3S, 10, SpringLayout.NORTH, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel2T3S, 0, SpringLayout.SOUTH, panel1T3);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel2T3S, -154, SpringLayout.EAST, panel_2);
+		panel2T3S.setBackground(Color.LIGHT_GRAY);
+		panel_2.add(panel2T3S);
 		
-		panel1T1_12 = new JPanel();
-		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T1_12, 0, SpringLayout.NORTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T1_12, -36, SpringLayout.WEST, panel1T1_11);
-		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T1_12, 0, SpringLayout.SOUTH, panel1T1_1);
-		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T1_12, -6, SpringLayout.WEST, panel1T1_11);
-		panel_2.add(panel1T1_12);
-		sl_panel.putConstraint(SpringLayout.WEST, panel_5, 30, SpringLayout.WEST, panel);
-		sl_panel.putConstraint(SpringLayout.EAST, panel_5, 0, SpringLayout.EAST, panel_turno1);
+		panel1T3S = new JPanel();
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T3S, 396, SpringLayout.WEST, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T3S, -190, SpringLayout.EAST, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel2T3S, 6, SpringLayout.EAST, panel1T3S);
+		sl_panel_2.putConstraint(SpringLayout.EAST, btnCorregitTurno2_1, -70, SpringLayout.WEST, panel1T3S);
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T3S, 10, SpringLayout.NORTH, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T3S, 0, SpringLayout.SOUTH, panel1T3);
+		panel1T3S.setBackground(Color.LIGHT_GRAY);
+		panel_2.add(panel1T3S);
+		
+		txtErrorT3 = new JLabel("Error: hay algun color vacio");
+		txtErrorT3.setVisible(false);
+		txtErrorT3.setForeground(Color.RED);
+		sl_panel_2.putConstraint(SpringLayout.WEST, txtErrorT3, 10, SpringLayout.WEST, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T3, -6, SpringLayout.NORTH, txtErrorT3);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, txtErrorT3, 0, SpringLayout.SOUTH, panel_2);
+		txtErrorT3.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		panel_2.add(txtErrorT3);
 		panel.add(panel_5);
 		
 		panel_6 = new JPanel();
-		sl_panel.putConstraint(SpringLayout.SOUTH, panel_5, -6, SpringLayout.NORTH, panel_6);
+		panel_6.setVisible(false);
+		sl_panel.putConstraint(SpringLayout.NORTH, panel_turno6, 6, SpringLayout.SOUTH, panel_6);
+		sl_panel.putConstraint(SpringLayout.NORTH, panel_6, 6, SpringLayout.SOUTH, panel_5);
+		sl_panel.putConstraint(SpringLayout.SOUTH, panel_6, -103, SpringLayout.SOUTH, panel);
+		sl_panel.putConstraint(SpringLayout.WEST, panel_6, 30, SpringLayout.WEST, panel);
+		sl_panel.putConstraint(SpringLayout.EAST, panel_6, -39, SpringLayout.EAST, panel);
 		SpringLayout sl_panel_5 = new SpringLayout();
 		panel_5.setLayout(sl_panel_5);
 		
-		panel1T1_13 = new JPanel();
-		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T1_13, 10, SpringLayout.NORTH, panel_5);
-		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T1_13, 10, SpringLayout.WEST, panel_5);
-		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T1_13, -10, SpringLayout.SOUTH, panel_5);
-		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T1_13, 40, SpringLayout.WEST, panel_5);
-		panel_5.add(panel1T1_13);
+		panel1T4 = new JPanel();
+		panel1T4.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T4, 10, SpringLayout.NORTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T4, 10, SpringLayout.WEST, panel_5);
+		panel_5.add(panel1T4);
 		
-		panel1T1_14 = new JPanel();
-		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T1_14, 0, SpringLayout.NORTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T1_14, 6, SpringLayout.EAST, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T1_14, 0, SpringLayout.SOUTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T1_14, 36, SpringLayout.EAST, panel1T1_13);
-		panel_5.add(panel1T1_14);
+		panel2T4 = new JPanel();
+		panel2T4.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T4, 0, SpringLayout.SOUTH, panel2T4);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T4, -6, SpringLayout.WEST, panel2T4);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel2T4, 46, SpringLayout.WEST, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel2T4, 10, SpringLayout.NORTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel2T4, -22, SpringLayout.SOUTH, panel_5);
+		panel_5.add(panel2T4);
 		
-		panel1T1_15 = new JPanel();
-		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T1_15, 0, SpringLayout.NORTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T1_15, 6, SpringLayout.EAST, panel1T1_14);
-		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T1_15, 0, SpringLayout.SOUTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T1_15, 36, SpringLayout.EAST, panel1T1_14);
-		panel_5.add(panel1T1_15);
+		panel3T4 = new JPanel();
+		panel3T4.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel3T4, 82, SpringLayout.WEST, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel2T4, -6, SpringLayout.WEST, panel3T4);
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel3T4, 10, SpringLayout.NORTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel3T4, -22, SpringLayout.SOUTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel3T4, -504, SpringLayout.EAST, panel_5);
+		panel_5.add(panel3T4);
 		
-		panel1T1_16 = new JPanel();
-		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T1_16, 0, SpringLayout.NORTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T1_16, 6, SpringLayout.EAST, panel1T1_15);
-		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T1_16, 0, SpringLayout.SOUTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T1_16, 36, SpringLayout.EAST, panel1T1_15);
-		panel_5.add(panel1T1_16);
+		panel4T4 = new JPanel();
+		panel4T4.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel4T4, 10, SpringLayout.NORTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel4T4, 6, SpringLayout.EAST, panel3T4);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel4T4, -22, SpringLayout.SOUTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel4T4, -468, SpringLayout.EAST, panel_5);
+		panel_5.add(panel4T4);
 		
-		panel1T1_17 = new JPanel();
-		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T1_17, 0, SpringLayout.NORTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T1_17, 6, SpringLayout.EAST, panel1T1_16);
-		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T1_17, 0, SpringLayout.SOUTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T1_17, 36, SpringLayout.EAST, panel1T1_16);
-		panel_5.add(panel1T1_17);
+		panel5T4 = new JPanel();
+		panel5T4.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel5T4, 10, SpringLayout.NORTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel5T4, 6, SpringLayout.EAST, panel4T4);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel5T4, -22, SpringLayout.SOUTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel5T4, -432, SpringLayout.EAST, panel_5);
+		panel_5.add(panel5T4);
 		
-		panel1T1_18 = new JPanel();
-		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T1_18, 0, SpringLayout.NORTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T1_18, 6, SpringLayout.EAST, panel1T1_17);
-		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T1_18, 0, SpringLayout.SOUTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T1_18, 36, SpringLayout.EAST, panel1T1_17);
-		panel_5.add(panel1T1_18);
+		panel6T4 = new JPanel();
+		panel6T4.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel6T4, 10, SpringLayout.NORTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel6T4, 6, SpringLayout.EAST, panel5T4);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel6T4, -22, SpringLayout.SOUTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel6T4, -396, SpringLayout.EAST, panel_5);
+		panel_5.add(panel6T4);
 		
 		btnCorregitTurno2_2 = new JButton("Corregir");
-		sl_panel_5.putConstraint(SpringLayout.NORTH, btnCorregitTurno2_2, 0, SpringLayout.NORTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.WEST, btnCorregitTurno2_2, 33, SpringLayout.EAST, panel1T1_18);
-		sl_panel_5.putConstraint(SpringLayout.SOUTH, btnCorregitTurno2_2, 0, SpringLayout.SOUTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.EAST, btnCorregitTurno2_2, 129, SpringLayout.EAST, panel1T1_18);
+		sl_panel_5.putConstraint(SpringLayout.NORTH, btnCorregitTurno2_2, 10, SpringLayout.NORTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.WEST, btnCorregitTurno2_2, 6, SpringLayout.EAST, panel6T4);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, btnCorregitTurno2_2, -22, SpringLayout.SOUTH, panel_5);
 		panel_5.add(btnCorregitTurno2_2);
 		
-		panel1T6S_1 = new JPanel();
-		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T6S_1, 0, SpringLayout.NORTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T6S_1, -40, SpringLayout.EAST, panel_5);
-		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T6S_1, 0, SpringLayout.SOUTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T6S_1, -10, SpringLayout.EAST, panel_5);
-		panel_5.add(panel1T6S_1);
+		panel6T4S = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel6T4S, 10, SpringLayout.NORTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel6T4S, -22, SpringLayout.SOUTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel6T4S, -10, SpringLayout.EAST, panel_5);
+		panel6T4S.setBackground(Color.LIGHT_GRAY);
+		panel_5.add(panel6T4S);
 		
-		panel1T6S_2 = new JPanel();
-		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T6S_2, 0, SpringLayout.NORTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T6S_2, -36, SpringLayout.WEST, panel1T6S_1);
-		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T6S_2, 0, SpringLayout.SOUTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T6S_2, -6, SpringLayout.WEST, panel1T6S_1);
-		panel_5.add(panel1T6S_2);
+		panel5T4S = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel5T4S, -46, SpringLayout.EAST, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel6T4S, 6, SpringLayout.EAST, panel5T4S);
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel5T4S, 10, SpringLayout.NORTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel5T4S, -22, SpringLayout.SOUTH, panel_5);
+		panel5T4S.setBackground(Color.LIGHT_GRAY);
+		panel_5.add(panel5T4S);
 		
-		panel1T6S_3 = new JPanel();
-		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T6S_3, 0, SpringLayout.NORTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T6S_3, -36, SpringLayout.WEST, panel1T6S_2);
-		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T6S_3, 0, SpringLayout.SOUTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T6S_3, -6, SpringLayout.WEST, panel1T6S_2);
-		panel_5.add(panel1T6S_3);
+		panel4T4S = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel5T4S, 6, SpringLayout.EAST, panel4T4S);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel4T4S, -82, SpringLayout.EAST, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel4T4S, 10, SpringLayout.NORTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel4T4S, -22, SpringLayout.SOUTH, panel_5);
+		panel4T4S.setBackground(Color.LIGHT_GRAY);
+		panel_5.add(panel4T4S);
 		
-		panel1T6S_4 = new JPanel();
-		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T6S_4, 0, SpringLayout.NORTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T6S_4, -36, SpringLayout.WEST, panel1T6S_3);
-		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T6S_4, -10, SpringLayout.SOUTH, panel_5);
-		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T6S_4, -6, SpringLayout.WEST, panel1T6S_3);
-		panel_5.add(panel1T6S_4);
+		panel3T4S = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel4T4S, 6, SpringLayout.EAST, panel3T4S);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel3T4S, -118, SpringLayout.EAST, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel3T4S, 10, SpringLayout.NORTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel3T4S, -22, SpringLayout.SOUTH, panel_5);
+		panel3T4S.setBackground(Color.LIGHT_GRAY);
+		panel_5.add(panel3T4S);
 		
-		panel1T6S_5 = new JPanel();
-		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T6S_5, 0, SpringLayout.NORTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T6S_5, -36, SpringLayout.WEST, panel1T6S_4);
-		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T6S_5, 0, SpringLayout.SOUTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T6S_5, -6, SpringLayout.WEST, panel1T6S_4);
-		panel_5.add(panel1T6S_5);
+		panel2T4S = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel3T4S, 6, SpringLayout.EAST, panel2T4S);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel2T4S, -154, SpringLayout.EAST, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel2T4S, 10, SpringLayout.NORTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel2T4S, -22, SpringLayout.SOUTH, panel_5);
+		panel2T4S.setBackground(Color.LIGHT_GRAY);
+		panel_5.add(panel2T4S);
 		
-		panel1T6S_6 = new JPanel();
-		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T6S_6, 0, SpringLayout.NORTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T6S_6, -36, SpringLayout.WEST, panel1T6S_5);
-		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T6S_6, 0, SpringLayout.SOUTH, panel1T1_13);
-		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T6S_6, -6, SpringLayout.WEST, panel1T6S_5);
-		panel_5.add(panel1T6S_6);
-		sl_panel.putConstraint(SpringLayout.NORTH, panel_6, 247, SpringLayout.NORTH, panel);
-		sl_panel.putConstraint(SpringLayout.SOUTH, panel_6, -6, SpringLayout.NORTH, panel_turno6);
-		sl_panel.putConstraint(SpringLayout.WEST, panel_6, 30, SpringLayout.WEST, panel);
-		sl_panel.putConstraint(SpringLayout.EAST, panel_6, 0, SpringLayout.EAST, panel_turno1);
+		panel1T4S = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.EAST, btnCorregitTurno2_2, -74, SpringLayout.WEST, panel1T4S);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel2T4S, 6, SpringLayout.EAST, panel1T4S);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T4S, 396, SpringLayout.WEST, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T4S, -190, SpringLayout.EAST, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T4S, 10, SpringLayout.NORTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T4S, -22, SpringLayout.SOUTH, panel_5);
+		panel1T4S.setBackground(Color.LIGHT_GRAY);
+		panel_5.add(panel1T4S);
+		
+		txtErrorT4 = new JLabel("Error: hay algun color vacio");
+		txtErrorT4.setVisible(false);
+		txtErrorT4.setForeground(Color.RED);
+		txtErrorT4.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		sl_panel_5.putConstraint(SpringLayout.NORTH, txtErrorT4, 6, SpringLayout.SOUTH, panel1T4);
+		sl_panel_5.putConstraint(SpringLayout.WEST, txtErrorT4, 0, SpringLayout.WEST, panel1T4);
+		panel_5.add(txtErrorT4);
 		panel.add(panel_6);
 		SpringLayout sl_panel_6 = new SpringLayout();
 		panel_6.setLayout(sl_panel_6);
 		
 		btnCorregitTurno2_3 = new JButton("Corregir");
 		sl_panel_6.putConstraint(SpringLayout.NORTH, btnCorregitTurno2_3, 10, SpringLayout.NORTH, panel_6);
-		sl_panel_6.putConstraint(SpringLayout.WEST, btnCorregitTurno2_3, 251, SpringLayout.WEST, panel_6);
-		sl_panel_6.putConstraint(SpringLayout.SOUTH, btnCorregitTurno2_3, -5, SpringLayout.SOUTH, panel_6);
-		sl_panel_6.putConstraint(SpringLayout.EAST, btnCorregitTurno2_3, 346, SpringLayout.WEST, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, btnCorregitTurno2_3, -21, SpringLayout.SOUTH, panel_6);
 		panel_6.add(btnCorregitTurno2_3);
 		
-		panel1T6S_7 = new JPanel();
-		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_7, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_7, 10, SpringLayout.WEST, panel_6);
-		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_7, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_7, 41, SpringLayout.WEST, panel_6);
-		panel_6.add(panel1T6S_7);
+		panel1T5 = new JPanel();
+		panel1T5.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T5, 10, SpringLayout.NORTH, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T5, 10, SpringLayout.WEST, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T5, -21, SpringLayout.SOUTH, panel_6);
+		panel_6.add(panel1T5);
 		
-		panel1T6S_8 = new JPanel();
-		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_8, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_8, 5, SpringLayout.EAST, panel1T6S_7);
-		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_8, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_8, 36, SpringLayout.EAST, panel1T6S_7);
-		panel_6.add(panel1T6S_8);
+		panel2T5 = new JPanel();
+		panel2T5.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T5, -6, SpringLayout.WEST, panel2T5);
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel2T5, 46, SpringLayout.WEST, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel2T5, 10, SpringLayout.NORTH, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel2T5, -21, SpringLayout.SOUTH, panel_6);
+		panel_6.add(panel2T5);
 		
-		panel1T6S_9 = new JPanel();
-		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_9, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_9, 6, SpringLayout.EAST, panel1T6S_8);
-		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_9, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_9, 37, SpringLayout.EAST, panel1T6S_8);
-		panel_6.add(panel1T6S_9);
+		panel3T5 = new JPanel();
+		panel3T5.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel2T5, -6, SpringLayout.WEST, panel3T5);
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel3T5, 83, SpringLayout.WEST, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel3T5, -21, SpringLayout.SOUTH, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel3T5, 10, SpringLayout.NORTH, panel_6);
+		panel_6.add(panel3T5);
 		
-		panel1T6S_10 = new JPanel();
-		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_10, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_10, 6, SpringLayout.EAST, panel1T6S_9);
-		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_10, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_10, 37, SpringLayout.EAST, panel1T6S_9);
-		panel_6.add(panel1T6S_10);
+		panel4T5 = new JPanel();
+		panel4T5.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel4T5, 120, SpringLayout.WEST, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel3T5, -6, SpringLayout.WEST, panel4T5);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel4T5, -21, SpringLayout.SOUTH, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel4T5, 10, SpringLayout.NORTH, panel_6);
+		panel_6.add(panel4T5);
 		
-		panel1T6S_11 = new JPanel();
-		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_11, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_11, 6, SpringLayout.EAST, panel1T6S_10);
-		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_11, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_11, 37, SpringLayout.EAST, panel1T6S_10);
-		panel_6.add(panel1T6S_11);
+		panel5T5 = new JPanel();
+		panel5T5.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel5T5, 157, SpringLayout.WEST, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel4T5, -6, SpringLayout.WEST, panel5T5);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel5T5, -21, SpringLayout.SOUTH, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel5T5, 10, SpringLayout.NORTH, panel_6);
+		panel_6.add(panel5T5);
 		
-		panel1T6S_12 = new JPanel();
-		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_12, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_12, 6, SpringLayout.EAST, panel1T6S_11);
-		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_12, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_12, 37, SpringLayout.EAST, panel1T6S_11);
-		panel_6.add(panel1T6S_12);
+		panel6T5 = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.WEST, btnCorregitTurno2_3, 6, SpringLayout.EAST, panel6T5);
+		panel6T5.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel5T5, -6, SpringLayout.WEST, panel6T5);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel6T5, -21, SpringLayout.SOUTH, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel6T5, 194, SpringLayout.WEST, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel6T5, -391, SpringLayout.EAST, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel6T5, 10, SpringLayout.NORTH, panel_6);
+		panel_6.add(panel6T5);
 		
-		panel1T6S_13 = new JPanel();
-		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_13, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_13, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_13, -10, SpringLayout.EAST, panel_6);
-		panel_6.add(panel1T6S_13);
+		panel6T5S = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel6T5S, -21, SpringLayout.SOUTH, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel6T5S, -10, SpringLayout.EAST, panel_6);
+		panel6T5S.setBackground(Color.LIGHT_GRAY);
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel6T5S, 10, SpringLayout.NORTH, panel_6);
+		panel_6.add(panel6T5S);
 		
-		panel1T6S_14 = new JPanel();
-		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_14, 538, SpringLayout.WEST, panel_6);
-		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_14, -47, SpringLayout.EAST, panel_6);
-		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_13, 6, SpringLayout.EAST, panel1T6S_14);
-		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_14, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_14, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
-		panel_6.add(panel1T6S_14);
+		panel5T5S = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel6T5S, 6, SpringLayout.EAST, panel5T5S);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel5T5S, -21, SpringLayout.SOUTH, panel_6);
+		panel5T5S.setBackground(Color.LIGHT_GRAY);
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel5T5S, 10, SpringLayout.NORTH, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel5T5S, 538, SpringLayout.WEST, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel5T5S, -47, SpringLayout.EAST, panel_6);
+		panel_6.add(panel5T5S);
 		
-		panel1T6S_15 = new JPanel();
-		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_15, 501, SpringLayout.WEST, panel_6);
-		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_15, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_15, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_15, -6, SpringLayout.WEST, panel1T6S_14);
-		panel_6.add(panel1T6S_15);
+		panel4T5S = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel4T5S, 10, SpringLayout.NORTH, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel4T5S, -21, SpringLayout.SOUTH, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel4T5S, -6, SpringLayout.WEST, panel5T5S);
+		panel4T5S.setBackground(Color.LIGHT_GRAY);
+		panel_6.add(panel4T5S);
 		
-		panel1T6S_16 = new JPanel();
-		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_16, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_16, -37, SpringLayout.WEST, panel1T6S_15);
-		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_16, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_16, -6, SpringLayout.WEST, panel1T6S_15);
-		panel_6.add(panel1T6S_16);
+		panel3T5S = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel3T5S, -121, SpringLayout.EAST, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel4T5S, 6, SpringLayout.EAST, panel3T5S);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel3T5S, -21, SpringLayout.SOUTH, panel_6);
+		panel3T5S.setBackground(Color.LIGHT_GRAY);
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel3T5S, 10, SpringLayout.NORTH, panel_6);
+		panel_6.add(panel3T5S);
 		
-		panel1T6S_17 = new JPanel();
-		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_17, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_17, -37, SpringLayout.WEST, panel1T6S_16);
-		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_17, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_17, -6, SpringLayout.WEST, panel1T6S_16);
-		panel_6.add(panel1T6S_17);
+		panel2T5S = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel3T5S, 6, SpringLayout.EAST, panel2T5S);
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel2T5S, 10, SpringLayout.NORTH, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel2T5S, -21, SpringLayout.SOUTH, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel2T5S, -158, SpringLayout.EAST, panel_6);
+		panel2T5S.setBackground(Color.LIGHT_GRAY);
+		panel_6.add(panel2T5S);
 		
-		panel1T6S_18 = new JPanel();
-		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T6S_18, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T6S_18, -37, SpringLayout.WEST, panel1T6S_17);
-		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T6S_18, 0, SpringLayout.SOUTH, btnCorregitTurno2_3);
-		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T6S_18, -6, SpringLayout.WEST, panel1T6S_17);
-		panel_6.add(panel1T6S_18);
+		panel1T5S = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T5S, 392, SpringLayout.WEST, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T5S, -195, SpringLayout.EAST, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel2T5S, 6, SpringLayout.EAST, panel1T5S);
+		sl_panel_6.putConstraint(SpringLayout.EAST, btnCorregitTurno2_3, -65, SpringLayout.WEST, panel1T5S);
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T5S, 10, SpringLayout.NORTH, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T5S, -21, SpringLayout.SOUTH, panel_6);
+		panel1T5S.setBackground(Color.LIGHT_GRAY);
+		panel_6.add(panel1T5S);
+		
+		txtErrorT5 = new JLabel("Error: hay algun color vacio");
+		txtErrorT5.setVisible(false);
+		txtErrorT5.setForeground(Color.RED);
+		txtErrorT5.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		sl_panel_6.putConstraint(SpringLayout.WEST, txtErrorT5, 0, SpringLayout.WEST, panel1T5);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, txtErrorT5, 0, SpringLayout.SOUTH, panel_6);
+		panel_6.add(txtErrorT5);
 		frame.getContentPane().add(panel_1);
 		
 		//Si los botones estan activados, pulsaremos y se abrira una ventan de selector de color para asignarlo color a este
@@ -985,6 +1176,13 @@ public class AppGrafica {
 		tglbtnClr4.addActionListener(e -> botonColor(tglbtnClr4));
 		tglbtnClr5.addActionListener(e -> botonColor(tglbtnClr5));
 		tglbtnClr6.addActionListener(e -> botonColor(tglbtnClr6));
+		
+		panel1T1.addMouseListener(mouseListener);
+		panel2T1.addMouseListener(mouseListener);
+		panel3T1.addMouseListener(mouseListener);
+		panel4T1.addMouseListener(mouseListener);
+		panel5T1.addMouseListener(mouseListener);
+		panel6T1.addMouseListener(mouseListener);
 	}
 	
 	static MouseListener mouseListener= new MouseListener() {
@@ -1007,102 +1205,21 @@ public class AppGrafica {
 
         @Override
         public void mouseClicked(MouseEvent e) {
-        	System.out.println("Botón clicado");
+            ((JPanel) e.getComponent()).setBackground(new Color(coloresDisponibles[pos]));
             if(e.getButton() == MouseEvent.BUTTON3) {
             	if(pos==0) {
         			pos=5;
         		}else {
         			pos--;
         		}
-            	a=false;
             }else if(e.getButton() == MouseEvent.BUTTON1){
             	pos++;
         		if(pos>5) {
         			pos=0;
         		}
-        		a=true;
-            }else if(e.getButton() == MouseEvent.BUTTON2){}
-            System.out.println(pos);
-            ((JToggleButton) e.getComponent()).setBackground(new Color(coloresDisponibles[pos]));
-        	((JToggleButton) e.getComponent()).setSelected(false);
-//        	if (a) {
-//				pos--;
-//			}else {
-//				pos++;
-//			}
+            }
         }
     };
-	private JPanel panel1T1;
-	private JPanel panel2T1;
-	private JPanel panel3T1;
-	private JPanel panel4T1;
-	private JPanel panel5T1;
-	private JPanel panel6T1;
-	private JPanel panel6T1S;
-	private JPanel panel1T1S;
-	private JPanel panel1T6_9;
-	private JPanel panel2T1S;
-	private JPanel panel4T1S;
-	private JPanel panel5T1S;
-	private JPanel panel1T2;
-	private JPanel panel2T2;
-	private JPanel panel3T2;
-	private JPanel panel4T2;
-	private JPanel panel5T2;
-	private JPanel panel6T2;
-	private JPanel panel6T2S;
-	private JPanel panel5T2S;
-	private JPanel panel4T2S;
-	private JPanel panel3T2S;
-	private JPanel panel2T2S;
-	private JPanel panel1T2S;
-	private JPanel panel_2;
-	private JPanel panel_5;
-	private JPanel panel_6;
-	private JPanel panel1T1_1;
-	private JPanel panel1T1_2;
-	private JPanel panel1T1_3;
-	private JPanel panel1T1_4;
-	private JPanel panel1T1_5;
-	private JPanel panel1T1_6;
-	private JButton btnCorregitTurno2_1;
-	private JPanel panel1T1_7;
-	private JPanel panel1T1_8;
-	private JPanel panel1T1_9;
-	private JPanel panel1T1_10;
-	private JPanel panel1T1_11;
-	private JPanel panel1T1_12;
-	private JPanel panel1T1_13;
-	private JPanel panel1T1_14;
-	private JPanel panel1T1_15;
-	private JPanel panel1T1_16;
-	private JPanel panel1T1_17;
-	private JPanel panel1T1_18;
-	private JButton btnCorregitTurno2_2;
-	private JButton btnCorregitTurno2_3;
-	private JPanel panel1T6S_1;
-	private JPanel panel1T6S_2;
-	private JPanel panel1T6S_3;
-	private JPanel panel1T6S_4;
-	private JPanel panel1T6S_5;
-	private JPanel panel1T6S_6;
-	private JPanel panel1T6S_7;
-	private JPanel panel1T6S_8;
-	private JPanel panel1T6S_9;
-	private JPanel panel1T6S_10;
-	private JPanel panel1T6S_11;
-	private JPanel panel1T6S_12;
-	private JPanel panel1T6S_13;
-	private JPanel panel1T6S_14;
-	private JPanel panel1T6S_15;
-	private JPanel panel1T6S_16;
-	private JPanel panel1T6S_17;
-	private JPanel panel1T6S_18;
-
-    //Llama al mouseLIstener porque sino el boton aunque lo desactivaras seguia dejando canviar el color
-    public static void botonColorJugador(JToggleButton button) {
-    	button.addMouseListener(mouseListener);
-	}
 	
 	public static void botonColor(JToggleButton button) {
 		button.setBackground(colorPicker());
@@ -1161,11 +1278,11 @@ public class AppGrafica {
 		tglbtnClr6S.setBackground(new Color(colores[5].getColor()));
 	}
 	
-	public static void colorPista (JToggleButton boton, int num) {
+	public static void colorPista (JPanel panel, int num) {
 		if (piezasJUgador[num].getEstado() == 0) {
-			boton.setBackground(Color.white);
+			panel.setBackground(Color.white);
 		} else if(piezasJUgador[num].getEstado() == 1){
-			boton.setBackground(Color.black);
+			panel.setBackground(Color.black);
 		}
 	}
 }
