@@ -14,20 +14,22 @@ public class Funciones {
 		menu();
 	}*/
 	
-	public static Pieza[] generarPiezas(Integer[] colores) {
+	//Genera las piezas con los colores aleatorios es decir, genera el patron aleatorio
+	public static Pieza[] generarPiezas(Integer[] colores, boolean mezclar) {
 		Pieza[] piezas= new Pieza[6];
 		
 		int temp, random;
 	    for (int i = 0; i < colores.length; i++)
-	    {
-	        random=(int)Math.floor(Math.random() * colores.length);
-	        if(random!=i) {
-	        	temp=colores[i];
-	        	colores[i]=colores[random];
-	        	colores[random]=temp;
-	        }else {
-	        	i--;
-	        }    
+	    { 	if(mezclar) {
+		        random=(int)Math.floor(Math.random() * colores.length);
+		        if(random!=i) {
+		        	temp=colores[i];
+		        	colores[i]=colores[random];
+		        	colores[random]=temp;
+		        }else {
+		        	i--;
+		        }  
+	    	}
 	    }
 		
 		for(int i=0;i<piezas.length;i++) {
@@ -37,6 +39,8 @@ public class Funciones {
 		return piezas;
 	}
 	
+	//Funcion que solo funciona por terminal si es para entrar los colores 
+	//se tendria que adaptar a grafico
 	public static Pieza[] entrarPiezas() {
 		
 		Pieza[] piezas= new Pieza[5];
@@ -68,6 +72,8 @@ public class Funciones {
 		return piezasS;
 	}
 	
+	//Funcion que solo funciona por terminal es para cambiar el estado de estas 
+	//se tendria que adaptar a grafico
 	public static String estadoPiezas(Pieza[] piezas) {
 		
 		String estadoTodo="";
@@ -90,7 +96,7 @@ public class Funciones {
 		for(int i=0;i<12;i++) {
 			
 			piezas=entrarPiezas();
-			fin=comprobarPiezas(piezas);
+			fin=comprobarPiezas(piezas, piezasGeneradas);
 			
 			piezasHistorial.add(mostrarPiezas(piezas)+"     "+estadoPiezas(piezas));
 			historial();
@@ -110,21 +116,21 @@ public class Funciones {
 		System.out.println();
 	}
 	
-	public static boolean comprobarPiezas(Pieza[] piezas) {
+	public static boolean comprobarPiezas(Pieza[] piezasUsuario, Pieza[] piezasGeneradas) {
 		
 		boolean fin=false;
 		int cont=0;
 		boolean ok1=false;
-		for(int i=0; i<piezasGeneradas.length;i++) {
+		for(int i=0; i<piezasUsuario.length;i++) {
 			ok1=false;
-			for(int j=0;j<piezas.length;j++) {
+			for(int j=0;j<piezasGeneradas.length;j++) {
 				
-				if(piezas[i].getColor() == piezasGeneradas[j].getColor() && piezas[i].getPosicion() == piezasGeneradas[j].getPosicion()) {
-					piezas[i].setEstado(1);
+				if(piezasUsuario[i].getColor() == piezasGeneradas[j].getColor() && piezasUsuario[i].getPosicion() == piezasGeneradas[j].getPosicion()) {
+					piezasUsuario[i].setEstado(1);
 					cont++;
 					ok1=true;
-				}else if(piezas[i].getColor() == piezasGeneradas[j].getColor() && piezas[i].getPosicion() != piezasGeneradas[j].getPosicion() && !ok1) {
-					piezas[i].setEstado(0);
+				}else if(piezasUsuario[i].getColor() == piezasGeneradas[j].getColor() && piezasUsuario[i].getPosicion() != piezasGeneradas[j].getPosicion() && !ok1) {
+					piezasUsuario[i].setEstado(0);
 				}
 			}
 		}
