@@ -379,41 +379,35 @@ public class AppGrafica {
 		
 		JPanel panel_2_turno1 = new JPanel();
 		panel_2_turno1.setBorder(null);
-		panel_2_turno1.setBackground(SystemColor.menu);
+		panel_2_turno1.setBackground(UIManager.getColor("Button.background"));
 		panel_2_turno1.setLayout(new GridLayout(1, 0, 0, 0));
 			
 		tglbtnClr1Turno1 = new JToggleButton("");
-		tglbtnClr1Turno1.setEnabled(false);
 		tglbtnClr1Turno1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
 		tglbtnClr1Turno1.setBackground(Color.WHITE);
 		panel_2_turno1.add(tglbtnClr1Turno1);
 		
 		tglbtnClr2Turno1 = new JToggleButton("");
-		tglbtnClr2Turno1.setEnabled(false);
 		tglbtnClr2Turno1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
 		tglbtnClr2Turno1.setBackground(Color.WHITE);
 		panel_2_turno1.add(tglbtnClr2Turno1);
 		
 		tglbtnClr3Turno1 = new JToggleButton("");
-		tglbtnClr3Turno1.setEnabled(false);
 		tglbtnClr3Turno1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
 		tglbtnClr3Turno1.setBackground(Color.WHITE);
 		panel_2_turno1.add(tglbtnClr3Turno1);
 		
 		tglbtnClr4Turno1 = new JToggleButton("");
-		tglbtnClr4Turno1.setEnabled(false);
 		tglbtnClr4Turno1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
 		tglbtnClr4Turno1.setBackground(Color.WHITE);
 		panel_2_turno1.add(tglbtnClr4Turno1);
 		
 		tglbtnClr5Turno1 = new JToggleButton("");
-		tglbtnClr5Turno1.setEnabled(false);
 		tglbtnClr5Turno1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
 		tglbtnClr5Turno1.setBackground(Color.WHITE);
 		panel_2_turno1.add(tglbtnClr5Turno1);
 		
 		tglbtnClr6Turno1 = new JToggleButton("");
-		tglbtnClr6Turno1.setEnabled(false);
 		tglbtnClr6Turno1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
 		tglbtnClr6Turno1.setBackground(Color.WHITE);
 		panel_2_turno1.add(tglbtnClr6Turno1);
@@ -432,12 +426,6 @@ public class AppGrafica {
 				for (Integer integer : respuesta) {
 					System.out.println(integer);
 				}
-				tglbtnClr1Turno1.setEnabled(false);
-				tglbtnClr2Turno1.setEnabled(false);
-				tglbtnClr3Turno1.setEnabled(false);
-				tglbtnClr4Turno1.setEnabled(false);
-				tglbtnClr5Turno1.setEnabled(false);
-				tglbtnClr6Turno1.setEnabled(false);
 				
 				piezasJUgador=Funciones.generarPiezas(respuesta, false);
 				boolean fin=Funciones.comprobarPiezas(piezasJUgador, piezasGeneradas);
@@ -455,11 +443,6 @@ public class AppGrafica {
 		panel_5_turno1.setBackground(SystemColor.menu);
 		panel_5_turno1.setLayout(new GridLayout(1, 0, 0, 0));
 		
-		
-		/*
-		 *
-		 * private static JToggleButton tglbtnPista1Turno1
-		 */
 		
 		tglbtnPista1Turno1 = new JToggleButton("");
 		tglbtnPista1Turno1.setEnabled(false);
@@ -1078,12 +1061,12 @@ public class AppGrafica {
 		tglbtnClr5.addActionListener(e -> botonColor(tglbtnClr5));
 		tglbtnClr6.addActionListener(e -> botonColor(tglbtnClr6));
 		
-		tglbtnClr1Turno1.addMouseListener(mouseListener);
-		tglbtnClr2Turno1.addMouseListener(mouseListener);
-		tglbtnClr3Turno1.addMouseListener(mouseListener);
-		tglbtnClr4Turno1.addMouseListener(mouseListener);
-		tglbtnClr5Turno1.addMouseListener(mouseListener);
-		tglbtnClr6Turno1.addMouseListener(mouseListener);
+		tglbtnClr1Turno1.addActionListener(e -> botonColorJugador(tglbtnClr1Turno1));
+		tglbtnClr2Turno1.addActionListener(e -> botonColorJugador(tglbtnClr2Turno1));
+		tglbtnClr3Turno1.addActionListener(e -> botonColorJugador(tglbtnClr3Turno1));
+		tglbtnClr4Turno1.addActionListener(e -> botonColorJugador(tglbtnClr4Turno1));
+		tglbtnClr5Turno1.addActionListener(e -> botonColorJugador(tglbtnClr5Turno1));
+		tglbtnClr6Turno1.addActionListener(e -> botonColorJugador(tglbtnClr6Turno1));
 		
 		tglbtnClr1Turno2.addMouseListener(mouseListener);
 		tglbtnClr2Turno2.addMouseListener(mouseListener);
@@ -1122,7 +1105,7 @@ public class AppGrafica {
 		
 	}
 	
-	MouseListener mouseListener= new MouseListener() {
+	static MouseListener mouseListener= new MouseListener() {
 
         @Override
         public void mouseReleased(MouseEvent e) {
@@ -1161,6 +1144,10 @@ public class AppGrafica {
         }
     };
 
+    //Llama al mouseLIstener porque sino el boton aunque lo desactivaras seguia dejando canviar el color
+    public static void botonColorJugador(JToggleButton button) {
+    	button.addMouseListener(mouseListener);
+	}
 	
 	public static void botonColor(JToggleButton button) {
 		button.setBackground(colorPicker());
@@ -1209,7 +1196,7 @@ public class AppGrafica {
 			tglbtnClr5.setEnabled(estado);
 			tglbtnClr6.setEnabled(estado);
 			break;
-		case 2:
+		case 1:
 			System.out.print("B");
 			tglbtnClr1Turno1.setEnabled(estado);
 			tglbtnClr2Turno1.setEnabled(estado);
@@ -1218,7 +1205,7 @@ public class AppGrafica {
 			tglbtnClr5Turno1.setEnabled(estado);
 			tglbtnClr6Turno1.setEnabled(estado);
 			break;
-		case 1:
+		case 2:
 			tglbtnClr1Turno2.setEnabled(estado);
 			tglbtnClr2Turno2.setEnabled(estado);
 			tglbtnClr3Turno2.setEnabled(estado);
