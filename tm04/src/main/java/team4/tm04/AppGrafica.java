@@ -84,6 +84,12 @@ public class AppGrafica {
 	private JPanel panel4T5;
 	private JPanel panel5T5;
 	private JPanel panel6T5;
+	private JPanel panel1T6;
+	private JPanel panel2T6;
+	private JPanel panel3T6;
+	private JPanel panel4T6;
+	private JPanel panel5T6;
+	private JPanel panel6T6;
 	
 	private JPanel panel_7;
 	private JPanel panel6T1S;
@@ -119,6 +125,7 @@ public class AppGrafica {
 	private JPanel panel3T5S;
 	private JPanel panel4T5S;
 	private JPanel panel5T5S;
+	private JPanel panel6T5S;
 	private JPanel panel_12;
 	private JPanel panel1T6S;
 	private JPanel panel2T6S;
@@ -710,22 +717,22 @@ public class AppGrafica {
 			}
 		});
 		
-		JPanel panel1T6 = new JPanel();
+		panel1T6 = new JPanel();
 		panel1T6.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		
-		JPanel panel2T6 = new JPanel();
+		panel2T6 = new JPanel();
 		panel2T6.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		
-		JPanel panel3T6 = new JPanel();
+		panel3T6 = new JPanel();
 		panel3T6.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		
-		JPanel panel4T6 = new JPanel();
+		panel4T6 = new JPanel();
 		panel4T6.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		
-		JPanel panel5T6 = new JPanel();
+		panel5T6 = new JPanel();
 		panel5T6.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		
-		JPanel panel6T6 = new JPanel();
+		panel6T6 = new JPanel();
 		panel6T6.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		
 		txtErrorT6 = new JLabel("Error: hay algun color vacio");
@@ -1139,7 +1146,7 @@ public class AppGrafica {
 		panel5T5S.setBackground(Color.LIGHT_GRAY);
 		panel_11.add(panel5T5S);
 		
-		JPanel panel6T5S = new JPanel();
+		panel6T5S = new JPanel();
 		panel6T5S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
 		panel6T5S.setBackground(Color.LIGHT_GRAY);
 		panel_11.add(panel6T5S);
@@ -1160,6 +1167,41 @@ public class AppGrafica {
 		panel4T1.addMouseListener(mouseListener);
 		panel5T1.addMouseListener(mouseListener);
 		panel6T1.addMouseListener(mouseListener);
+		
+		panel1T2.addMouseListener(mouseListener);
+		panel2T2.addMouseListener(mouseListener);
+		panel3T2.addMouseListener(mouseListener);
+		panel4T2.addMouseListener(mouseListener);
+		panel5T2.addMouseListener(mouseListener);
+		panel6T2.addMouseListener(mouseListener);
+		
+		panel1T3.addMouseListener(mouseListener);
+		panel2T3.addMouseListener(mouseListener);
+		panel3T3.addMouseListener(mouseListener);
+		panel4T3.addMouseListener(mouseListener);
+		panel5T3.addMouseListener(mouseListener);
+		panel6T3.addMouseListener(mouseListener);
+		
+		panel1T4.addMouseListener(mouseListener);
+		panel2T4.addMouseListener(mouseListener);
+		panel3T4.addMouseListener(mouseListener);
+		panel4T4.addMouseListener(mouseListener);
+		panel5T4.addMouseListener(mouseListener);
+		panel6T4.addMouseListener(mouseListener);
+		
+		panel1T5.addMouseListener(mouseListener);
+		panel2T5.addMouseListener(mouseListener);
+		panel3T5.addMouseListener(mouseListener);
+		panel4T5.addMouseListener(mouseListener);
+		panel5T5.addMouseListener(mouseListener);
+		panel6T5.addMouseListener(mouseListener);
+		
+		panel1T6.addMouseListener(mouseListener);
+		panel2T6.addMouseListener(mouseListener);
+		panel3T6.addMouseListener(mouseListener);
+		panel4T6.addMouseListener(mouseListener);
+		panel5T6.addMouseListener(mouseListener);
+		panel6T6.addMouseListener(mouseListener);
 	}
 	
 	static MouseListener mouseListener= new MouseListener() {
