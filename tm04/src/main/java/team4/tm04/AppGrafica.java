@@ -26,7 +26,7 @@ public class AppGrafica {
 	private JMenuItem about;
 	private static JPanel panel;
 	private static JPanel panel_1;
-	private static Integer[] coloresDisponibles=new Integer[6];
+	protected static Integer[] coloresDisponibles=new Integer[6];
 	private static Integer[] respuesta=new Integer[6];
 	private static JPanel panel_3;
 	private static JToggleButton tglbtnClr1;
@@ -50,7 +50,7 @@ public class AppGrafica {
 	static Pieza[] piezasJUgador;
 	static Scanner sc = new Scanner(System.in);
 	static ArrayList<String> piezasHistorial=new ArrayList<>();
-	private static int pos=0;
+	protected static int pos=0;
 	
 	private static JPanel panel1T1;
 	private static JPanel panel2T1;
@@ -225,7 +225,7 @@ public class AppGrafica {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				reset();
-				coloresDisponibles=generarColoresAleatorio();
+				coloresDisponibles=Funciones.generarColoresAleatorio();
 				activarDesactivar(false);
 				tglbtnClr1.setBackground(new Color(coloresDisponibles[0]));
 				tglbtnClr2.setBackground(new Color(coloresDisponibles[1]));
@@ -448,22 +448,22 @@ public class AppGrafica {
 					for (int i = 0; i < piezasJUgador.length; i++) {
 						switch (i) {
 						case 0:
-							colorPista(panel1T1S, i);
+							Funciones.colorPista(panel1T1S, i);
 							break;
 						case 1:
-							colorPista(panel2T1S, i);
+							Funciones.colorPista(panel2T1S, i);
 							break;
 						case 2:
-							colorPista(panel3T1S, i);
+							Funciones.colorPista(panel3T1S, i);
 							break;
 						case 3:
-							colorPista(panel4T1S, i);
+							Funciones.colorPista(panel4T1S, i);
 							break;
 						case 4:
-							colorPista(panel5T1S, i);
+							Funciones.colorPista(panel5T1S, i);
 							break;
 						case 5:
-							colorPista(panel6T1S, i);
+							Funciones.colorPista(panel6T1S, i);
 							break;
 	
 						default:
@@ -622,22 +622,22 @@ public class AppGrafica {
 					for (int i = 0; i < piezasJUgador.length; i++) {
 						switch (i) {
 						case 0:
-							colorPista(panel1T2S, i);
+							Funciones.colorPista(panel1T2S, i);
 							break;
 						case 1:
-							colorPista(panel2T2S, i);
+							Funciones.colorPista(panel2T2S, i);
 							break;
 						case 2:
-							colorPista(panel3T2S, i);
+							Funciones.colorPista(panel3T2S, i);
 							break;
 						case 3:
-							colorPista(panel4T2S, i);
+							Funciones.colorPista(panel4T2S, i);
 							break;
 						case 4:
-							colorPista(panel5T2S, i);
+							Funciones.colorPista(panel5T2S, i);
 							break;
 						case 5:
-							colorPista(panel6T2S, i);
+							Funciones.colorPista(panel6T2S, i);
 							break;
 	
 						default:
@@ -793,22 +793,22 @@ public class AppGrafica {
 				for (int i = 0; i < piezasJUgador.length; i++) {
 					switch (i) {
 					case 0:
-						colorPista(panel1T6S, i);
+						Funciones.colorPista(panel1T6S, i);
 						break;
 					case 1:
-						colorPista(panel2T6S, i);
+						Funciones.colorPista(panel2T6S, i);
 						break;
 					case 2:
-						colorPista(panel3T6S, i);
+						Funciones.colorPista(panel3T6S, i);
 						break;
 					case 3:
-						colorPista(panel4T6S, i);
+						Funciones.colorPista(panel4T6S, i);
 						break;
 					case 4:
-						colorPista(panel5T6S, i);
+						Funciones.colorPista(panel5T6S, i);
 						break;
 					case 5:
-						colorPista(panel6T6S, i);
+						Funciones.colorPista(panel6T6S, i);
 						break;
 
 					default:
@@ -1018,22 +1018,22 @@ public class AppGrafica {
 					for (int i = 0; i < piezasJUgador.length; i++) {
 						switch (i) {
 						case 0:
-							colorPista(panel1T3S, i);
+							Funciones.colorPista(panel1T3S, i);
 							break;
 						case 1:
-							colorPista(panel2T3S, i);
+							Funciones.colorPista(panel2T3S, i);
 							break;
 						case 2:
-							colorPista(panel3T3S, i);
+							Funciones.colorPista(panel3T3S, i);
 							break;
 						case 3:
-							colorPista(panel4T3S, i);
+							Funciones.colorPista(panel4T3S, i);
 							break;
 						case 4:
-							colorPista(panel5T3S, i);
+							Funciones.colorPista(panel5T3S, i);
 							break;
 						case 5:
-							colorPista(panel6T3S, i);
+							Funciones.colorPista(panel6T3S, i);
 							break;
 	
 						default:
@@ -1184,22 +1184,22 @@ public class AppGrafica {
 					for (int i = 0; i < piezasJUgador.length; i++) {
 						switch (i) {
 						case 0:
-							colorPista(panel1T4S, i);
+							Funciones.colorPista(panel1T4S, i);
 							break;
 						case 1:
-							colorPista(panel2T4S, i);
+							Funciones.colorPista(panel2T4S, i);
 							break;
 						case 2:
-							colorPista(panel3T4S, i);
+							Funciones.colorPista(panel3T4S, i);
 							break;
 						case 3:
-							colorPista(panel4T4S, i);
+							Funciones.colorPista(panel4T4S, i);
 							break;
 						case 4:
-							colorPista(panel5T4S, i);
+							Funciones.colorPista(panel5T4S, i);
 							break;
 						case 5:
-							colorPista(panel6T4S, i);
+							Funciones.colorPista(panel6T4S, i);
 							break;
 	
 						default:
@@ -1291,23 +1291,23 @@ public class AppGrafica {
 					for (int i = 0; i < piezasJUgador.length; i++) {
 						switch (i) {
 						case 0:
-							colorPista(panel1T5S, i);
+							Funciones.colorPista(panel1T5S, i);
 							break;
 						case 1:
-							colorPista(panel2T5S, i);
+							Funciones.colorPista(panel2T5S, i);
 							break;
 						case 2:
-							colorPista(panel3T5S, i);
+							Funciones.colorPista(panel3T5S, i);
 							break;
 						case 3:
-							colorPista(panel4T5S, i);
+							Funciones.colorPista(panel4T5S, i);
 							break;
 						case 4:
-							colorPista(panel5T5S, i);
+							Funciones.colorPista(panel5T5S, i);
 							break;
 						case 5:
 							
-							colorPista(panel6T5S, i);
+							Funciones.colorPista(panel6T5S, i);
 							break;
 	
 						default:
@@ -1419,12 +1419,12 @@ public class AppGrafica {
 		
 		//Si los botones estan activados, pulsaremos y se abrira una ventan de selector de color para asignarlo color a este
 		//Todos los botones son iguales
-		tglbtnClr1.addActionListener(e -> botonColor(tglbtnClr1));
-		tglbtnClr2.addActionListener(e -> botonColor(tglbtnClr2));
-		tglbtnClr3.addActionListener(e -> botonColor(tglbtnClr3));
-		tglbtnClr4.addActionListener(e -> botonColor(tglbtnClr4));
-		tglbtnClr5.addActionListener(e -> botonColor(tglbtnClr5));
-		tglbtnClr6.addActionListener(e -> botonColor(tglbtnClr6));
+		tglbtnClr1.addActionListener(e -> Funciones.botonColor(tglbtnClr1));
+		tglbtnClr2.addActionListener(e -> Funciones.botonColor(tglbtnClr2));
+		tglbtnClr3.addActionListener(e -> Funciones.botonColor(tglbtnClr3));
+		tglbtnClr4.addActionListener(e -> Funciones.botonColor(tglbtnClr4));
+		tglbtnClr5.addActionListener(e -> Funciones.botonColor(tglbtnClr5));
+		tglbtnClr6.addActionListener(e -> Funciones.botonColor(tglbtnClr6));
 		
 		panel1T1.addMouseListener(mouseListener);
 		panel2T1.addMouseListener(mouseListener);
@@ -1505,60 +1505,14 @@ public class AppGrafica {
         }
     };
 	
-	
-	public static void botonColor(JToggleButton button) {
-		button.setBackground(colorPicker());
-		coloresDisponibles[pos]=button.getBackground().getRGB();
-		button.setSelected(false);	
-		pos++;
-		if(pos==6) {
-			pos=0;
-		}
-	}
-	
-	//funcion para que abra ventana se selector de color
-	public static Color colorPicker() {
-		
-		JPanel contentPane= new JPanel();
-		contentPane.setVisible(true);
-		Color color=JColorChooser.showDialog(contentPane, "Elige un color", Color.BLACK);
-		if(color==null) {
-			color=Color.LIGHT_GRAY;
-		}
-		return color;
-	}
-	
-	//Generacion de colores aleatorios RGB
-	public static Integer[] generarColoresAleatorio() {
-		Integer[] colores= new Integer[3];
-		Integer[] coloresRGB= new Integer[6];
-		Color color;
-		for(int i=0;i<coloresRGB.length;i++) {
-			colores[0]=(int)Math.floor(Math.random() * 255);
-			colores[1]=(int)Math.floor(Math.random() * 255);
-			colores[2]=(int)Math.floor(Math.random() * 255);
-			color=new Color(colores[0], colores[1], colores[2]);
-			if(color.getRGB()!=-1118482) {
-				coloresRGB[i]=color.getRGB();
-			}else {
-				i--;
-			}
-			
-			
-		}
-		return coloresRGB;
-	}
-	
 	//Activar y desactivar los botones 
-	public static void activarDesactivar(boolean estado) {
-		
+	public static void activarDesactivar(boolean estado) {	
 			tglbtnClr1.setEnabled(estado);
 			tglbtnClr2.setEnabled(estado);
 			tglbtnClr3.setEnabled(estado);
 			tglbtnClr4.setEnabled(estado);
 			tglbtnClr5.setEnabled(estado);
 			tglbtnClr6.setEnabled(estado);
-		
 	}
 	
 	//anadir el background a los botones secretos
@@ -1570,18 +1524,8 @@ public class AppGrafica {
 		tglbtnClr5S.setBackground(new Color(colores[4].getColor()));
 		tglbtnClr6S.setBackground(new Color(colores[5].getColor()));
 	}
-	
-	public static void colorPista (JPanel panel, int num) {
-		
-		System.out.println(piezasJUgador[num].getColor()+" - "+piezasJUgador[num].getEstado());
-		
-		if (piezasJUgador[num].getEstado() == 0) {
-			panel.setBackground(Color.white);
-		} else if(piezasJUgador[num].getEstado() == 1){
-			panel.setBackground(Color.black);
-		}
-	}
-	
+
+	//Resetar el estado de todo
 	public static void reset() {
 		
 		panel1T1.setBackground(new Color(-1118482));
@@ -1688,6 +1632,8 @@ public class AppGrafica {
 		tglbtnClr4.setBackground(Color.LIGHT_GRAY);
 		tglbtnClr5.setBackground(Color.LIGHT_GRAY);
 		tglbtnClr6.setBackground(Color.LIGHT_GRAY);
+		
+		panel_4.setVisible(false);
 		
 		if(piezasGeneradas!=null) {
 			for(int i=0;i<piezasGeneradas.length;i++) {
