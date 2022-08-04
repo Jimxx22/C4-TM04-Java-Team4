@@ -204,7 +204,7 @@ public class AppGrafica {
 		about.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(about, "Arnau Mas Hernández, Jaume Gil Vilar y Marc Cuenca Díaz","Acerca De",1);
+				JOptionPane.showMessageDialog(about, "Diseñadores: Arnau Mas Hernández, Jaume Gil Vilar y Marc Cuenca Díaz","Acerca De",1);
 				
 			}
 		});
