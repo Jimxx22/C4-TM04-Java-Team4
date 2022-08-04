@@ -23,6 +23,7 @@ public class AppGrafica {
 	private JMenuItem nuevaPartidaJugador;
 	private JMenuItem salir;
 	private JMenuItem reglas;
+	private JMenuItem about;
 	private static JPanel panel;
 	private static JPanel panel_1;
 	private static Integer[] coloresDisponibles=new Integer[6];
@@ -197,16 +198,25 @@ public class AppGrafica {
 		archivo.add(salir);
 		ayuda.add(reglas);
 		
-		About = new JMenuItem("Acerca De");
-		ayuda.add(About);
+		about = new JMenuItem("Acerca De");
+		ayuda.add(about);
 		
-		About.addActionListener(new ActionListener() {
+		about.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(About, "Arnau Mas Hernández, Jaume Gil Vilar y Marc Cuenca Díaz","Acerca De",1);
+				JOptionPane.showMessageDialog(about, "Arnau Mas Hernández, Jaume Gil Vilar y Marc Cuenca Díaz","Acerca De",1);
 				
 			}
 		});
+		
+		salir.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);	
+			}
+		});
+		
+		
 		
 		//Cuando pulsamos Partida VS Maquina nose generara 6 colores aleatorios i los guaradara en una array, i estos se asignaran como background
 		//Los botones se descativaran
@@ -1494,7 +1504,7 @@ public class AppGrafica {
             }
         }
     };
-	private JMenuItem About;
+	
 	
 	public static void botonColor(JToggleButton button) {
 		button.setBackground(colorPicker());
@@ -1678,5 +1688,16 @@ public class AppGrafica {
 		tglbtnClr4.setBackground(Color.LIGHT_GRAY);
 		tglbtnClr5.setBackground(Color.LIGHT_GRAY);
 		tglbtnClr6.setBackground(Color.LIGHT_GRAY);
+		
+		if(piezasGeneradas!=null) {
+			for(int i=0;i<piezasGeneradas.length;i++) {
+				System.out.println(i);
+				piezasGeneradas[i]=null;
+				coloresDisponibles[i]=null;
+				respuesta[i]=null;
+
+			}
+		}
+		
 	}
 }
