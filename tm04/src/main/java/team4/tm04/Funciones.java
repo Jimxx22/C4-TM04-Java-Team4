@@ -136,7 +136,7 @@ public class Funciones {
 			}
 		}
 		
-		if(cont==5) {
+		if(cont==6) {
 			fin=true;
 		}
 		return fin;
