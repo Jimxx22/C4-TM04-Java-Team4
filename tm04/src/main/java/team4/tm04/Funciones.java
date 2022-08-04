@@ -1,4 +1,5 @@
 package team4.tm04;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.InputMismatchException;
@@ -34,7 +35,8 @@ public class Funciones {
 	    }
 		
 		for(int i=0;i<piezas.length;i++) {
-			piezas[i]=new Pieza(coloresM[i]);
+			random=(int)Math.floor(Math.random() * coloresM.length);
+			piezas[i]=new Pieza(coloresM[random]);
 			piezas[i].setPosicion(i);
 		}
 		return piezas;
