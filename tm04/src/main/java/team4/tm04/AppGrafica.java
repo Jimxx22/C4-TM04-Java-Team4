@@ -400,6 +400,9 @@ public class AppGrafica {
 					
 					if(!fin) {
 						panel_turno2.setVisible(true);
+					}else{
+						 JOptionPane.showMessageDialog(new JFrame(), "Has ganado en 1 turnos.\nEnhorabuena!!");
+						 panel_4.setVisible(true);
 					}
 					
 					for (int i = 0; i < piezasJUgador.length; i++) {
@@ -571,6 +574,9 @@ public class AppGrafica {
 					
 					if(!fin) {
 						panel_turno3.setVisible(true);
+					}else{
+						 JOptionPane.showMessageDialog(new JFrame(), "Has ganado en 2 turnos.\nEnhorabuena!!");
+						 panel_4.setVisible(true);
 					}
 					
 					for (int i = 0; i < piezasJUgador.length; i++) {
@@ -733,9 +739,12 @@ public class AppGrafica {
 				
 				piezasJUgador=Funciones.generarPiezas(respuesta, false);
 				boolean fin=Funciones.comprobarPiezas(piezasJUgador, piezasGeneradas);
-				
+				System.out.println(fin);
 				if(!fin) {
 					panel_turno6.setVisible(true);
+				}else{
+					 JOptionPane.showMessageDialog(new JFrame(), "Has ganado en 6 turnos.\nEnhorabuena!!");
+					 panel_4.setVisible(true);
 				}
 				
 				for (int i = 0; i < piezasJUgador.length; i++) {
@@ -952,6 +961,9 @@ public class AppGrafica {
 					
 					if(!fin) {
 						panel_turno4.setVisible(true);
+					}else{
+						 JOptionPane.showMessageDialog(new JFrame(), "Has ganado en 3 turnos.\nEnhorabuena!!");
+						 panel_4.setVisible(true);
 					}
 					
 					for (int i = 0; i < piezasJUgador.length; i++) {
@@ -1115,6 +1127,9 @@ public class AppGrafica {
 					
 					if(!fin) {
 						panel_turno5.setVisible(true);
+					}else{
+						 JOptionPane.showMessageDialog(new JFrame(), "Has ganado en 4 turnos.\nEnhorabuena!!");
+						 panel_4.setVisible(true);
 					}
 					
 					for (int i = 0; i < piezasJUgador.length; i++) {
@@ -1221,6 +1236,9 @@ public class AppGrafica {
 					
 					if(!fin) {
 						panel_turno6.setVisible(true);
+					}else{
+						 JOptionPane.showMessageDialog(new JFrame(), "Has ganado en 5 turnos.\nEnhorabuena!!");
+						 panel_4.setVisible(true);
 					}
 					
 					for (int i = 0; i < piezasJUgador.length; i++) {
