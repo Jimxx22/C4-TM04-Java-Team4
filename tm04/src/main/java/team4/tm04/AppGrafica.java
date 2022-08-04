@@ -193,6 +193,17 @@ public class AppGrafica {
 		archivo.add(salir);
 		ayuda.add(reglas);
 		
+		About = new JMenuItem("Acerca De");
+		ayuda.add(About);
+		
+		About.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(About, "Arnau Mas Hernández, Jaume Gil Vilar y Marc Cuenca Díaz","Acerca De",1);
+				
+			}
+		});
+		
 		//Cuando pulsamos Partida VS Maquina nose generara 6 colores aleatorios i los guaradara en una array, i estos se asignaran como background
 		//Los botones se descativaran
 		//generaremos las piezas con los colores que emos generado
@@ -215,6 +226,18 @@ public class AppGrafica {
 				//activarDesactivar(true,1);
 		}});
 		
+		reglas.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {			
+				JOptionPane.showMessageDialog(archivo, "Se juega en un tablero con fichas blancas y negras pequeñas y de otros colores, de un tamaño algo superior. \r\n"
+						+ "Uno de los jugadores escoge un número de fichas de colores, 4 en el juego original, y pone un código secreto oculto del otro jugador. \r\n"
+						+ "Este, tomando fichas de colores del mismo conjunto, aventura una posibilidad contestada con negras (fichas de color bien colocadas) o \r\n"
+						+ "blancas (fichas de color con el color correcto, pero mal colocadas).\r\n\r\n"
+						+ "Termina al averiguarse la combinación (es decir, se consigue una combinación con cuatro negras), o bien se agota el tablero \r\n(depende del tamaño, aunque generalmente son 15 combinaciones).",
+						"Reglas",1
+						
+						);
+		}});		
 		//Cuando pulsamos Partida VS Persona nose tendemos los botones activados, i tendremos que ir pulsano 1 a 1 i seleccionar los colores que queremos nosotros 
 		//Una vez hayamos seleccionado todos los colores, pulsaremos para que se genere el patron, y se descativaran los botones
 		//generaremos las piezas con los colores que emos generado
@@ -1465,6 +1488,7 @@ public class AppGrafica {
             }
         }
     };
+	private JMenuItem About;
 	
 	public static void botonColor(JToggleButton button) {
 		button.setBackground(colorPicker());
