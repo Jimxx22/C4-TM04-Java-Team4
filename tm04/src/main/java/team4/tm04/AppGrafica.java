@@ -229,7 +229,7 @@ public class AppGrafica {
 		frame.setJMenuBar(barraMenu);
 		
 		panel = new JPanel();
-		panel.setBounds(new Rectangle(0, 0, 685, 439));
+		panel.setBounds(new Rectangle(10, 0, 685, 439));
 		panel.setBackground(UIManager.getColor("ComboBox.buttonBackground"));
 		SpringLayout sl_panel = new SpringLayout();
 		panel.setLayout(sl_panel);
@@ -314,6 +314,7 @@ public class AppGrafica {
 		panel_1.add(lblCombinacion);
 		
 		panel_4 = new JPanel();
+		panel_4.setVisible(false);
 		sl_panel_1.putConstraint(SpringLayout.SOUTH, lblCombinacion, -6, SpringLayout.NORTH, panel_4);
 		sl_panel_1.putConstraint(SpringLayout.WEST, panel_4, 28, SpringLayout.WEST, panel_1);
 		sl_panel_1.putConstraint(SpringLayout.EAST, panel_4, -29, SpringLayout.EAST, panel_1);
@@ -735,7 +736,8 @@ public class AppGrafica {
 				boolean fin=Funciones.comprobarPiezas(piezasJUgador, piezasGeneradas);
 				
 				if(!fin) {
-					panel_turno6.setVisible(true);
+					JOptionPane.showMessageDialog(btnCorregitTurno6, "Has fallado");
+					panel_4.setVisible(true);
 				}
 				
 				for (int i = 0; i < piezasJUgador.length; i++) {
@@ -841,9 +843,9 @@ public class AppGrafica {
 							.addComponent(panel5T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(panel6T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addGap(10)
+							.addGap(18)
 							.addComponent(btnCorregitTurno6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
 							.addComponent(panel_12, GroupLayout.PREFERRED_SIZE, 243, GroupLayout.PREFERRED_SIZE))
 						.addComponent(txtErrorT6))
 					.addContainerGap())
@@ -853,17 +855,19 @@ public class AppGrafica {
 				.addGroup(gl_panel_turno6.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_panel_turno6.createParallelGroup(Alignment.LEADING)
-						.addComponent(panel_12, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
 						.addComponent(btnCorregitTurno6, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel6T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel5T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel4T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING, false)
-							.addComponent(panel1T6, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addComponent(panel2T6, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addComponent(panel3T6, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(txtErrorT6)
+						.addGroup(gl_panel_turno6.createSequentialGroup()
+							.addGroup(gl_panel_turno6.createParallelGroup(Alignment.LEADING)
+								.addComponent(panel_12, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
+								.addComponent(panel6T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								.addComponent(panel5T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								.addComponent(panel4T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING, false)
+									.addComponent(panel1T6, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(panel2T6, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(panel3T6, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(txtErrorT6)))
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		panel_turno6.setLayout(gl_panel_turno6);
@@ -933,6 +937,10 @@ public class AppGrafica {
 		panel_turno3.add(panel6T3);
 		
 		btnCorregitTurno3 = new JButton("Corregir");
+		sl_panel_turno3.putConstraint(SpringLayout.NORTH, btnCorregitTurno3, 10, SpringLayout.NORTH, panel_turno3);
+		sl_panel_turno3.putConstraint(SpringLayout.WEST, btnCorregitTurno3, 14, SpringLayout.EAST, panel6T3);
+		sl_panel_turno3.putConstraint(SpringLayout.SOUTH, btnCorregitTurno3, 0, SpringLayout.SOUTH, panel1T3);
+		sl_panel_turno3.putConstraint(SpringLayout.EAST, btnCorregitTurno3, -282, SpringLayout.EAST, panel_turno3);
 		btnCorregitTurno3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				respuesta[0]=panel1T3.getBackground().getRGB();
@@ -983,10 +991,6 @@ public class AppGrafica {
 				}
 			}
 		});
-		sl_panel_turno3.putConstraint(SpringLayout.NORTH, btnCorregitTurno3, 10, SpringLayout.NORTH, panel_turno3);
-		sl_panel_turno3.putConstraint(SpringLayout.WEST, btnCorregitTurno3, 6, SpringLayout.EAST, panel6T3);
-		sl_panel_turno3.putConstraint(SpringLayout.SOUTH, btnCorregitTurno3, 0, SpringLayout.SOUTH, panel1T3);
-		sl_panel_turno3.putConstraint(SpringLayout.EAST, btnCorregitTurno3, -290, SpringLayout.EAST, panel_turno3);
 		panel_turno3.add(btnCorregitTurno3);
 		
 		txtErrorT3 = new JLabel("Error: hay algun color vacio");
@@ -1096,6 +1100,10 @@ public class AppGrafica {
 		panel_turno4.add(panel6T4);
 		
 		btnCorregitTurno4 = new JButton("Corregir");
+		sl_panel_turno4.putConstraint(SpringLayout.NORTH, btnCorregitTurno4, 0, SpringLayout.NORTH, panel1T4);
+		sl_panel_turno4.putConstraint(SpringLayout.WEST, btnCorregitTurno4, 16, SpringLayout.EAST, panel6T4);
+		sl_panel_turno4.putConstraint(SpringLayout.SOUTH, btnCorregitTurno4, 0, SpringLayout.SOUTH, panel1T4);
+		sl_panel_turno4.putConstraint(SpringLayout.EAST, btnCorregitTurno4, -280, SpringLayout.EAST, panel_turno4);
 		btnCorregitTurno4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				respuesta[0]=panel1T4.getBackground().getRGB();
@@ -1146,10 +1154,6 @@ public class AppGrafica {
 				}
 			}
 		});
-		sl_panel_turno4.putConstraint(SpringLayout.NORTH, btnCorregitTurno4, 10, SpringLayout.NORTH, panel_turno4);
-		sl_panel_turno4.putConstraint(SpringLayout.WEST, btnCorregitTurno4, 6, SpringLayout.EAST, panel6T4);
-		sl_panel_turno4.putConstraint(SpringLayout.SOUTH, btnCorregitTurno4, -22, SpringLayout.SOUTH, panel_turno4);
-		sl_panel_turno4.putConstraint(SpringLayout.EAST, btnCorregitTurno4, -294, SpringLayout.EAST, panel_turno4);
 		panel_turno4.add(btnCorregitTurno4);
 		
 		txtErrorT4 = new JLabel("Error: hay algun color vacio");
@@ -1202,6 +1206,8 @@ public class AppGrafica {
 		panel_turno5.setLayout(sl_panel_turno5);
 		
 		btnCorregitTurno5 = new JButton("Corregir");
+		sl_panel_turno5.putConstraint(SpringLayout.SOUTH, btnCorregitTurno5, -21, SpringLayout.SOUTH, panel_turno5);
+		sl_panel_turno5.putConstraint(SpringLayout.EAST, btnCorregitTurno5, -281, SpringLayout.EAST, panel_turno5);
 		btnCorregitTurno5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				respuesta[0]=panel1T5.getBackground().getRGB();
@@ -1253,12 +1259,10 @@ public class AppGrafica {
 				}
 			}
 		});
-		sl_panel_turno5.putConstraint(SpringLayout.NORTH, btnCorregitTurno5, 10, SpringLayout.NORTH, panel_turno5);
-		sl_panel_turno5.putConstraint(SpringLayout.SOUTH, btnCorregitTurno5, -21, SpringLayout.SOUTH, panel_turno5);
-		sl_panel_turno5.putConstraint(SpringLayout.EAST, btnCorregitTurno5, -289, SpringLayout.EAST, panel_turno5);
 		panel_turno5.add(btnCorregitTurno5);
 		
 		panel1T5 = new JPanel();
+		sl_panel_turno5.putConstraint(SpringLayout.NORTH, btnCorregitTurno5, 0, SpringLayout.NORTH, panel1T5);
 		panel1T5.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		sl_panel_turno5.putConstraint(SpringLayout.NORTH, panel1T5, 10, SpringLayout.NORTH, panel_turno5);
 		sl_panel_turno5.putConstraint(SpringLayout.WEST, panel1T5, 10, SpringLayout.WEST, panel_turno5);
@@ -1298,7 +1302,7 @@ public class AppGrafica {
 		panel_turno5.add(panel5T5);
 		
 		panel6T5 = new JPanel();
-		sl_panel_turno5.putConstraint(SpringLayout.WEST, btnCorregitTurno5, 6, SpringLayout.EAST, panel6T5);
+		sl_panel_turno5.putConstraint(SpringLayout.WEST, btnCorregitTurno5, 14, SpringLayout.EAST, panel6T5);
 		panel6T5.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		sl_panel_turno5.putConstraint(SpringLayout.EAST, panel5T5, -6, SpringLayout.WEST, panel6T5);
 		sl_panel_turno5.putConstraint(SpringLayout.SOUTH, panel6T5, -21, SpringLayout.SOUTH, panel_turno5);
@@ -1316,9 +1320,9 @@ public class AppGrafica {
 		panel_turno5.add(txtErrorT5);
 		
 		panel_11 = new JPanel();
-		sl_panel_turno5.putConstraint(SpringLayout.NORTH, panel_11, 0, SpringLayout.NORTH, btnCorregitTurno5);
+		sl_panel_turno5.putConstraint(SpringLayout.NORTH, panel_11, 10, SpringLayout.NORTH, panel_turno5);
 		sl_panel_turno5.putConstraint(SpringLayout.WEST, panel_11, -252, SpringLayout.EAST, panel_turno5);
-		sl_panel_turno5.putConstraint(SpringLayout.SOUTH, panel_11, 29, SpringLayout.NORTH, btnCorregitTurno5);
+		sl_panel_turno5.putConstraint(SpringLayout.SOUTH, panel_11, -21, SpringLayout.SOUTH, panel_turno5);
 		sl_panel_turno5.putConstraint(SpringLayout.EAST, panel_11, -10, SpringLayout.EAST, panel_turno5);
 		panel_turno5.add(panel_11);
 		panel_11.setLayout(new GridLayout(1, 0, 0, 0));
