@@ -84,6 +84,12 @@ public class AppGrafica {
 	private JPanel panel4T5;
 	private JPanel panel5T5;
 	private JPanel panel6T5;
+	private JPanel panel1T6;
+	private JPanel panel2T6;
+	private JPanel panel3T6;
+	private JPanel panel4T6;
+	private JPanel panel5T6;
+	private JPanel panel6T6;
 	
 	private JPanel panel_7;
 	private JPanel panel6T1S;
@@ -1369,6 +1375,41 @@ public class AppGrafica {
 		panel4T1.addMouseListener(mouseListener);
 		panel5T1.addMouseListener(mouseListener);
 		panel6T1.addMouseListener(mouseListener);
+		
+		panel1T2.addMouseListener(mouseListener);
+		panel2T2.addMouseListener(mouseListener);
+		panel3T2.addMouseListener(mouseListener);
+		panel4T2.addMouseListener(mouseListener);
+		panel5T2.addMouseListener(mouseListener);
+		panel6T2.addMouseListener(mouseListener);
+		
+		panel1T3.addMouseListener(mouseListener);
+		panel2T3.addMouseListener(mouseListener);
+		panel3T3.addMouseListener(mouseListener);
+		panel4T3.addMouseListener(mouseListener);
+		panel5T3.addMouseListener(mouseListener);
+		panel6T3.addMouseListener(mouseListener);
+		
+		panel1T4.addMouseListener(mouseListener);
+		panel2T4.addMouseListener(mouseListener);
+		panel3T4.addMouseListener(mouseListener);
+		panel4T4.addMouseListener(mouseListener);
+		panel5T4.addMouseListener(mouseListener);
+		panel6T4.addMouseListener(mouseListener);
+		
+		panel1T5.addMouseListener(mouseListener);
+		panel2T5.addMouseListener(mouseListener);
+		panel3T5.addMouseListener(mouseListener);
+		panel4T5.addMouseListener(mouseListener);
+		panel5T5.addMouseListener(mouseListener);
+		panel6T5.addMouseListener(mouseListener);
+		
+		panel1T6.addMouseListener(mouseListener);
+		panel2T6.addMouseListener(mouseListener);
+		panel3T6.addMouseListener(mouseListener);
+		panel4T6.addMouseListener(mouseListener);
+		panel5T6.addMouseListener(mouseListener);
+		panel6T6.addMouseListener(mouseListener);
 	}
 	
 	static MouseListener mouseListener= new MouseListener() {
