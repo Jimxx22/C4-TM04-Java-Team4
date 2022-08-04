@@ -23,11 +23,11 @@ public class AppGrafica {
 	private JMenuItem nuevaPartidaJugador;
 	private JMenuItem salir;
 	private JMenuItem reglas;
-	private JPanel panel;
-	private JPanel panel_1;
+	private static JPanel panel;
+	private static JPanel panel_1;
 	private static Integer[] coloresDisponibles=new Integer[6];
 	private static Integer[] respuesta=new Integer[6];
-	private JPanel panel_3;
+	private static JPanel panel_3;
 	private static JToggleButton tglbtnClr1;
 	private static JToggleButton tglbtnClr2;
 	private static JToggleButton tglbtnClr3;
@@ -37,7 +37,7 @@ public class AppGrafica {
 	private JLabel lblColores;
 	private JButton btnGen;
 	private JLabel lblCombinacion;
-	private JPanel panel_4;
+	private static JPanel panel_4;
 	private static JToggleButton tglbtnClr1S;
 	private static JToggleButton tglbtnClr2S;
 	private static JToggleButton tglbtnClr3S;
@@ -51,97 +51,94 @@ public class AppGrafica {
 	static ArrayList<String> piezasHistorial=new ArrayList<>();
 	private static int pos=0;
 	
-	private JPanel panel1T1;
-	private JPanel panel2T1;
-	private JPanel panel3T1;
-	private JPanel panel4T1;
-	private JPanel panel5T1;
-	private JPanel panel6T1;
-	private JPanel panel1T2;
-	private JPanel panel2T2;
-	private JPanel panel3T2;
-	private JPanel panel4T2;
-	private JPanel panel5T2;
-	private JPanel panel6T2;
-	private JPanel panel1T3;
-	private JPanel panel2T3;
-	private JPanel panel3T3;
-	private JPanel panel4T3;
-	private JPanel panel5T3;
-	private JPanel panel6T3;
-	private JButton btnCorregitTurno3;
-	private JPanel panel1T4;
-	private JPanel panel2T4;
-	private JPanel panel3T4;
-	private JPanel panel4T4;
-	private JPanel panel5T4;
-	private JPanel panel6T4;
-	private JButton btnCorregitTurno4;
-	private JButton btnCorregitTurno5;
-	private JPanel panel1T5;
-	private JPanel panel2T5;
-	private JPanel panel3T5;
-	private JPanel panel4T5;
-	private JPanel panel5T5;
-	private JPanel panel6T5;
+	private static JPanel panel1T1;
+	private static JPanel panel2T1;
+	private static JPanel panel3T1;
+	private static JPanel panel4T1;
+	private static JPanel panel5T1;
+	private static JPanel panel6T1;
+	private static JPanel panel1T2;
+	private static JPanel panel2T2;
+	private static JPanel panel3T2;
+	private static JPanel panel4T2;
+	private static JPanel panel5T2;
+	private static JPanel panel6T2;
+	private static JPanel panel1T3;
+	private static JPanel panel2T3;
+	private static JPanel panel3T3;
+	private static JPanel panel4T3;
+	private static JPanel panel5T3;
+	private static JPanel panel6T3;
+	private static JPanel panel1T4;
+	private static JPanel panel2T4;
+	private static JPanel panel3T4;
+	private static JPanel panel4T4;
+	private static JPanel panel5T4;
+	private static JPanel panel6T4;
+	private static JPanel panel1T5;
+	private static JPanel panel2T5;
+	private static JPanel panel3T5;
+	private static JPanel panel4T5;
+	private static JPanel panel5T5;
+	private static JPanel panel6T5;
 
-	private JPanel panel_7;
-	private JPanel panel6T1S;
-	private JPanel panel5T1S;
-	private JPanel panel4T1S;
-	private JPanel panel3T1S;
-	private JPanel panel2T1S;
-	private JPanel panel1T1S;
-	private JPanel panel_8;
-	private JPanel panel1T2S;
-	private JPanel panel2T2S;
-	private JPanel panel3T2S;
-	private JPanel panel4T2S;
-	private JPanel panel5T2S;
-	private JPanel panel6T2S;
-	private JPanel panel_9;
-	private JPanel panel1T3S;
-	private JPanel panel2T3S;
-	private JPanel panel3T3S;
-	private JPanel panel4T3S;
-	private JPanel panel5T3S;
-	private JPanel panel6T3S;
-	private JPanel panel_10;
-	private JPanel panel1T4S;
-	private JPanel panel2T4S;
-	private JPanel panel3T4S;
-	private JPanel panel4T4S;
-	private JPanel panel5T4S;
-	private JPanel panel6T4S;
-	private JPanel panel_11;
-	private JPanel panel1T5S;
-	private JPanel panel2T5S;
-	private JPanel panel3T5S;
-	private JPanel panel4T5S;
-	private JPanel panel5T5S;
-	private JPanel panel6T5S;
-	private JPanel panel_12;
-	private JPanel panel1T6S;
-	private JPanel panel2T6S;
-	private JPanel panel3T6S;
-	private JPanel panel4T6S;
-	private JPanel panel5T6S;
-	private JPanel panel6T6S;
-	private JPanel panel1T6;
-	private JPanel panel2T6;
-	private JPanel panel3T6;
-	private JPanel panel4T6;
-	private JPanel panel5T6;
-	private JPanel panel6T6;
+	private static JPanel panel_7;
+	private static JPanel panel6T1S;
+	private static JPanel panel5T1S;
+	private static JPanel panel4T1S;
+	private static JPanel panel3T1S;
+	private static JPanel panel2T1S;
+	private static JPanel panel1T1S;
+	private static JPanel panel_8;
+	private static JPanel panel1T2S;
+	private static JPanel panel2T2S;
+	private static JPanel panel3T2S;
+	private static JPanel panel4T2S;
+	private static JPanel panel5T2S;
+	private static JPanel panel6T2S;
+	private static JPanel panel_9;
+	private static JPanel panel1T3S;
+	private static JPanel panel2T3S;
+	private static JPanel panel3T3S;
+	private static JPanel panel4T3S;
+	private static JPanel panel5T3S;
+	private static JPanel panel6T3S;
+	private static JPanel panel_10;
+	private static JPanel panel1T4S;
+	private static JPanel panel2T4S;
+	private static JPanel panel3T4S;
+	private static JPanel panel4T4S;
+	private static JPanel panel5T4S;
+	private static JPanel panel6T4S;
+	private static JPanel panel_11;
+	private static JPanel panel1T5S;
+	private static JPanel panel2T5S;
+	private static JPanel panel3T5S;
+	private static JPanel panel4T5S;
+	private static JPanel panel5T5S;
+	private static JPanel panel6T5S;
+	private static JPanel panel_12;
+	private static JPanel panel1T6S;
+	private static JPanel panel2T6S;
+	private static JPanel panel3T6S;
+	private static JPanel panel4T6S;
+	private static JPanel panel5T6S;
+	private static JPanel panel6T6S;
+	private static JPanel panel1T6;
+	private static JPanel panel2T6;
+	private static JPanel panel3T6;
+	private static JPanel panel4T6;
+	private static JPanel panel5T6;
+	private static JPanel panel6T6;
 	
 
 	//panels trons
-	private JPanel panel_turno1;
-	private JPanel panel_turno2;
-	private JPanel panel_turno6;
-	private JPanel panel_turno3;
-	private JPanel panel_turno4;
-	private JPanel panel_turno5;
+	private static JPanel panel_turno1;
+	private static JPanel panel_turno2;
+	private static JPanel panel_turno6;
+	private static JPanel panel_turno3;
+	private static JPanel panel_turno4;
+	private static JPanel panel_turno5;
 	
 	private JLabel txtErrorT1;
 	private JLabel txtErrorT2;
@@ -149,7 +146,14 @@ public class AppGrafica {
 	private JLabel txtErrorT4;
 	private JLabel txtErrorT5;
 	private JLabel txtErrorT6;
-	 
+	
+	private static JButton btnCorregitTurno1;
+	private static JButton btnCorregitTurno2;
+	private static JButton btnCorregitTurno3;
+	private static JButton btnCorregitTurno4;
+	private static JButton btnCorregitTurno5;
+	private static JButton btnCorregitTurno6;
+	
 	 
 	 
 	/**
@@ -198,7 +202,8 @@ public class AppGrafica {
 		//generaremos las piezas con los colores que emos generado
 		nuevaPartidaMaquina.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {			
+			public void actionPerformed(ActionEvent e) {
+				reset();
 				coloresDisponibles=generarColoresAleatorio();
 				activarDesactivar(false);
 				tglbtnClr1.setBackground(new Color(coloresDisponibles[0]));
@@ -220,7 +225,8 @@ public class AppGrafica {
 		//generaremos las piezas con los colores que emos generado
 		nuevaPartidaJugador.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {			
+			public void actionPerformed(ActionEvent e) {
+				reset();
 				activarDesactivar(true);
 				btnGen.setVisible(true);
 				lblError.setVisible(true);
@@ -229,13 +235,13 @@ public class AppGrafica {
 		frame.setJMenuBar(barraMenu);
 		
 		panel = new JPanel();
-		panel.setBounds(new Rectangle(10, 0, 685, 439));
+		panel.setBounds(new Rectangle(0, 0, 695, 439));
 		panel.setBackground(UIManager.getColor("ComboBox.buttonBackground"));
 		SpringLayout sl_panel = new SpringLayout();
 		panel.setLayout(sl_panel);
 		
 		panel_1 = new JPanel();
-		panel_1.setBounds(new Rectangle(684, 0, 300, 439));
+		panel_1.setBounds(new Rectangle(695, 0, 289, 439));
 		panel_1.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		SpringLayout sl_panel_1 = new SpringLayout();
 		panel_1.setLayout(sl_panel_1);
@@ -250,33 +256,33 @@ public class AppGrafica {
 		
 		tglbtnClr1 = new JToggleButton("");
 		tglbtnClr1.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr1.setBackground(Color.WHITE);
+		tglbtnClr1.setBackground(Color.LIGHT_GRAY);
 		panel_3.add(tglbtnClr1);
 		
 		
 		tglbtnClr2 = new JToggleButton("");
 		tglbtnClr2.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr2.setBackground(Color.WHITE);
+		tglbtnClr2.setBackground(Color.LIGHT_GRAY);
 		panel_3.add(tglbtnClr2);
 		
 		tglbtnClr3 = new JToggleButton("");
 		tglbtnClr3.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr3.setBackground(Color.WHITE);
+		tglbtnClr3.setBackground(Color.LIGHT_GRAY);
 		panel_3.add(tglbtnClr3);
 		
 		tglbtnClr4 = new JToggleButton("");
 		tglbtnClr4.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr4.setBackground(Color.WHITE);
+		tglbtnClr4.setBackground(Color.LIGHT_GRAY);
 		panel_3.add(tglbtnClr4);
 		
 		tglbtnClr5 = new JToggleButton("");
 		tglbtnClr5.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr5.setBackground(Color.WHITE);
+		tglbtnClr5.setBackground(Color.LIGHT_GRAY);
 		panel_3.add(tglbtnClr5);
 		
 		tglbtnClr6 = new JToggleButton("");
 		tglbtnClr6.setBorder(new LineBorder(UIManager.getColor("ComboBox.buttonBackground"), 3));
-		tglbtnClr6.setBackground(Color.WHITE);
+		tglbtnClr6.setBackground(Color.LIGHT_GRAY);
 		panel_3.add(tglbtnClr6);
 		
 		lblColores = new JLabel("Colores disponibles: ");
@@ -381,7 +387,7 @@ public class AppGrafica {
 		sl_panel.putConstraint(SpringLayout.EAST, panel_turno1, -39, SpringLayout.EAST, panel);
 		panel.add(panel_turno1);
 		
-		JButton btnCorregitTurno1 = new JButton("Corregir");
+		btnCorregitTurno1 = new JButton("Corregir");
 		btnCorregitTurno1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				respuesta[0]=panel1T1.getBackground().getRGB();
@@ -555,7 +561,7 @@ public class AppGrafica {
 		panel_turno2.setVisible(false);
 		panel.add(panel_turno2);
 		
-		JButton btnCorregitTurno2 = new JButton("Corregir");
+		btnCorregitTurno2 = new JButton("Corregir");
 		btnCorregitTurno2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				respuesta[0]=panel1T2.getBackground().getRGB();
@@ -724,7 +730,7 @@ public class AppGrafica {
 		panel_turno6.setVisible(false);
 		panel.add(panel_turno6);
 		
-		JButton btnCorregitTurno6 = new JButton("Corregir");
+		btnCorregitTurno6 = new JButton("Corregir");
 		btnCorregitTurno6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				respuesta[0]=panel1T6.getBackground().getRGB();
@@ -1482,7 +1488,9 @@ public class AppGrafica {
 		JPanel contentPane= new JPanel();
 		contentPane.setVisible(true);
 		Color color=JColorChooser.showDialog(contentPane, "Elige un color", Color.BLACK);
-		
+		if(color==null) {
+			color=Color.LIGHT_GRAY;
+		}
 		return color;
 	}
 	
@@ -1538,5 +1546,113 @@ public class AppGrafica {
 		} else if(piezasJUgador[num].getEstado() == 1){
 			panel.setBackground(Color.black);
 		}
+	}
+	
+	public static void reset() {
+		
+		panel1T1.setBackground(new Color(-1118482));
+		panel2T1.setBackground(new Color(-1118482));
+		panel3T1.setBackground(new Color(-1118482));
+		panel4T1.setBackground(new Color(-1118482));
+		panel5T1.setBackground(new Color(-1118482));
+		panel6T1.setBackground(new Color(-1118482));
+		
+		panel1T2.setBackground(new Color(-1118482));
+		panel2T2.setBackground(new Color(-1118482));
+		panel3T2.setBackground(new Color(-1118482));
+		panel4T2.setBackground(new Color(-1118482));
+		panel5T2.setBackground(new Color(-1118482));
+		panel6T2.setBackground(new Color(-1118482));
+		
+		panel1T3.setBackground(new Color(-1118482));
+		panel2T3.setBackground(new Color(-1118482));
+		panel3T3.setBackground(new Color(-1118482));
+		panel4T3.setBackground(new Color(-1118482));
+		panel5T3.setBackground(new Color(-1118482));
+		panel6T3.setBackground(new Color(-1118482));
+		
+		panel1T4.setBackground(new Color(-1118482));
+		panel2T4.setBackground(new Color(-1118482));
+		panel3T4.setBackground(new Color(-1118482));
+		panel4T4.setBackground(new Color(-1118482));
+		panel5T4.setBackground(new Color(-1118482));
+		panel6T4.setBackground(new Color(-1118482));
+		
+		panel1T5.setBackground(new Color(-1118482));
+		panel2T5.setBackground(new Color(-1118482));
+		panel3T5.setBackground(new Color(-1118482));
+		panel4T5.setBackground(new Color(-1118482));
+		panel5T5.setBackground(new Color(-1118482));
+		panel6T5.setBackground(new Color(-1118482));
+		
+		panel1T6.setBackground(new Color(-1118482));
+		panel2T6.setBackground(new Color(-1118482));
+		panel3T6.setBackground(new Color(-1118482));
+		panel4T6.setBackground(new Color(-1118482));
+		panel5T6.setBackground(new Color(-1118482));
+		panel6T6.setBackground(new Color(-1118482));
+		
+		panel1T1S.setBackground(Color.LIGHT_GRAY);
+		panel2T1S.setBackground(Color.LIGHT_GRAY);
+		panel3T1S.setBackground(Color.LIGHT_GRAY);
+		panel4T1S.setBackground(Color.LIGHT_GRAY);
+		panel5T1S.setBackground(Color.LIGHT_GRAY);
+		panel6T1S.setBackground(Color.LIGHT_GRAY);
+		
+		panel1T2S.setBackground(Color.LIGHT_GRAY);
+		panel2T2S.setBackground(Color.LIGHT_GRAY);
+		panel3T2S.setBackground(Color.LIGHT_GRAY);
+		panel4T2S.setBackground(Color.LIGHT_GRAY);
+		panel5T2S.setBackground(Color.LIGHT_GRAY);
+		panel6T2S.setBackground(Color.LIGHT_GRAY);
+		
+		panel1T3S.setBackground(Color.LIGHT_GRAY);
+		panel2T3S.setBackground(Color.LIGHT_GRAY);
+		panel3T3S.setBackground(Color.LIGHT_GRAY);
+		panel4T3S.setBackground(Color.LIGHT_GRAY);
+		panel5T3S.setBackground(Color.LIGHT_GRAY);
+		panel6T3S.setBackground(Color.LIGHT_GRAY);
+		
+		panel1T4S.setBackground(Color.LIGHT_GRAY);
+		panel2T4S.setBackground(Color.LIGHT_GRAY);
+		panel3T4S.setBackground(Color.LIGHT_GRAY);
+		panel4T4S.setBackground(Color.LIGHT_GRAY);
+		panel5T4S.setBackground(Color.LIGHT_GRAY);
+		panel6T4S.setBackground(Color.LIGHT_GRAY);
+		
+		panel1T5S.setBackground(Color.LIGHT_GRAY);
+		panel2T5S.setBackground(Color.LIGHT_GRAY);
+		panel3T5S.setBackground(Color.LIGHT_GRAY);
+		panel4T5S.setBackground(Color.LIGHT_GRAY);
+		panel5T5S.setBackground(Color.LIGHT_GRAY);
+		panel6T5S.setBackground(Color.LIGHT_GRAY);
+		
+		panel1T6S.setBackground(Color.LIGHT_GRAY);
+		panel2T6S.setBackground(Color.LIGHT_GRAY);
+		panel3T6S.setBackground(Color.LIGHT_GRAY);
+		panel4T6S.setBackground(Color.LIGHT_GRAY);
+		panel5T6S.setBackground(Color.LIGHT_GRAY);
+		panel6T6S.setBackground(Color.LIGHT_GRAY);
+		
+		panel_turno1.setVisible(false);
+		panel_turno2.setVisible(false);
+		panel_turno3.setVisible(false);
+		panel_turno4.setVisible(false);
+		panel_turno5.setVisible(false);
+		panel_turno6.setVisible(false);
+		
+		btnCorregitTurno1.setVisible(true);
+		btnCorregitTurno2.setVisible(true);
+		btnCorregitTurno3.setVisible(true);
+		btnCorregitTurno4.setVisible(true);
+		btnCorregitTurno5.setVisible(true);
+		btnCorregitTurno6.setVisible(true);
+		
+		tglbtnClr1.setBackground(Color.LIGHT_GRAY);
+		tglbtnClr2.setBackground(Color.LIGHT_GRAY);
+		tglbtnClr3.setBackground(Color.LIGHT_GRAY);
+		tglbtnClr4.setBackground(Color.LIGHT_GRAY);
+		tglbtnClr5.setBackground(Color.LIGHT_GRAY);
+		tglbtnClr6.setBackground(Color.LIGHT_GRAY);
 	}
 }
