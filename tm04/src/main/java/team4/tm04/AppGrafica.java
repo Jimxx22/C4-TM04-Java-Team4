@@ -57,24 +57,12 @@ public class AppGrafica {
 	private JPanel panel4T1;
 	private JPanel panel5T1;
 	private JPanel panel6T1;
-	private JPanel panel6T1S;
-	private JPanel panel1T1S;
-	private JPanel panel2T1S;
-	private JPanel panel3T1S;
-	private JPanel panel4T1S;
-	private JPanel panel5T1S;
 	private JPanel panel1T2;
 	private JPanel panel2T2;
 	private JPanel panel3T2;
 	private JPanel panel4T2;
 	private JPanel panel5T2;
 	private JPanel panel6T2;
-	private JPanel panel6T2S;
-	private JPanel panel5T2S;
-	private JPanel panel4T2S;
-	private JPanel panel3T2S;
-	private JPanel panel2T2S;
-	private JPanel panel1T2S;
 	private JPanel panel1T3;
 	private JPanel panel2T3;
 	private JPanel panel3T3;
@@ -82,12 +70,6 @@ public class AppGrafica {
 	private JPanel panel5T3;
 	private JPanel panel6T3;
 	private JButton btnCorregitTurno2_1;
-	private JPanel panel6T3S;
-	private JPanel panel5T3S;
-	private JPanel panel4T3S;
-	private JPanel panel3T3S;
-	private JPanel panel2T3S;
-	private JPanel panel1T3S;
 	private JPanel panel1T4;
 	private JPanel panel2T4;
 	private JPanel panel3T4;
@@ -96,24 +78,12 @@ public class AppGrafica {
 	private JPanel panel6T4;
 	private JButton btnCorregitTurno2_2;
 	private JButton btnCorregitTurno2_3;
-	private JPanel panel6T4S;
-	private JPanel panel5T4S;
-	private JPanel panel4T4S;
-	private JPanel panel3T4S;
-	private JPanel panel2T4S;
-	private JPanel panel1T4S;
 	private JPanel panel1T5;
 	private JPanel panel2T5;
 	private JPanel panel3T5;
 	private JPanel panel4T5;
 	private JPanel panel5T5;
 	private JPanel panel6T5;
-	private JPanel panel6T5S;
-	private JPanel panel5T5S;
-	private JPanel panel4T5S;
-	private JPanel panel3T5S;
-	private JPanel panel2T5S;
-	private JPanel panel1T5S;
 	 
 	//panels trons
 	private JPanel panel_turno1;
@@ -442,28 +412,47 @@ public class AppGrafica {
 		panel6T1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		panel6T1.setBackground(UIManager.getColor("ComboBox.buttonBackground"));
 		
-		panel6T1S = new JPanel();
-		panel6T1S.setBackground(Color.LIGHT_GRAY);
-		
-		panel1T1S = new JPanel();
-		panel1T1S.setBackground(Color.LIGHT_GRAY);
-		
-		panel2T1S = new JPanel();
-		panel2T1S.setBackground(Color.LIGHT_GRAY);
-		
-		panel3T1S = new JPanel();
-		panel3T1S.setBackground(Color.LIGHT_GRAY);
-		
-		panel4T1S = new JPanel();
-		panel4T1S.setBackground(Color.LIGHT_GRAY);
-		
-		panel5T1S = new JPanel();
-		panel5T1S.setBackground(Color.LIGHT_GRAY);
-		
 		txtErrorT1 = new JLabel("Error: hay algun color vacio");
 		txtErrorT1.setVisible(false);
 		txtErrorT1.setForeground(Color.RED);
 		txtErrorT1.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		
+		panel_7 = new JPanel();
+		sl_panel_1.putConstraint(SpringLayout.NORTH, panel_7, 6, SpringLayout.SOUTH, panel_4);
+		sl_panel_1.putConstraint(SpringLayout.WEST, panel_7, 28, SpringLayout.WEST, panel_1);
+		sl_panel_1.putConstraint(SpringLayout.SOUTH, panel_7, 39, SpringLayout.SOUTH, panel_4);
+		sl_panel_1.putConstraint(SpringLayout.EAST, panel_7, 271, SpringLayout.WEST, panel_1);
+		panel_7.setLayout(new GridLayout(1, 0, 0, 0));
+		
+		panel1T1S = new JPanel();
+		panel1T1S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel1T1S.setBackground(Color.LIGHT_GRAY);
+		panel_7.add(panel1T1S);
+		
+		panel2T1S = new JPanel();
+		panel2T1S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel2T1S.setBackground(Color.LIGHT_GRAY);
+		panel_7.add(panel2T1S);
+		
+		panel3T1S = new JPanel();
+		panel3T1S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel3T1S.setBackground(Color.LIGHT_GRAY);
+		panel_7.add(panel3T1S);
+		
+		panel4T1S = new JPanel();
+		panel4T1S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel4T1S.setBackground(Color.LIGHT_GRAY);
+		panel_7.add(panel4T1S);
+		
+		panel5T1S = new JPanel();
+		panel5T1S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel5T1S.setBackground(Color.LIGHT_GRAY);
+		panel_7.add(panel5T1S);
+		
+		panel6T1S = new JPanel();
+		panel6T1S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel6T1S.setBackground(Color.LIGHT_GRAY);
+		panel_7.add(panel6T1S);
 		
 		GroupLayout gl_panel_turno1 = new GroupLayout(panel_turno1);
 		gl_panel_turno1.setHorizontalGroup(
@@ -485,18 +474,8 @@ public class AppGrafica {
 							.addComponent(panel6T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.UNRELATED)
 							.addComponent(btnCorregitTurno1, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
-							.addGap(62)
-							.addComponent(panel1T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(panel2T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(panel3T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(panel4T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(panel5T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addComponent(panel6T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+							.addComponent(panel_7, GroupLayout.PREFERRED_SIZE, 243, GroupLayout.PREFERRED_SIZE))
 						.addComponent(txtErrorT1))
 					.addContainerGap())
 		);
@@ -505,22 +484,14 @@ public class AppGrafica {
 				.addGroup(gl_panel_turno1.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_panel_turno1.createParallelGroup(Alignment.TRAILING)
+						.addComponent(panel_7, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel6T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 						.addComponent(btnCorregitTurno1, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
 						.addComponent(panel1T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel6T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 						.addComponent(panel5T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 						.addComponent(panel4T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 						.addComponent(panel3T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel2T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addGroup(gl_panel_turno1.createSequentialGroup()
-							.addGroup(gl_panel_turno1.createParallelGroup(Alignment.LEADING)
-								.addComponent(panel2T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-								.addComponent(panel3T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-								.addComponent(panel4T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-								.addComponent(panel6T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-								.addComponent(panel5T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-								.addComponent(panel1T1S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-							.addGap(3)))
+						.addComponent(panel2T1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addComponent(txtErrorT1)
 					.addContainerGap())
@@ -559,28 +530,43 @@ public class AppGrafica {
 		panel6T2 = new JPanel();
 		panel6T2.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		
-		panel6T2S = new JPanel();
-		panel6T2S.setBackground(Color.LIGHT_GRAY);
-		
-		panel5T2S = new JPanel();
-		panel5T2S.setBackground(Color.LIGHT_GRAY);
-		
-		panel4T2S = new JPanel();
-		panel4T2S.setBackground(Color.LIGHT_GRAY);
-		
-		panel3T2S = new JPanel();
-		panel3T2S.setBackground(Color.LIGHT_GRAY);
-		
-		panel2T2S = new JPanel();
-		panel2T2S.setBackground(Color.LIGHT_GRAY);
-		
-		panel1T2S = new JPanel();
-		panel1T2S.setBackground(Color.LIGHT_GRAY);
-		
 		txtErrorT2 = new JLabel("Error: hay algun color vacio");
 		txtErrorT2.setVisible(false);
 		txtErrorT2.setForeground(Color.RED);
 		txtErrorT2.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		
+		panel_8 = new JPanel();
+		panel_8.setLayout(new GridLayout(1, 0, 0, 0));
+		
+		panel1T2S = new JPanel();
+		panel1T2S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel1T2S.setBackground(Color.LIGHT_GRAY);
+		panel_8.add(panel1T2S);
+		
+		panel2T2S = new JPanel();
+		panel2T2S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel2T2S.setBackground(Color.LIGHT_GRAY);
+		panel_8.add(panel2T2S);
+		
+		panel3T2S = new JPanel();
+		panel3T2S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel3T2S.setBackground(Color.LIGHT_GRAY);
+		panel_8.add(panel3T2S);
+		
+		panel4T2S = new JPanel();
+		panel4T2S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel4T2S.setBackground(Color.LIGHT_GRAY);
+		panel_8.add(panel4T2S);
+		
+		panel5T2S = new JPanel();
+		panel5T2S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel5T2S.setBackground(Color.LIGHT_GRAY);
+		panel_8.add(panel5T2S);
+		
+		panel6T2S = new JPanel();
+		panel6T2S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel6T2S.setBackground(Color.LIGHT_GRAY);
+		panel_8.add(panel6T2S);
 		GroupLayout gl_panel_turno2 = new GroupLayout(panel_turno2);
 		gl_panel_turno2.setHorizontalGroup(
 			gl_panel_turno2.createParallelGroup(Alignment.LEADING)
@@ -601,27 +587,20 @@ public class AppGrafica {
 							.addComponent(panel6T2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.UNRELATED)
 							.addComponent(btnCorregitTurno2, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-							.addComponent(panel1T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(panel2T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(panel3T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(panel4T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(panel5T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(panel6T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+							.addComponent(panel_8, GroupLayout.PREFERRED_SIZE, 243, GroupLayout.PREFERRED_SIZE))
 						.addComponent(txtErrorT2))
 					.addContainerGap())
 		);
 		gl_panel_turno2.setVerticalGroup(
 			gl_panel_turno2.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_turno2.createSequentialGroup()
+					.addContainerGap()
 					.addGroup(gl_panel_turno2.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panel_turno2.createSequentialGroup()
-							.addContainerGap()
+							.addComponent(panel_8, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap())
+						.addGroup(gl_panel_turno2.createSequentialGroup()
 							.addGroup(gl_panel_turno2.createParallelGroup(Alignment.LEADING, false)
 								.addComponent(panel2T2, GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
 								.addComponent(panel3T2, GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
@@ -629,18 +608,9 @@ public class AppGrafica {
 								.addComponent(panel5T2, GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
 								.addComponent(panel6T2, GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
 								.addComponent(panel1T2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(btnCorregitTurno2, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_panel_turno2.createSequentialGroup()
-							.addContainerGap()
-							.addGroup(gl_panel_turno2.createParallelGroup(Alignment.TRAILING)
-								.addComponent(panel4T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-								.addComponent(panel6T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-								.addComponent(panel5T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-								.addComponent(panel3T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-								.addComponent(panel2T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-								.addComponent(panel1T2S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))))
-					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(txtErrorT2))
+								.addComponent(btnCorregitTurno2, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(txtErrorT2))))
 		);
 		panel_turno2.setLayout(gl_panel_turno2);
 		
@@ -722,28 +692,43 @@ public class AppGrafica {
 		JPanel panel6T6 = new JPanel();
 		panel6T6.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		
-		JPanel panel6T6S = new JPanel();
-		panel6T6S.setBackground(Color.LIGHT_GRAY);
-		
-		JPanel panel5T6S = new JPanel();
-		panel5T6S.setBackground(Color.LIGHT_GRAY);
-		
-		JPanel panel4T6S = new JPanel();
-		panel4T6S.setBackground(Color.LIGHT_GRAY);
-		
-		JPanel panel3T6S = new JPanel();
-		panel3T6S.setBackground(Color.LIGHT_GRAY);
-		
-		JPanel panel2T6S = new JPanel();
-		panel2T6S.setBackground(Color.LIGHT_GRAY);
-		
-		JPanel panel1T6S = new JPanel();
-		panel1T6S.setBackground(Color.LIGHT_GRAY);
-		
 		txtErrorT6 = new JLabel("Error: hay algun color vacio");
 		txtErrorT6.setVisible(false);
 		txtErrorT6.setForeground(Color.RED);
 		txtErrorT6.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		
+		panel_12 = new JPanel();
+		panel_12.setLayout(new GridLayout(1, 0, 0, 0));
+		
+		panel1T6S = new JPanel();
+		panel1T6S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel1T6S.setBackground(Color.LIGHT_GRAY);
+		panel_12.add(panel1T6S);
+		
+		panel2T6S = new JPanel();
+		panel2T6S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel2T6S.setBackground(Color.LIGHT_GRAY);
+		panel_12.add(panel2T6S);
+		
+		panel3T6S = new JPanel();
+		panel3T6S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel3T6S.setBackground(Color.LIGHT_GRAY);
+		panel_12.add(panel3T6S);
+		
+		panel4T6S = new JPanel();
+		panel4T6S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel4T6S.setBackground(Color.LIGHT_GRAY);
+		panel_12.add(panel4T6S);
+		
+		panel5T6S = new JPanel();
+		panel5T6S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel5T6S.setBackground(Color.LIGHT_GRAY);
+		panel_12.add(panel5T6S);
+		
+		panel6T6S = new JPanel();
+		panel6T6S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel6T6S.setBackground(Color.LIGHT_GRAY);
+		panel_12.add(panel6T6S);
 		GroupLayout gl_panel_turno6 = new GroupLayout(panel_turno6);
 		gl_panel_turno6.setHorizontalGroup(
 			gl_panel_turno6.createParallelGroup(Alignment.LEADING)
@@ -764,42 +749,31 @@ public class AppGrafica {
 							.addComponent(panel6T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
 							.addGap(10)
 							.addComponent(btnCorregitTurno6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-							.addComponent(panel1T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(panel2T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(panel3T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(panel4T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(panel5T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(panel6T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+							.addComponent(panel_12, GroupLayout.PREFERRED_SIZE, 243, GroupLayout.PREFERRED_SIZE))
 						.addComponent(txtErrorT6))
 					.addContainerGap())
 		);
 		gl_panel_turno6.setVerticalGroup(
-			gl_panel_turno6.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_panel_turno6.createSequentialGroup()
+			gl_panel_turno6.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_turno6.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_panel_turno6.createParallelGroup(Alignment.LEADING)
-						.addComponent(panel1T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnCorregitTurno6, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel2T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel3T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel4T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel5T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel6T6S, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel6T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel5T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel4T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-						.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING, false)
-							.addComponent(panel1T6, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addComponent(panel2T6, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addComponent(panel3T6, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)))
-					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addComponent(txtErrorT6))
+						.addGroup(gl_panel_turno6.createSequentialGroup()
+							.addComponent(panel_12, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap())
+						.addGroup(gl_panel_turno6.createSequentialGroup()
+							.addGroup(gl_panel_turno6.createParallelGroup(Alignment.LEADING)
+								.addComponent(btnCorregitTurno6, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
+								.addComponent(panel6T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								.addComponent(panel5T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								.addComponent(panel4T6, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_panel_turno6.createParallelGroup(Alignment.TRAILING, false)
+									.addComponent(panel1T6, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(panel2T6, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(panel3T6, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)))
+							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(txtErrorT6))))
 		);
 		panel_turno6.setLayout(gl_panel_turno6);
 		
@@ -871,56 +845,8 @@ public class AppGrafica {
 		sl_panel_2.putConstraint(SpringLayout.NORTH, btnCorregitTurno2_1, 10, SpringLayout.NORTH, panel_2);
 		sl_panel_2.putConstraint(SpringLayout.WEST, btnCorregitTurno2_1, 6, SpringLayout.EAST, panel6T3);
 		sl_panel_2.putConstraint(SpringLayout.SOUTH, btnCorregitTurno2_1, 0, SpringLayout.SOUTH, panel1T3);
+		sl_panel_2.putConstraint(SpringLayout.EAST, btnCorregitTurno2_1, -290, SpringLayout.EAST, panel_2);
 		panel_2.add(btnCorregitTurno2_1);
-		
-		panel6T3S = new JPanel();
-		sl_panel_2.putConstraint(SpringLayout.NORTH, panel6T3S, 10, SpringLayout.NORTH, panel_2);
-		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel6T3S, 0, SpringLayout.SOUTH, panel1T3);
-		sl_panel_2.putConstraint(SpringLayout.EAST, panel6T3S, -10, SpringLayout.EAST, panel_2);
-		panel6T3S.setBackground(Color.LIGHT_GRAY);
-		panel_2.add(panel6T3S);
-		
-		panel5T3S = new JPanel();
-		sl_panel_2.putConstraint(SpringLayout.WEST, panel6T3S, 6, SpringLayout.EAST, panel5T3S);
-		sl_panel_2.putConstraint(SpringLayout.NORTH, panel5T3S, 10, SpringLayout.NORTH, panel_2);
-		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel5T3S, 0, SpringLayout.SOUTH, panel1T3);
-		sl_panel_2.putConstraint(SpringLayout.EAST, panel5T3S, -46, SpringLayout.EAST, panel_2);
-		panel5T3S.setBackground(Color.LIGHT_GRAY);
-		panel_2.add(panel5T3S);
-		
-		panel4T3S = new JPanel();
-		sl_panel_2.putConstraint(SpringLayout.WEST, panel5T3S, 6, SpringLayout.EAST, panel4T3S);
-		sl_panel_2.putConstraint(SpringLayout.NORTH, panel4T3S, 10, SpringLayout.NORTH, panel_2);
-		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel4T3S, 0, SpringLayout.SOUTH, panel1T3);
-		sl_panel_2.putConstraint(SpringLayout.EAST, panel4T3S, -82, SpringLayout.EAST, panel_2);
-		panel4T3S.setBackground(Color.LIGHT_GRAY);
-		panel_2.add(panel4T3S);
-		
-		panel3T3S = new JPanel();
-		sl_panel_2.putConstraint(SpringLayout.WEST, panel4T3S, 6, SpringLayout.EAST, panel3T3S);
-		sl_panel_2.putConstraint(SpringLayout.NORTH, panel3T3S, 10, SpringLayout.NORTH, panel_2);
-		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel3T3S, -19, SpringLayout.SOUTH, panel_2);
-		sl_panel_2.putConstraint(SpringLayout.EAST, panel3T3S, -118, SpringLayout.EAST, panel_2);
-		panel3T3S.setBackground(Color.LIGHT_GRAY);
-		panel_2.add(panel3T3S);
-		
-		panel2T3S = new JPanel();
-		sl_panel_2.putConstraint(SpringLayout.WEST, panel3T3S, 6, SpringLayout.EAST, panel2T3S);
-		sl_panel_2.putConstraint(SpringLayout.NORTH, panel2T3S, 10, SpringLayout.NORTH, panel_2);
-		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel2T3S, 0, SpringLayout.SOUTH, panel1T3);
-		sl_panel_2.putConstraint(SpringLayout.EAST, panel2T3S, -154, SpringLayout.EAST, panel_2);
-		panel2T3S.setBackground(Color.LIGHT_GRAY);
-		panel_2.add(panel2T3S);
-		
-		panel1T3S = new JPanel();
-		sl_panel_2.putConstraint(SpringLayout.WEST, panel1T3S, 396, SpringLayout.WEST, panel_2);
-		sl_panel_2.putConstraint(SpringLayout.EAST, panel1T3S, -190, SpringLayout.EAST, panel_2);
-		sl_panel_2.putConstraint(SpringLayout.WEST, panel2T3S, 6, SpringLayout.EAST, panel1T3S);
-		sl_panel_2.putConstraint(SpringLayout.EAST, btnCorregitTurno2_1, -70, SpringLayout.WEST, panel1T3S);
-		sl_panel_2.putConstraint(SpringLayout.NORTH, panel1T3S, 10, SpringLayout.NORTH, panel_2);
-		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel1T3S, 0, SpringLayout.SOUTH, panel1T3);
-		panel1T3S.setBackground(Color.LIGHT_GRAY);
-		panel_2.add(panel1T3S);
 		
 		txtErrorT3 = new JLabel("Error: hay algun color vacio");
 		txtErrorT3.setVisible(false);
@@ -930,6 +856,44 @@ public class AppGrafica {
 		sl_panel_2.putConstraint(SpringLayout.SOUTH, txtErrorT3, 0, SpringLayout.SOUTH, panel_2);
 		txtErrorT3.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel_2.add(txtErrorT3);
+		
+		panel_9 = new JPanel();
+		sl_panel_2.putConstraint(SpringLayout.NORTH, panel_9, 0, SpringLayout.NORTH, panel1T3);
+		sl_panel_2.putConstraint(SpringLayout.WEST, panel_9, -251, SpringLayout.EAST, panel_2);
+		sl_panel_2.putConstraint(SpringLayout.SOUTH, panel_9, 0, SpringLayout.SOUTH, panel1T3);
+		sl_panel_2.putConstraint(SpringLayout.EAST, panel_9, -10, SpringLayout.EAST, panel_2);
+		panel_2.add(panel_9);
+		panel_9.setLayout(new GridLayout(1, 0, 0, 0));
+		
+		panel1T3S = new JPanel();
+		panel1T3S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel1T3S.setBackground(Color.LIGHT_GRAY);
+		panel_9.add(panel1T3S);
+		
+		panel2T3S = new JPanel();
+		panel2T3S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel2T3S.setBackground(Color.LIGHT_GRAY);
+		panel_9.add(panel2T3S);
+		
+		panel3T3S = new JPanel();
+		panel3T3S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel3T3S.setBackground(Color.LIGHT_GRAY);
+		panel_9.add(panel3T3S);
+		
+		panel4T3S = new JPanel();
+		panel4T3S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel4T3S.setBackground(Color.LIGHT_GRAY);
+		panel_9.add(panel4T3S);
+		
+		panel5T3S = new JPanel();
+		panel5T3S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel5T3S.setBackground(Color.LIGHT_GRAY);
+		panel_9.add(panel5T3S);
+		
+		panel6T3S = new JPanel();
+		panel6T3S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel6T3S.setBackground(Color.LIGHT_GRAY);
+		panel_9.add(panel6T3S);
 		panel.add(panel_5);
 		
 		panel_6 = new JPanel();
@@ -994,56 +958,8 @@ public class AppGrafica {
 		sl_panel_5.putConstraint(SpringLayout.NORTH, btnCorregitTurno2_2, 10, SpringLayout.NORTH, panel_5);
 		sl_panel_5.putConstraint(SpringLayout.WEST, btnCorregitTurno2_2, 6, SpringLayout.EAST, panel6T4);
 		sl_panel_5.putConstraint(SpringLayout.SOUTH, btnCorregitTurno2_2, -22, SpringLayout.SOUTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.EAST, btnCorregitTurno2_2, -294, SpringLayout.EAST, panel_5);
 		panel_5.add(btnCorregitTurno2_2);
-		
-		panel6T4S = new JPanel();
-		sl_panel_5.putConstraint(SpringLayout.NORTH, panel6T4S, 10, SpringLayout.NORTH, panel_5);
-		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel6T4S, -22, SpringLayout.SOUTH, panel_5);
-		sl_panel_5.putConstraint(SpringLayout.EAST, panel6T4S, -10, SpringLayout.EAST, panel_5);
-		panel6T4S.setBackground(Color.LIGHT_GRAY);
-		panel_5.add(panel6T4S);
-		
-		panel5T4S = new JPanel();
-		sl_panel_5.putConstraint(SpringLayout.EAST, panel5T4S, -46, SpringLayout.EAST, panel_5);
-		sl_panel_5.putConstraint(SpringLayout.WEST, panel6T4S, 6, SpringLayout.EAST, panel5T4S);
-		sl_panel_5.putConstraint(SpringLayout.NORTH, panel5T4S, 10, SpringLayout.NORTH, panel_5);
-		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel5T4S, -22, SpringLayout.SOUTH, panel_5);
-		panel5T4S.setBackground(Color.LIGHT_GRAY);
-		panel_5.add(panel5T4S);
-		
-		panel4T4S = new JPanel();
-		sl_panel_5.putConstraint(SpringLayout.WEST, panel5T4S, 6, SpringLayout.EAST, panel4T4S);
-		sl_panel_5.putConstraint(SpringLayout.EAST, panel4T4S, -82, SpringLayout.EAST, panel_5);
-		sl_panel_5.putConstraint(SpringLayout.NORTH, panel4T4S, 10, SpringLayout.NORTH, panel_5);
-		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel4T4S, -22, SpringLayout.SOUTH, panel_5);
-		panel4T4S.setBackground(Color.LIGHT_GRAY);
-		panel_5.add(panel4T4S);
-		
-		panel3T4S = new JPanel();
-		sl_panel_5.putConstraint(SpringLayout.WEST, panel4T4S, 6, SpringLayout.EAST, panel3T4S);
-		sl_panel_5.putConstraint(SpringLayout.EAST, panel3T4S, -118, SpringLayout.EAST, panel_5);
-		sl_panel_5.putConstraint(SpringLayout.NORTH, panel3T4S, 10, SpringLayout.NORTH, panel_5);
-		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel3T4S, -22, SpringLayout.SOUTH, panel_5);
-		panel3T4S.setBackground(Color.LIGHT_GRAY);
-		panel_5.add(panel3T4S);
-		
-		panel2T4S = new JPanel();
-		sl_panel_5.putConstraint(SpringLayout.WEST, panel3T4S, 6, SpringLayout.EAST, panel2T4S);
-		sl_panel_5.putConstraint(SpringLayout.EAST, panel2T4S, -154, SpringLayout.EAST, panel_5);
-		sl_panel_5.putConstraint(SpringLayout.NORTH, panel2T4S, 10, SpringLayout.NORTH, panel_5);
-		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel2T4S, -22, SpringLayout.SOUTH, panel_5);
-		panel2T4S.setBackground(Color.LIGHT_GRAY);
-		panel_5.add(panel2T4S);
-		
-		panel1T4S = new JPanel();
-		sl_panel_5.putConstraint(SpringLayout.EAST, btnCorregitTurno2_2, -74, SpringLayout.WEST, panel1T4S);
-		sl_panel_5.putConstraint(SpringLayout.WEST, panel2T4S, 6, SpringLayout.EAST, panel1T4S);
-		sl_panel_5.putConstraint(SpringLayout.WEST, panel1T4S, 396, SpringLayout.WEST, panel_5);
-		sl_panel_5.putConstraint(SpringLayout.EAST, panel1T4S, -190, SpringLayout.EAST, panel_5);
-		sl_panel_5.putConstraint(SpringLayout.NORTH, panel1T4S, 10, SpringLayout.NORTH, panel_5);
-		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel1T4S, -22, SpringLayout.SOUTH, panel_5);
-		panel1T4S.setBackground(Color.LIGHT_GRAY);
-		panel_5.add(panel1T4S);
 		
 		txtErrorT4 = new JLabel("Error: hay algun color vacio");
 		txtErrorT4.setVisible(false);
@@ -1052,6 +968,44 @@ public class AppGrafica {
 		sl_panel_5.putConstraint(SpringLayout.NORTH, txtErrorT4, 6, SpringLayout.SOUTH, panel1T4);
 		sl_panel_5.putConstraint(SpringLayout.WEST, txtErrorT4, 0, SpringLayout.WEST, panel1T4);
 		panel_5.add(txtErrorT4);
+		
+		panel_10 = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel_10, 0, SpringLayout.NORTH, panel1T4);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel_10, -252, SpringLayout.EAST, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel_10, 28, SpringLayout.NORTH, panel1T4);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel_10, -10, SpringLayout.EAST, panel_5);
+		panel_5.add(panel_10);
+		panel_10.setLayout(new GridLayout(1, 0, 0, 0));
+		
+		panel1T4S = new JPanel();
+		panel1T4S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel1T4S.setBackground(Color.LIGHT_GRAY);
+		panel_10.add(panel1T4S);
+		
+		panel2T4S = new JPanel();
+		panel2T4S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel2T4S.setBackground(Color.LIGHT_GRAY);
+		panel_10.add(panel2T4S);
+		
+		panel3T4S = new JPanel();
+		panel3T4S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel3T4S.setBackground(Color.LIGHT_GRAY);
+		panel_10.add(panel3T4S);
+		
+		panel4T4S = new JPanel();
+		panel4T4S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel4T4S.setBackground(Color.LIGHT_GRAY);
+		panel_10.add(panel4T4S);
+		
+		panel5T4S = new JPanel();
+		panel5T4S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel5T4S.setBackground(Color.LIGHT_GRAY);
+		panel_10.add(panel5T4S);
+		
+		panel6T4S = new JPanel();
+		panel6T4S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel6T4S.setBackground(Color.LIGHT_GRAY);
+		panel_10.add(panel6T4S);
 		panel.add(panel_6);
 		SpringLayout sl_panel_6 = new SpringLayout();
 		panel_6.setLayout(sl_panel_6);
@@ -1059,6 +1013,7 @@ public class AppGrafica {
 		btnCorregitTurno2_3 = new JButton("Corregir");
 		sl_panel_6.putConstraint(SpringLayout.NORTH, btnCorregitTurno2_3, 10, SpringLayout.NORTH, panel_6);
 		sl_panel_6.putConstraint(SpringLayout.SOUTH, btnCorregitTurno2_3, -21, SpringLayout.SOUTH, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.EAST, btnCorregitTurno2_3, -289, SpringLayout.EAST, panel_6);
 		panel_6.add(btnCorregitTurno2_3);
 		
 		panel1T5 = new JPanel();
@@ -1110,55 +1065,6 @@ public class AppGrafica {
 		sl_panel_6.putConstraint(SpringLayout.NORTH, panel6T5, 10, SpringLayout.NORTH, panel_6);
 		panel_6.add(panel6T5);
 		
-		panel6T5S = new JPanel();
-		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel6T5S, -21, SpringLayout.SOUTH, panel_6);
-		sl_panel_6.putConstraint(SpringLayout.EAST, panel6T5S, -10, SpringLayout.EAST, panel_6);
-		panel6T5S.setBackground(Color.LIGHT_GRAY);
-		sl_panel_6.putConstraint(SpringLayout.NORTH, panel6T5S, 10, SpringLayout.NORTH, panel_6);
-		panel_6.add(panel6T5S);
-		
-		panel5T5S = new JPanel();
-		sl_panel_6.putConstraint(SpringLayout.WEST, panel6T5S, 6, SpringLayout.EAST, panel5T5S);
-		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel5T5S, -21, SpringLayout.SOUTH, panel_6);
-		panel5T5S.setBackground(Color.LIGHT_GRAY);
-		sl_panel_6.putConstraint(SpringLayout.NORTH, panel5T5S, 10, SpringLayout.NORTH, panel_6);
-		sl_panel_6.putConstraint(SpringLayout.WEST, panel5T5S, 538, SpringLayout.WEST, panel_6);
-		sl_panel_6.putConstraint(SpringLayout.EAST, panel5T5S, -47, SpringLayout.EAST, panel_6);
-		panel_6.add(panel5T5S);
-		
-		panel4T5S = new JPanel();
-		sl_panel_6.putConstraint(SpringLayout.NORTH, panel4T5S, 10, SpringLayout.NORTH, panel_6);
-		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel4T5S, -21, SpringLayout.SOUTH, panel_6);
-		sl_panel_6.putConstraint(SpringLayout.EAST, panel4T5S, -6, SpringLayout.WEST, panel5T5S);
-		panel4T5S.setBackground(Color.LIGHT_GRAY);
-		panel_6.add(panel4T5S);
-		
-		panel3T5S = new JPanel();
-		sl_panel_6.putConstraint(SpringLayout.EAST, panel3T5S, -121, SpringLayout.EAST, panel_6);
-		sl_panel_6.putConstraint(SpringLayout.WEST, panel4T5S, 6, SpringLayout.EAST, panel3T5S);
-		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel3T5S, -21, SpringLayout.SOUTH, panel_6);
-		panel3T5S.setBackground(Color.LIGHT_GRAY);
-		sl_panel_6.putConstraint(SpringLayout.NORTH, panel3T5S, 10, SpringLayout.NORTH, panel_6);
-		panel_6.add(panel3T5S);
-		
-		panel2T5S = new JPanel();
-		sl_panel_6.putConstraint(SpringLayout.WEST, panel3T5S, 6, SpringLayout.EAST, panel2T5S);
-		sl_panel_6.putConstraint(SpringLayout.NORTH, panel2T5S, 10, SpringLayout.NORTH, panel_6);
-		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel2T5S, -21, SpringLayout.SOUTH, panel_6);
-		sl_panel_6.putConstraint(SpringLayout.EAST, panel2T5S, -158, SpringLayout.EAST, panel_6);
-		panel2T5S.setBackground(Color.LIGHT_GRAY);
-		panel_6.add(panel2T5S);
-		
-		panel1T5S = new JPanel();
-		sl_panel_6.putConstraint(SpringLayout.WEST, panel1T5S, 392, SpringLayout.WEST, panel_6);
-		sl_panel_6.putConstraint(SpringLayout.EAST, panel1T5S, -195, SpringLayout.EAST, panel_6);
-		sl_panel_6.putConstraint(SpringLayout.WEST, panel2T5S, 6, SpringLayout.EAST, panel1T5S);
-		sl_panel_6.putConstraint(SpringLayout.EAST, btnCorregitTurno2_3, -65, SpringLayout.WEST, panel1T5S);
-		sl_panel_6.putConstraint(SpringLayout.NORTH, panel1T5S, 10, SpringLayout.NORTH, panel_6);
-		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel1T5S, -21, SpringLayout.SOUTH, panel_6);
-		panel1T5S.setBackground(Color.LIGHT_GRAY);
-		panel_6.add(panel1T5S);
-		
 		txtErrorT5 = new JLabel("Error: hay algun color vacio");
 		txtErrorT5.setVisible(false);
 		txtErrorT5.setForeground(Color.RED);
@@ -1166,6 +1072,44 @@ public class AppGrafica {
 		sl_panel_6.putConstraint(SpringLayout.WEST, txtErrorT5, 0, SpringLayout.WEST, panel1T5);
 		sl_panel_6.putConstraint(SpringLayout.SOUTH, txtErrorT5, 0, SpringLayout.SOUTH, panel_6);
 		panel_6.add(txtErrorT5);
+		
+		panel_11 = new JPanel();
+		sl_panel_6.putConstraint(SpringLayout.NORTH, panel_11, 0, SpringLayout.NORTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.WEST, panel_11, -252, SpringLayout.EAST, panel_6);
+		sl_panel_6.putConstraint(SpringLayout.SOUTH, panel_11, 29, SpringLayout.NORTH, btnCorregitTurno2_3);
+		sl_panel_6.putConstraint(SpringLayout.EAST, panel_11, -10, SpringLayout.EAST, panel_6);
+		panel_6.add(panel_11);
+		panel_11.setLayout(new GridLayout(1, 0, 0, 0));
+		
+		panel1T5S = new JPanel();
+		panel1T5S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel1T5S.setBackground(Color.LIGHT_GRAY);
+		panel_11.add(panel1T5S);
+		
+		panel2T5S = new JPanel();
+		panel2T5S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel2T5S.setBackground(Color.LIGHT_GRAY);
+		panel_11.add(panel2T5S);
+		
+		panel3T5S = new JPanel();
+		panel3T5S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel3T5S.setBackground(Color.LIGHT_GRAY);
+		panel_11.add(panel3T5S);
+		
+		panel4T5S = new JPanel();
+		panel4T5S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel4T5S.setBackground(Color.LIGHT_GRAY);
+		panel_11.add(panel4T5S);
+		
+		panel5T5S = new JPanel();
+		panel5T5S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel5T5S.setBackground(Color.LIGHT_GRAY);
+		panel_11.add(panel5T5S);
+		
+		JPanel panel6T5S = new JPanel();
+		panel6T5S.setBorder(new LineBorder(UIManager.getColor("Button.background"), 3));
+		panel6T5S.setBackground(Color.LIGHT_GRAY);
+		panel_11.add(panel6T5S);
 		frame.getContentPane().add(panel_1);
 		
 		//Si los botones estan activados, pulsaremos y se abrira una ventan de selector de color para asignarlo color a este
@@ -1220,6 +1164,47 @@ public class AppGrafica {
             }
         }
     };
+	private JPanel panel_7;
+	private JPanel panel6T1S;
+	private JPanel panel5T1S;
+	private JPanel panel4T1S;
+	private JPanel panel3T1S;
+	private JPanel panel2T1S;
+	private JPanel panel1T1S;
+	private JPanel panel_8;
+	private JPanel panel1T2S;
+	private JPanel panel2T2S;
+	private JPanel panel3T2S;
+	private JPanel panel4T2S;
+	private JPanel panel5T2S;
+	private JPanel panel6T2S;
+	private JPanel panel_9;
+	private JPanel panel1T3S;
+	private JPanel panel2T3S;
+	private JPanel panel3T3S;
+	private JPanel panel4T3S;
+	private JPanel panel5T3S;
+	private JPanel panel6T3S;
+	private JPanel panel_10;
+	private JPanel panel1T4S;
+	private JPanel panel2T4S;
+	private JPanel panel3T4S;
+	private JPanel panel4T4S;
+	private JPanel panel5T4S;
+	private JPanel panel6T4S;
+	private JPanel panel_11;
+	private JPanel panel1T5S;
+	private JPanel panel2T5S;
+	private JPanel panel3T5S;
+	private JPanel panel4T5S;
+	private JPanel panel5T5S;
+	private JPanel panel_12;
+	private JPanel panel1T6S;
+	private JPanel panel2T6S;
+	private JPanel panel3T6S;
+	private JPanel panel4T6S;
+	private JPanel panel5T6S;
+	private JPanel panel6T6S;
 	
 	public static void botonColor(JToggleButton button) {
 		button.setBackground(colorPicker());
