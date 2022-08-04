@@ -35,8 +35,9 @@ public class Funciones {
 	    }
 		
 		for(int i=0;i<piezas.length;i++) {
-			random=(int)Math.floor(Math.random() * coloresM.length);
-			piezas[i]=new Pieza(coloresM[random]);
+//			random=(int)Math.floor(Math.random() * coloresM.length);
+//			piezas[i]=new Pieza(coloresM[random]);
+			piezas[i]=new Pieza(coloresM[i]);
 			piezas[i].setPosicion(i);
 		}
 		return piezas;
