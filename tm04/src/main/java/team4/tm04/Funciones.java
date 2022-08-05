@@ -93,18 +93,6 @@ public class Funciones {
 		return color;
 	}
 	
-	public static void botonColor(JToggleButton button) {
-		int pos=AppGrafica.pos;
-		
-		button.setBackground(Funciones.colorPicker());
-		AppGrafica.coloresDisponibles[pos]=button.getBackground().getRGB();
-		button.setSelected(false);	
-		pos++;
-		if(pos==6) {
-			pos=0;
-		}
-	}
-	
 	public static void colorPista (JPanel panel, int num) {		
 		Pieza[] piezasJugador = AppGrafica.piezasJUgador;
 		if (piezasJugador[num].getEstado() == 0) {
