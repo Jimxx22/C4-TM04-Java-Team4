@@ -13,7 +13,7 @@ public class Funciones {
 	//Genera las piezas con los colores aleatorios es decir, genera el patron aleatorio
 	public static Pieza[] generarPiezas(Integer[] colores, boolean mezclar) {
 		Pieza[] piezas= new Pieza[6];
-		Integer[] coloresM= Arrays.copyOf(colores, colores.length);;
+		Integer[] coloresM= Arrays.copyOf(colores, colores.length);
 		
 		int temp, random;
 	    for (int i = 0; i < coloresM.length; i++){ 	

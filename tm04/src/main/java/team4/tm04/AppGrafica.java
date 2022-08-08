@@ -163,15 +163,6 @@ public class AppGrafica {
 	public AppGrafica() {
 		initialize();
 	}
-	
-	/**
-	 * Que falta:
-	 * Hacer que el jugador seleccione las piezas para adivinar
-	 * Que el programa mire en que coinciden las piezas mediante la clase Pieza y su estado
-	 * Anadir las reglas
-	 * Hacer que una vez a entrado un patron, le deje entrar otro y asi consecutivamente hasta que acierte el patron o hayan pasado 6 turnos
-	 * Una vez pasen 6 turnos o no haya adivinado el patron, salta una ventana diciendo si ha gando o no, i si ha ganado con quantos intentos, i mostrando el patron ha adivinar
-	 */
 
 	/**
 	 * Initialize the contents of the frame.
@@ -1638,7 +1629,7 @@ public class AppGrafica {
 		tglbtnClr5.setBackground(Color.LIGHT_GRAY);
 		tglbtnClr6.setBackground(Color.LIGHT_GRAY);
 		
-		panel_4.setVisible(true);
+		panel_4.setVisible(false);
 		
 		if(piezasGeneradas!=null) {
 			for(int i=0;i<piezasGeneradas.length;i++) {
