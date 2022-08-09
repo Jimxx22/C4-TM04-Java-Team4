@@ -1629,7 +1629,7 @@ public class AppGrafica {
 		tglbtnClr5.setBackground(Color.LIGHT_GRAY);
 		tglbtnClr6.setBackground(Color.LIGHT_GRAY);
 		
-		panel_4.setVisible(false);
+		panel_4.setVisible(true);
 		
 		if(piezasGeneradas!=null) {
 			for(int i=0;i<piezasGeneradas.length;i++) {

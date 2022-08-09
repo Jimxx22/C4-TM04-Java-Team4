@@ -14,13 +14,14 @@ public class Funciones {
 	public static Pieza[] generarPiezas(Integer[] colores, boolean mezclar) {
 		Pieza[] piezas= new Pieza[6];
 		Integer[] coloresM= Arrays.copyOf(colores, colores.length);
+		Integer[] coloresS= Arrays.copyOf(colores, colores.length);
 		
 		int temp, random;
 	    for (int i = 0; i < coloresM.length; i++){ 	
 	    	if(mezclar) {
 		        random=(int)Math.floor(Math.random() * coloresM.length);
 		        if(random!=i) {
-		        	coloresM[i]=coloresM[random];
+		        	coloresM[i]=coloresS[random];
 		        }else {
 		        	i--;
 		        }  
